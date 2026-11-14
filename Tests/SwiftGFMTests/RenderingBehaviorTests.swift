@@ -92,3 +92,24 @@ private func exactReferenceFormats(_ example: FormatExample) throws {
     #expect(try MarkdownEngine().render("") == "")
     #expect(try MarkdownEngine().parse("").root.kind == .document)
 }
+
+@Test func unsupportedOptionBitsAreRejected() throws {
+    #expect(MarkdownOptions.supported.contains(.allowUnsafeHTML))
+    #expect(MarkdownOptions.supported.rawValue & (1 << 0 | 1 << 3 | 1 << 8) == 0)
+    for bits: UInt32 in [1 << 0, 1 << 3, 1 << 8, 1 << 18, 1 << 31] {
+        let engine = MarkdownEngine(configuration: .init(options: MarkdownOptions(rawValue: bits)))
+        #expect(throws: MarkdownEngineError.unsupportedOptions(bits)) { try engine.render("x") }
+        #expect(throws: MarkdownEngineError.unsupportedOptions(bits)) { try engine.parse("x") }
+    }
+    let mixed = MarkdownEngine(configuration: .init(options: [.smartPunctuation, MarkdownOptions(rawValue: 1 << 20)]))
+    #expect(throws: MarkdownEngineError.unsupportedOptions(1 << 20)) { try mixed.render("x") }
+    let all = MarkdownEngine(configuration: .init(options: .supported))
+    #expect(try all.render("x\n").contains("x"))
+}
+
+@Test func emptyAndLargeInputsAreFedWithoutCopies() throws {
+    #expect(try MarkdownEngine().render("") == "")
+    #expect(try MarkdownEngine().parse("").root.children.isEmpty)
+    let large = String(repeating: "word ", count: 200_000) + "\n"
+    #expect(try MarkdownEngine().render(large).hasPrefix("<p>word word"))
+}

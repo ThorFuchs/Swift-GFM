@@ -88,22 +88,10 @@ policy, and host security limitations also apply.
 
 ## Validation
 
-On Linux with Swift 6.4.2 and GitHub cmark-gfm commit
-`27d942c8b0a62d192f616e5bf3578f4b6a89e180`, the XML-visible projection,
-including raw source positions, matched the independently built C XML output on
-670/670 upstream-enabled examples using the flags supplied by each example,
-and on 670/670 with all five GFM extensions enabled. Upstream examples 279 and
-280 are marked disabled and were not included. This comparison does not test
-all C-only properties, footnotes, malformed XML, arbitrary inputs, or formal
-specification conformance. Focused Swift tests cover several of those omitted
-properties and cases. On 2026-11-14, GitHub Actions also passed the Swift tests
-in debug and release on macOS arm64 with Xcode 27.2 and Apple Swift 6.4.2; that
-job did not run the Linux-only independent C reference or sanitizer checks.
-See [REPRODUCTION.md](REPRODUCTION.md) for the commands and CI evidence.
-
-The Linux Swift test suite also passed in debug and release configurations and
-under Thread Sanitizer. The C object contained thread-sanitizer instrumentation.
-Address Sanitizer passed with leak detection disabled; that run does not test
-for memory leaks. The concurrency tests exercise mixed parse/render operations
-and sharing an immutable snapshot across tasks. These tests are evidence for the
-exercised cases, not a proof of thread safety or bounded resource usage.
+CI compares the XML-visible projection, including raw source positions, with
+the XML of an independently built pinned cmark-gfm for every upstream-enabled
+spec example (670), once with each example's own extensions and once with all
+five GFM extensions. Focused Swift tests cover footnotes, task-list state, list
+and fence details, table alignments, malformed backend XML, and deeply nested
+documents. These checks do not cover arbitrary inputs or every C-only field.
+See [TESTING.md](TESTING.md) for the commands.

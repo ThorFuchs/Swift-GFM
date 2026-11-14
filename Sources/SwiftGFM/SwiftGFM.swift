@@ -58,7 +58,8 @@ public struct MarkdownExtensions: OptionSet, Sendable, Hashable {
 public struct MarkdownOptions: OptionSet, Sendable, Hashable {
     /// The underlying cmark options bit mask.
     public let rawValue: UInt32
-    /// Creates options from a cmark bit mask. Unknown option bits pass through.
+    /// Creates options from a cmark bit mask.
+    /// Bits outside ``MarkdownOptions/supported`` cause parsing and rendering to throw.
     public init(rawValue: UInt32) { self.rawValue = rawValue }
     /// Calculate source positions and include them in supported render formats.
     public static let sourcePositions = Self(rawValue: 1 << 1)
@@ -84,6 +85,12 @@ public struct MarkdownOptions: OptionSet, Sendable, Hashable {
     public static let fullInfoString = Self(rawValue: 1 << 16)
     /// Render raw HTML and otherwise filtered unsafe links. This is not sanitization.
     public static let allowUnsafeHTML = Self(rawValue: 1 << 17)
+    /// Every option this version of SwiftGFM passes to the backend.
+    public static let supported: Self = [
+        .sourcePositions, .hardBreaks, .noBreaks, .validateUTF8, .smartPunctuation, .githubPreLanguage,
+        .liberalHTMLTags, .footnotes, .doubleTildeStrikethrough, .tableStyleAttributes, .fullInfoString,
+        .allowUnsafeHTML,
+    ]
 }
 
 /// Exact backend configuration. A wrap width of zero means no wrapping.
@@ -144,7 +151,8 @@ public struct MarkdownEngineError: Error, Sendable, Hashable, CustomStringConver
     /// Identifies the kind of failure. Compare with the static members.
     public struct Code: Sendable, Hashable, CustomStringConvertible {
         private enum Value: String, Sendable {
-            case invalidWidth, unsupportedExtensions, parserUnavailable, extensionUnavailable, parseFailed
+            case invalidWidth, unsupportedExtensions, unsupportedOptions, parserUnavailable, extensionUnavailable,
+                parseFailed
             case renderFailed, invalidUTF8Output, invalidResourceLimit, resourceLimitExceeded
             case unsupportedASTNode, invalidASTNode, invalidUTF8ASTNode
         }
@@ -159,6 +167,9 @@ public struct MarkdownEngineError: Error, Sendable, Hashable, CustomStringConver
         /// The extension mask contains bits not supported by the pinned backend;
         /// ``MarkdownEngineError/value`` holds the unsupported bits.
         public static let unsupportedExtensions = Self(.unsupportedExtensions)
+        /// The option mask contains bits outside ``MarkdownOptions/supported``;
+        /// ``MarkdownEngineError/value`` holds the unsupported bits.
+        public static let unsupportedOptions = Self(.unsupportedOptions)
         /// The backend failed to create a parser.
         public static let parserUnavailable = Self(.parserUnavailable)
         /// A named backend extension could not be found or attached;
@@ -224,6 +235,8 @@ public struct MarkdownEngineError: Error, Sendable, Hashable, CustomStringConver
     public static func invalidWidth(_ width: Int) -> Self { Self(.invalidWidth, value: width) }
     /// An ``Code/unsupportedExtensions`` error for the given unsupported bits.
     public static func unsupportedExtensions(_ bits: UInt8) -> Self { Self(.unsupportedExtensions, value: Int(bits)) }
+    /// An ``Code/unsupportedOptions`` error for the given unsupported bits.
+    public static func unsupportedOptions(_ bits: UInt32) -> Self { Self(.unsupportedOptions, value: Int(bits)) }
     /// A ``Code/parserUnavailable`` error.
     public static let parserUnavailable = Self(.parserUnavailable)
     /// An ``Code/extensionUnavailable`` error for the given backend extension name.
@@ -323,6 +336,8 @@ public struct MarkdownEngine: Sendable {
         }
         let unknown = configuration.extensions.rawValue & ~MarkdownExtensions.gfm.rawValue
         guard unknown == 0 else { throw MarkdownEngineError.unsupportedExtensions(unknown) }
+        let unknownOptions = configuration.options.rawValue & ~MarkdownOptions.supported.rawValue
+        guard unknownOptions == 0 else { throw MarkdownEngineError.unsupportedOptions(unknownOptions) }
         let configuredLimits: [(MarkdownResourceLimit, Int?)] = [
             (.inputUTF8Bytes, configuration.limits.maximumInputUTF8Bytes),
             (.astNodes, configuration.limits.maximumASTNodes),
@@ -353,10 +368,13 @@ public struct MarkdownEngine: Sendable {
                     throw MarkdownEngineError.extensionUnavailable(name)
                 }
             }
-            let bytes = Array(source.utf8) + [0]
-            bytes.withUnsafeBufferPointer { buffer in
-                buffer.baseAddress!.withMemoryRebound(to: CChar.self, capacity: buffer.count) {
-                    swiftgfm_cmark_parser_feed(parser, $0, buffer.count - 1)
+            // Feed the string's UTF-8 storage directly; cmark takes an explicit length,
+            // so neither a copy nor a NUL terminator is needed.
+            var input = source
+            input.withUTF8 { buffer in
+                guard let base = buffer.baseAddress, !buffer.isEmpty else { return }
+                base.withMemoryRebound(to: CChar.self, capacity: buffer.count) {
+                    swiftgfm_cmark_parser_feed(parser, $0, buffer.count)
                 }
             }
             guard let root = swiftgfm_cmark_parser_finish(parser) else { throw MarkdownEngineError.parseFailed }

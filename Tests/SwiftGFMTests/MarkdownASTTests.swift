@@ -184,3 +184,32 @@ private struct SkippingVisitor: MarkdownVisitor {
     }
     #expect(walkFailures == 0)
 }
+
+@Test func nodesAndDocumentsCompareStructurally() throws {
+    let engine = MarkdownEngine(configuration: .init(options: [.sourcePositions]))
+    let source = "# Title\n\n- [x] *done*\n\n| a |\n| - |\n| b |\n"
+    let first = try engine.parse(source)
+    let second = try engine.parse(source)
+    #expect(first == second)
+    #expect(first.root == second.root)
+    #expect(first.root.hashValue == second.root.hashValue)
+    #expect(Set([first.root, second.root]).count == 1)
+    #expect(first.root.children[0] == second.root.children[0])
+    #expect(first.root.children[0] != first.root.children[1])
+    let different = try engine.parse("# Title\n\n- [ ] *done*\n\n| a |\n| - |\n| b |\n")
+    #expect(first.root != different.root)
+    let withoutPositions = try MarkdownEngine().parse(source)
+    #expect(first.root != withoutPositions.root)
+    #expect(first != withoutPositions)
+    // A subtree compares equal to the same subtree from a separate parse.
+    let heading = try MarkdownEngine(configuration: .init(options: [.sourcePositions])).parse("# Title\n")
+    #expect(heading.root.children[0] == first.root.children[0])
+}
+
+@Test func deeplyNestedTreesCompareWithoutRecursion() throws {
+    let source = String(repeating: "> ", count: 20_000) + "x\n"
+    let first = try MarkdownEngine().parse(source)
+    let second = try MarkdownEngine().parse(source)
+    #expect(first.root == second.root)
+    #expect(first.root.hashValue == second.root.hashValue)
+}

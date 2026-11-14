@@ -1,0 +1,18 @@
+name: Focused proposal
+description: Explain a concrete use case and how it fits the package's scope.
+title: "[Proposal]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and current workaround
+      description: Describe the application need and the behavior you cannot express today.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed behavior and compatibility
+      description: Include an example. Explain whether this belongs in SwiftGFM, upstream cmark-gfm, or a host integration.
+    validations:
+      required: true

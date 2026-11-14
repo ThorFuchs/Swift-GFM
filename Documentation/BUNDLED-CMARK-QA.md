@@ -34,8 +34,8 @@ case is `extensions#20`, for which the original expected text is `<IGNORE>`;
 it has no expected HTML to assert. It is nevertheless included in the separate
 six-format C-backend differential check.
 
-The upstream `spec_tests.py --no-normalize` runner was independently run
-against the SwiftGFM CLI on Linux: spec 670/670, extensions 30/30, regression
+CI also runs the upstream `spec_tests.py --no-normalize` runner against the
+SwiftGFM CLI on Linux: spec 670/670, extensions 30/30, regression
 26/26, and smart punctuation 16/16. Its extension count includes the
 `<IGNORE>` case as a pass without comparing HTML, and its spec count omits the
 two disabled examples entirely. The Swift tests report those three separately.
@@ -73,7 +73,7 @@ built pinned C executable for all six output formats. It compares raw bytes and
 reports the exact input, commands, statuses, and base64 outputs for failures.
 The executable's hash is recorded; verify the reference checkout revision
 independently. This is backend parity, not formal specification certification.
-On Linux this comparison matched 4,482/4,482 outputs: 747 enabled inputs across
+In CI this comparison matches 4,482/4,482 outputs: 747 enabled inputs across
 six formats, with the two source-disabled specification cases excluded.
 
 The independent pinned upstream extractor was also checked against the local
@@ -81,8 +81,8 @@ fixture extraction for all 747 enabled inputs and their section names, example
 numbers, Markdown, expected HTML, and extension labels. The Swift tests read
 the original fixture bytes directly and retain the original example numbers.
 
-The upstream pathological test script was also run against SwiftGFM's CLI on
-Linux: 21 passed, zero errored, zero ignored. It checks large or adversarial
+CI also runs the upstream pathological test script against SwiftGFM's CLI
+(21 tests). It checks large or adversarial
 inputs under upstream's per-test timeouts; a pass does not establish hard
 resource limits or safety for all inputs. Reproduce it after checking out the
 pinned upstream revision with:
@@ -96,5 +96,5 @@ Run `swift test`, `python3 -m unittest discover -s Tools -p 'test_*.py'`, and
 checks source-declared symbol documentation, and treats DocC warnings as
 errors. CI also runs strict `swift-format` lint, release tests, and Linux thread
 and address sanitizer tests. Leak detection is disabled for the address
-sanitizer run; it is not a leak check. See [REPRODUCTION.md](REPRODUCTION.md)
+sanitizer run; it is not a leak check. See [TESTING.md](TESTING.md)
 for reference-build commands.

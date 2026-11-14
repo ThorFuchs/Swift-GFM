@@ -12,8 +12,7 @@ import shlex
 import subprocess
 import sys
 
-from compare_bundled_gfm import extract
-from bundled_cmark_fixtures import DIRECTORY, SOURCES
+from bundled_cmark_fixtures import DIRECTORY, REVISION, SOURCES, extract
 
 FORMATS = ("html", "xml", "commonmark", "plaintext", "latex", "man")
 ALL_EXTENSIONS = ("table", "strikethrough", "autolink", "tagfilter", "footnotes", "tasklist")
@@ -78,7 +77,7 @@ def main():
                 results.append(row)
     failures = [row for row in results if not row["match"]]
     per_suite = Counter(row["suite"] for row in results if row["match"])
-    report = {"cmark_revision": "27d942c8b0a62d192f616e5bf3578f4b6a89e180",
+    report = {"cmark_revision": REVISION,
               "scope": "Exact stdout bytes against an independently built C executable; all enabled bundled inputs and six formats. Includes extensions#20, whose upstream expected HTML is <IGNORE>. Binary hash does not establish source provenance.",
               "fixture_sha256": {suite: digest for suite, (digest, _) in SOURCES.items()},
               "reproduction": shlex.join([sys.executable, *sys.argv]),

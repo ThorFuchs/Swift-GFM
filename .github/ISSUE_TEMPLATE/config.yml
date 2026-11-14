@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Private vulnerability reporting
+    url: https://github.com/ThorFuchs/Swift-GFM/security/advisories/new
+    about: Keep security-sensitive details out of public issues.
+  - name: Upstream cmark-gfm
+    url: https://github.com/github/cmark-gfm/issues
+    about: Report behavior that the upstream cmark-gfm executable shows too.

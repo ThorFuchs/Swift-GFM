@@ -1,0 +1,28 @@
+name: Reproducible defect
+description: Report incorrect rendering, AST output, CLI behavior, or documentation.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Use the private route in SECURITY.md for vulnerabilities. Remove confidential data from inputs."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Version and environment
+      description: SwiftGFM version or commit, Swift version, OS, and the MarkdownConfiguration or CLI command.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: The smallest Markdown input and the Swift code or command that reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Include the exact output or error. If you can, include the output of the upstream cmark-gfm executable at the pinned revision.
+    validations:
+      required: true

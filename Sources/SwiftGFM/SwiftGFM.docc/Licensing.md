@@ -10,6 +10,6 @@ The package vendors GitHub's cmark-gfm C source. Its copyright notices and
 license terms, including those of its incorporated components, remain in
 `Vendor/GitHubCMark/COPYING`; they are not replaced by the project's Apache
 license. Distributors of binaries containing that code must retain the
-applicable upstream notices in the distribution. The specification fixtures
-and historical experiment have their own retained license and provenance
-files; test fixtures do not ship in the SwiftGFM library target.
+applicable upstream notices in the distribution. The test-only specification
+fixtures are licensed under CC BY-SA 4.0 and have their own license and
+provenance files; they do not ship in the SwiftGFM library target.

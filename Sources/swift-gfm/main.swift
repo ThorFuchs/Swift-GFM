@@ -22,9 +22,10 @@ func fail(_ message: String) -> Never {
     exit(2)
 }
 var args = Array(CommandLine.arguments.dropFirst())
-guard !args.isEmpty else { fail("usage: swift-gfm FORMAT [options] [-e extension]") }
+let usage = "usage: swift-gfm {html|xml|commonmark|plaintext|latex|man} [options] [-e extension] [file ...]"
+guard !args.isEmpty else { fail(usage) }
 let name = args.removeFirst()
-if name == "--version" {
+if name == "--version" || name == "-V" {
     print("cmark-gfm \(MarkdownEngine.backendVersion) (\(MarkdownEngine.backendRevision))")
     exit(0)
 }
@@ -37,8 +38,10 @@ case "plaintext": format = .plainText
 case "latex": format = .latex
 case "man": format = .man
 case "--help", "-h":
-    print("usage: swift-gfm {html|xml|commonmark|plaintext|latex|man} [options] [-e extension]")
-    print("Reads UTF-8 Markdown from standard input. Default: cmark options and no extensions.")
+    print(usage)
+    print("       swift-gfm --version | --help")
+    print("Reads UTF-8 Markdown from the files in order, or from standard input when no file")
+    print("is given or a file is '-'. Default: cmark options and no extensions.")
     print("Options: --unsafe --sourcepos --hardbreaks --nobreaks --smart --validate-utf8")
     print("         --github-pre-lang --liberal-html-tag --strikethrough-double-tilde")
     print("         --table-prefer-style-attributes --full-info-string --width N")
@@ -47,6 +50,7 @@ case "--help", "-h":
 default: fail("unknown output format: \(name)")
 }
 var config = MarkdownConfiguration.cmarkDefault
+var files: [String] = []
 while !args.isEmpty {
     let arg = args.removeFirst()
     switch arg {
@@ -75,10 +79,26 @@ while !args.isEmpty {
     case "--strikethrough-double-tilde": config.options.insert(.doubleTildeStrikethrough)
     case "--table-prefer-style-attributes": config.options.insert(.tableStyleAttributes)
     case "--full-info-string": config.options.insert(.fullInfoString)
-    default: fail("unknown option: \(arg)")
+    case "--":
+        files.append(contentsOf: args)
+        args.removeAll()
+    case "-":
+        files.append(arg)
+    default:
+        if arg.hasPrefix("-") { fail("unknown option: \(arg)") }
+        files.append(arg)
     }
 }
-let input = FileHandle.standardInput.readDataToEndOfFile()
+// Like cmark-gfm, concatenate all inputs before parsing them as one document.
+var input = Data()
+for file in files.isEmpty ? ["-"] : files {
+    if file == "-" {
+        input.append(FileHandle.standardInput.readDataToEndOfFile())
+    } else {
+        guard let data = FileManager.default.contents(atPath: file) else { fail("cannot read file: \(file)") }
+        input.append(data)
+    }
+}
 guard let source = String(data: input, encoding: .utf8) else { fail("input is not valid UTF-8") }
 do {
     let result = try MarkdownEngine(configuration: config).render(source, as: format)

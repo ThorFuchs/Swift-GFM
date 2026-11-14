@@ -1,4 +1,4 @@
-// swift-tools-version: 6.4
+// swift-tools-version: 6.0
 // SPDX-License-Identifier: Apache-2.0
 import PackageDescription
 
@@ -285,7 +285,7 @@ normalize_map_label
 """.split(whereSeparator: \.isWhitespace).map(String.init)
 
 let package = Package(
-    name: "SwiftGFM",
+    name: "Swift-GFM",
     products: [
         .library(name: "SwiftGFM", targets: ["SwiftGFM"]),
         .executable(name: "swift-gfm", targets: ["swift-gfm"]),

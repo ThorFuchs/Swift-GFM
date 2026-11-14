@@ -10,10 +10,38 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
-from compare_bundled_gfm import ROOT, SOURCES, extract
-from compare_gfm_ast import preserve_xml_attribute_whitespace
+from bundled_cmark_fixtures import DIRECTORY, REVISION, SOURCES, extract
 
 LITERALS = {"text", "code", "code_block", "html_inline", "html_block"}
+
+
+def preserve_xml_attribute_whitespace(xml):
+    """Recover cmark's literal attribute characters before XML normalization.
+
+    cmark's XML renderer writes literal LF/CR/TAB in quoted attributes. An XML
+    parser otherwise silently normalizes those to spaces. Character references
+    retain the original codepoints. This is not general-purpose XML rewriting.
+    """
+    out = []
+    in_tag = False
+    quote = None
+    replacements = {"\n": "&#10;", "\r": "&#13;", "\t": "&#9;"}
+    for char in xml:
+        if not in_tag:
+            if char == "<": in_tag = True
+            out.append(char)
+        elif quote is not None:
+            if char == quote:
+                quote = None
+                out.append(char)
+            else:
+                out.append(replacements.get(char, char))
+        else:
+            out.append(char)
+            if char in ("'", '"'): quote = char
+            elif char == ">": in_tag = False
+    return "".join(out)
+
 
 
 def xml_tree(element):
@@ -32,8 +60,9 @@ def main():
     parser.add_argument("--report", required=True)
     parser.add_argument("--full-gfm", action="store_true", help="attach all five built-in GFM extensions to every example")
     args = parser.parse_args()
-    name, digest, revision = SOURCES["current"]
-    raw = (ROOT / "Fixtures/gfm" / name).read_bytes()
+    digest, _ = SOURCES["spec"]
+    revision = REVISION
+    raw = (DIRECTORY / "spec.txt").read_bytes()
     if hashlib.sha256(raw).hexdigest() != digest:
         parser.error("fixture checksum mismatch")
     all_cases = extract(raw)

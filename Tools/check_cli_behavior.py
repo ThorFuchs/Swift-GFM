@@ -2,18 +2,28 @@
 # SPDX-License-Identifier: Apache-2.0
 """Exercise the standalone CLI's input, output, and error contract."""
 import argparse
+import pathlib
 import subprocess
 import sys
+import tempfile
+
+from bundled_cmark_fixtures import REVISION, VERSION
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--binary", required=True)
     args = parser.parse_args()
+    directory = tempfile.TemporaryDirectory()
+    first = pathlib.Path(directory.name) / "first.md"
+    second = pathlib.Path(directory.name) / "second.md"
+    first.write_bytes(b"# One\n")
+    second.write_bytes(b"*two*\n")
+    missing = str(pathlib.Path(directory.name) / "missing.md")
     # name, arguments, input, expected status, expected stdout, stderr fragment
     cases = [
         ("help", ["--help"], b"", 0, None, b""),
-        ("version", ["--version"], b"", 0, b"cmark-gfm 0.29.0.gfm.13 (27d942c8b0a62d192f616e5bf3578f4b6a89e180)\n", b""),
+        ("version", ["--version"], b"", 0, f"cmark-gfm {VERSION} ({REVISION})\n".encode(), b""),
         ("default HTML", ["html"], b"Hello *Swift*!\n", 0, b"<p>Hello <em>Swift</em>!</p>\n", b""),
         ("empty source", ["html"], b"", 0, b"", b""),
         ("extension", ["html", "-e", "autolink"], b"www.example.com\n", 0, b'<p><a href="http://www.example.com">www.example.com</a></p>\n', b""),
@@ -25,6 +35,13 @@ def main():
         ("too large width", ["html", "--width", "2147483648"], b"", 2, b"", b"render failed"),
         ("unknown option", ["html", "--bad"], b"", 2, b"", b"unknown option"),
         ("invalid UTF-8", ["html"], b"bad\xff", 2, b"", b"input is not valid UTF-8"),
+        ("short version", ["-V"], b"", 0, f"cmark-gfm {VERSION} ({REVISION})\n".encode(), b""),
+        ("one file", ["html", str(first)], b"ignored\n", 0, b"<h1>One</h1>\n", b""),
+        ("files in order", ["html", str(first), str(second)], b"", 0, b"<h1>One</h1>\n<p><em>two</em></p>\n", b""),
+        ("file and stdin", ["html", str(second), "-"], b"three\n", 0, b"<p><em>two</em>\nthree</p>\n", b""),
+        ("options after file", ["html", str(first), "--sourcepos"], b"", 0, b'<h1 data-sourcepos="1:1-1:5">One</h1>\n', b""),
+        ("double dash", ["html", "--", str(first)], b"", 0, b"<h1>One</h1>\n", b""),
+        ("missing file", ["html", missing], b"", 2, b"", b"cannot read file"),
     ]
     failures = 0
     for name, argv, data, status, stdout, stderr in cases:
