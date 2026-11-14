@@ -1,0 +1,20 @@
+{
+  "id": "gfm-fixed-profile-v1",
+  "purpose": "Exploratory fixed-profile examples and extension interactions; not the complete published corpus or a conformance certification.",
+  "published_examples": [198, 199, 200, 204, 205, 279, 280, 324, 491, 493, 625, 629, 633, 634, 635, 657, 665],
+  "selection_rationale": "Exercise table rendering and escaping, task lists, entity boundaries, strike delimiters, autolinks, tag filtering, and code-span whitespace with GFM extensions active. IDs are copied from the pinned published HTML, not edited here.",
+  "interaction_examples": [
+    {
+      "id": "interaction-table-strikethrough-1",
+      "markdown": "| name |\n| --- |\n| ~~old~~ |\n",
+      "html": "<table>\n<thead>\n<tr>\n<th>name</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><del>old</del></td>\n</tr>\n</tbody>\n</table>\n",
+      "rationale": "Table cell inline strikethrough; expected output is project-authored by composing published table and strikethrough examples 198 and 491."
+    },
+    {
+      "id": "interaction-tasklist-strikethrough-1",
+      "markdown": "- [x] ~~old~~\n",
+      "html": "<ul>\n<li><input checked=\"\" disabled=\"\" type=\"checkbox\"> <del>old</del></li>\n</ul>\n",
+      "rationale": "Checked task item with inline strikethrough; expected output is project-authored by composing published examples 279 and 491."
+    }
+  ]
+}

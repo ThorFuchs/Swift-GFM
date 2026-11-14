@@ -1,0 +1,9 @@
+.build/
+.swiftpm/
+Artifacts/
+__pycache__/
+
+.references/
+.toolchains/
+.analysis-deps/
+.analysis-venv/

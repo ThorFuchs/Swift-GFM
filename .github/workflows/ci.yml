@@ -1,0 +1,59 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  swift:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.4.2'
+      - if: runner.os == 'Linux'
+        run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests
+      - run: swift test
+      - run: swift test -c release
+      - if: runner.os == 'Linux'
+        run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
+      - if: runner.os == 'Linux'
+        env:
+          ASAN_OPTIONS: detect_leaks=0
+        run: swift test --sanitize=address --scratch-path "$RUNNER_TEMP/swift-gfm-asan"
+      - if: runner.os == 'Linux'
+        run: sh Tools/build-docc.sh "$RUNNER_TEMP/swift-gfm-docc-build" "$RUNNER_TEMP/SwiftGFM.doccarchive"
+      - run: python3 -m venv .analysis-venv
+      - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
+      - if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          object=$(find .build -name GitHubCMark.o -type f -print -quit)
+          test -n "$object"
+          .analysis-venv/bin/python Tools/check_cmark_symbol_namespace.py "$object"
+      - if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          git init "$RUNNER_TEMP/cmark-gfm"
+          git -C "$RUNNER_TEMP/cmark-gfm" remote add origin https://github.com/github/cmark-gfm.git
+          git -C "$RUNNER_TEMP/cmark-gfm" fetch --depth 1 origin 27d942c8b0a62d192f616e5bf3578f4b6a89e180
+          git -C "$RUNNER_TEMP/cmark-gfm" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/cmark-gfm" rev-parse HEAD)" = 27d942c8b0a62d192f616e5bf3578f4b6a89e180
+          cmake -S "$RUNNER_TEMP/cmark-gfm" -B "$RUNNER_TEMP/cmark-gfm-build" -DCMAKE_BUILD_TYPE=Release
+          cmake --build "$RUNNER_TEMP/cmark-gfm-build" --parallel 2
+          python3 Tools/check_bundled_fixture_extraction.py --upstream-test-dir "$RUNNER_TEMP/cmark-gfm/test"
+          python3 Tools/generate_cmark_entity_fixture.py --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --check
+          swift_bin="$(swift build --show-bin-path)/swift-gfm"
+          python3 Tools/check_cli_behavior.py --binary "$swift_bin"
+          runner="$RUNNER_TEMP/cmark-gfm/test/spec_tests.py"
+          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/spec.txt" --program "$swift_bin html"
+          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/extensions.txt" --program "$swift_bin html" --extensions 'table strikethrough autolink tagfilter footnotes tasklist'
+          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/regression.txt" --program "$swift_bin html"
+          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/smart_punct.txt" --program "$swift_bin html --smart"
+          python3 Tools/check_bundled_cmark_reference.py --probe "$swift_bin" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/bundled-backend-parity.json"
+          python3 "$RUNNER_TEMP/cmark-gfm/test/pathological_tests.py" --program "$swift_bin html"
+          swift build --package-path Experiments/ASTParityProbe
+          probe="$(swift build --package-path Experiments/ASTParityProbe --show-bin-path)/ASTParityProbe"
+          python3 Tools/check_ast_projection.py --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-fixture-flags.json"
+          python3 Tools/check_ast_projection.py --full-gfm --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-full-gfm.json"

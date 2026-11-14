@@ -1,0 +1,8509 @@
+{
+  "revision": "27d942c8b0a62d192f616e5bf3578f4b6a89e180",
+  "entities_source_sha256": "3932dfa630067813f47be6ae0072e1645c1183bde41140b51443f50857c88909",
+  "reference_options": [
+    "--unsafe"
+  ],
+  "examples": [
+    {
+      "name": "AElig",
+      "html": "<p>\u00c6</p>\n"
+    },
+    {
+      "name": "AMP",
+      "html": "<p>&amp;</p>\n"
+    },
+    {
+      "name": "Aacute",
+      "html": "<p>\u00c1</p>\n"
+    },
+    {
+      "name": "Abreve",
+      "html": "<p>\u0102</p>\n"
+    },
+    {
+      "name": "Acirc",
+      "html": "<p>\u00c2</p>\n"
+    },
+    {
+      "name": "Acy",
+      "html": "<p>\u0410</p>\n"
+    },
+    {
+      "name": "Afr",
+      "html": "<p>\ud835\udd04</p>\n"
+    },
+    {
+      "name": "Agrave",
+      "html": "<p>\u00c0</p>\n"
+    },
+    {
+      "name": "Alpha",
+      "html": "<p>\u0391</p>\n"
+    },
+    {
+      "name": "Amacr",
+      "html": "<p>\u0100</p>\n"
+    },
+    {
+      "name": "And",
+      "html": "<p>\u2a53</p>\n"
+    },
+    {
+      "name": "Aogon",
+      "html": "<p>\u0104</p>\n"
+    },
+    {
+      "name": "Aopf",
+      "html": "<p>\ud835\udd38</p>\n"
+    },
+    {
+      "name": "ApplyFunction",
+      "html": "<p>\u2061</p>\n"
+    },
+    {
+      "name": "Aring",
+      "html": "<p>\u00c5</p>\n"
+    },
+    {
+      "name": "Ascr",
+      "html": "<p>\ud835\udc9c</p>\n"
+    },
+    {
+      "name": "Assign",
+      "html": "<p>\u2254</p>\n"
+    },
+    {
+      "name": "Atilde",
+      "html": "<p>\u00c3</p>\n"
+    },
+    {
+      "name": "Auml",
+      "html": "<p>\u00c4</p>\n"
+    },
+    {
+      "name": "Backslash",
+      "html": "<p>\u2216</p>\n"
+    },
+    {
+      "name": "Barv",
+      "html": "<p>\u2ae7</p>\n"
+    },
+    {
+      "name": "Barwed",
+      "html": "<p>\u2306</p>\n"
+    },
+    {
+      "name": "Bcy",
+      "html": "<p>\u0411</p>\n"
+    },
+    {
+      "name": "Because",
+      "html": "<p>\u2235</p>\n"
+    },
+    {
+      "name": "Bernoullis",
+      "html": "<p>\u212c</p>\n"
+    },
+    {
+      "name": "Beta",
+      "html": "<p>\u0392</p>\n"
+    },
+    {
+      "name": "Bfr",
+      "html": "<p>\ud835\udd05</p>\n"
+    },
+    {
+      "name": "Bopf",
+      "html": "<p>\ud835\udd39</p>\n"
+    },
+    {
+      "name": "Breve",
+      "html": "<p>\u02d8</p>\n"
+    },
+    {
+      "name": "Bscr",
+      "html": "<p>\u212c</p>\n"
+    },
+    {
+      "name": "Bumpeq",
+      "html": "<p>\u224e</p>\n"
+    },
+    {
+      "name": "CHcy",
+      "html": "<p>\u0427</p>\n"
+    },
+    {
+      "name": "COPY",
+      "html": "<p>\u00a9</p>\n"
+    },
+    {
+      "name": "Cacute",
+      "html": "<p>\u0106</p>\n"
+    },
+    {
+      "name": "Cap",
+      "html": "<p>\u22d2</p>\n"
+    },
+    {
+      "name": "CapitalDifferentialD",
+      "html": "<p>\u2145</p>\n"
+    },
+    {
+      "name": "Cayleys",
+      "html": "<p>\u212d</p>\n"
+    },
+    {
+      "name": "Ccaron",
+      "html": "<p>\u010c</p>\n"
+    },
+    {
+      "name": "Ccedil",
+      "html": "<p>\u00c7</p>\n"
+    },
+    {
+      "name": "Ccirc",
+      "html": "<p>\u0108</p>\n"
+    },
+    {
+      "name": "Cconint",
+      "html": "<p>\u2230</p>\n"
+    },
+    {
+      "name": "Cdot",
+      "html": "<p>\u010a</p>\n"
+    },
+    {
+      "name": "Cedilla",
+      "html": "<p>\u00b8</p>\n"
+    },
+    {
+      "name": "CenterDot",
+      "html": "<p>\u00b7</p>\n"
+    },
+    {
+      "name": "Cfr",
+      "html": "<p>\u212d</p>\n"
+    },
+    {
+      "name": "Chi",
+      "html": "<p>\u03a7</p>\n"
+    },
+    {
+      "name": "CircleDot",
+      "html": "<p>\u2299</p>\n"
+    },
+    {
+      "name": "CircleMinus",
+      "html": "<p>\u2296</p>\n"
+    },
+    {
+      "name": "CirclePlus",
+      "html": "<p>\u2295</p>\n"
+    },
+    {
+      "name": "CircleTimes",
+      "html": "<p>\u2297</p>\n"
+    },
+    {
+      "name": "ClockwiseContourIntegral",
+      "html": "<p>\u2232</p>\n"
+    },
+    {
+      "name": "CloseCurlyDoubleQuote",
+      "html": "<p>\u201d</p>\n"
+    },
+    {
+      "name": "CloseCurlyQuote",
+      "html": "<p>\u2019</p>\n"
+    },
+    {
+      "name": "Colon",
+      "html": "<p>\u2237</p>\n"
+    },
+    {
+      "name": "Colone",
+      "html": "<p>\u2a74</p>\n"
+    },
+    {
+      "name": "Congruent",
+      "html": "<p>\u2261</p>\n"
+    },
+    {
+      "name": "Conint",
+      "html": "<p>\u222f</p>\n"
+    },
+    {
+      "name": "ContourIntegral",
+      "html": "<p>\u222e</p>\n"
+    },
+    {
+      "name": "Copf",
+      "html": "<p>\u2102</p>\n"
+    },
+    {
+      "name": "Coproduct",
+      "html": "<p>\u2210</p>\n"
+    },
+    {
+      "name": "CounterClockwiseContourIntegral",
+      "html": "<p>\u2233</p>\n"
+    },
+    {
+      "name": "Cross",
+      "html": "<p>\u2a2f</p>\n"
+    },
+    {
+      "name": "Cscr",
+      "html": "<p>\ud835\udc9e</p>\n"
+    },
+    {
+      "name": "Cup",
+      "html": "<p>\u22d3</p>\n"
+    },
+    {
+      "name": "CupCap",
+      "html": "<p>\u224d</p>\n"
+    },
+    {
+      "name": "DD",
+      "html": "<p>\u2145</p>\n"
+    },
+    {
+      "name": "DDotrahd",
+      "html": "<p>\u2911</p>\n"
+    },
+    {
+      "name": "DJcy",
+      "html": "<p>\u0402</p>\n"
+    },
+    {
+      "name": "DScy",
+      "html": "<p>\u0405</p>\n"
+    },
+    {
+      "name": "DZcy",
+      "html": "<p>\u040f</p>\n"
+    },
+    {
+      "name": "Dagger",
+      "html": "<p>\u2021</p>\n"
+    },
+    {
+      "name": "Darr",
+      "html": "<p>\u21a1</p>\n"
+    },
+    {
+      "name": "Dashv",
+      "html": "<p>\u2ae4</p>\n"
+    },
+    {
+      "name": "Dcaron",
+      "html": "<p>\u010e</p>\n"
+    },
+    {
+      "name": "Dcy",
+      "html": "<p>\u0414</p>\n"
+    },
+    {
+      "name": "Del",
+      "html": "<p>\u2207</p>\n"
+    },
+    {
+      "name": "Delta",
+      "html": "<p>\u0394</p>\n"
+    },
+    {
+      "name": "Dfr",
+      "html": "<p>\ud835\udd07</p>\n"
+    },
+    {
+      "name": "DiacriticalAcute",
+      "html": "<p>\u00b4</p>\n"
+    },
+    {
+      "name": "DiacriticalDot",
+      "html": "<p>\u02d9</p>\n"
+    },
+    {
+      "name": "DiacriticalDoubleAcute",
+      "html": "<p>\u02dd</p>\n"
+    },
+    {
+      "name": "DiacriticalGrave",
+      "html": "<p>`</p>\n"
+    },
+    {
+      "name": "DiacriticalTilde",
+      "html": "<p>\u02dc</p>\n"
+    },
+    {
+      "name": "Diamond",
+      "html": "<p>\u22c4</p>\n"
+    },
+    {
+      "name": "DifferentialD",
+      "html": "<p>\u2146</p>\n"
+    },
+    {
+      "name": "Dopf",
+      "html": "<p>\ud835\udd3b</p>\n"
+    },
+    {
+      "name": "Dot",
+      "html": "<p>\u00a8</p>\n"
+    },
+    {
+      "name": "DotDot",
+      "html": "<p>\u20dc</p>\n"
+    },
+    {
+      "name": "DotEqual",
+      "html": "<p>\u2250</p>\n"
+    },
+    {
+      "name": "DoubleContourIntegral",
+      "html": "<p>\u222f</p>\n"
+    },
+    {
+      "name": "DoubleDot",
+      "html": "<p>\u00a8</p>\n"
+    },
+    {
+      "name": "DoubleDownArrow",
+      "html": "<p>\u21d3</p>\n"
+    },
+    {
+      "name": "DoubleLeftArrow",
+      "html": "<p>\u21d0</p>\n"
+    },
+    {
+      "name": "DoubleLeftRightArrow",
+      "html": "<p>\u21d4</p>\n"
+    },
+    {
+      "name": "DoubleLeftTee",
+      "html": "<p>\u2ae4</p>\n"
+    },
+    {
+      "name": "DoubleLongLeftArrow",
+      "html": "<p>\u27f8</p>\n"
+    },
+    {
+      "name": "DoubleLongLeftRightArrow",
+      "html": "<p>\u27fa</p>\n"
+    },
+    {
+      "name": "DoubleLongRightArrow",
+      "html": "<p>\u27f9</p>\n"
+    },
+    {
+      "name": "DoubleRightArrow",
+      "html": "<p>\u21d2</p>\n"
+    },
+    {
+      "name": "DoubleRightTee",
+      "html": "<p>\u22a8</p>\n"
+    },
+    {
+      "name": "DoubleUpArrow",
+      "html": "<p>\u21d1</p>\n"
+    },
+    {
+      "name": "DoubleUpDownArrow",
+      "html": "<p>\u21d5</p>\n"
+    },
+    {
+      "name": "DoubleVerticalBar",
+      "html": "<p>\u2225</p>\n"
+    },
+    {
+      "name": "DownArrow",
+      "html": "<p>\u2193</p>\n"
+    },
+    {
+      "name": "DownArrowBar",
+      "html": "<p>\u2913</p>\n"
+    },
+    {
+      "name": "DownArrowUpArrow",
+      "html": "<p>\u21f5</p>\n"
+    },
+    {
+      "name": "DownBreve",
+      "html": "<p>\u0311</p>\n"
+    },
+    {
+      "name": "DownLeftRightVector",
+      "html": "<p>\u2950</p>\n"
+    },
+    {
+      "name": "DownLeftTeeVector",
+      "html": "<p>\u295e</p>\n"
+    },
+    {
+      "name": "DownLeftVector",
+      "html": "<p>\u21bd</p>\n"
+    },
+    {
+      "name": "DownLeftVectorBar",
+      "html": "<p>\u2956</p>\n"
+    },
+    {
+      "name": "DownRightTeeVector",
+      "html": "<p>\u295f</p>\n"
+    },
+    {
+      "name": "DownRightVector",
+      "html": "<p>\u21c1</p>\n"
+    },
+    {
+      "name": "DownRightVectorBar",
+      "html": "<p>\u2957</p>\n"
+    },
+    {
+      "name": "DownTee",
+      "html": "<p>\u22a4</p>\n"
+    },
+    {
+      "name": "DownTeeArrow",
+      "html": "<p>\u21a7</p>\n"
+    },
+    {
+      "name": "Downarrow",
+      "html": "<p>\u21d3</p>\n"
+    },
+    {
+      "name": "Dscr",
+      "html": "<p>\ud835\udc9f</p>\n"
+    },
+    {
+      "name": "Dstrok",
+      "html": "<p>\u0110</p>\n"
+    },
+    {
+      "name": "ENG",
+      "html": "<p>\u014a</p>\n"
+    },
+    {
+      "name": "ETH",
+      "html": "<p>\u00d0</p>\n"
+    },
+    {
+      "name": "Eacute",
+      "html": "<p>\u00c9</p>\n"
+    },
+    {
+      "name": "Ecaron",
+      "html": "<p>\u011a</p>\n"
+    },
+    {
+      "name": "Ecirc",
+      "html": "<p>\u00ca</p>\n"
+    },
+    {
+      "name": "Ecy",
+      "html": "<p>\u042d</p>\n"
+    },
+    {
+      "name": "Edot",
+      "html": "<p>\u0116</p>\n"
+    },
+    {
+      "name": "Efr",
+      "html": "<p>\ud835\udd08</p>\n"
+    },
+    {
+      "name": "Egrave",
+      "html": "<p>\u00c8</p>\n"
+    },
+    {
+      "name": "Element",
+      "html": "<p>\u2208</p>\n"
+    },
+    {
+      "name": "Emacr",
+      "html": "<p>\u0112</p>\n"
+    },
+    {
+      "name": "EmptySmallSquare",
+      "html": "<p>\u25fb</p>\n"
+    },
+    {
+      "name": "EmptyVerySmallSquare",
+      "html": "<p>\u25ab</p>\n"
+    },
+    {
+      "name": "Eogon",
+      "html": "<p>\u0118</p>\n"
+    },
+    {
+      "name": "Eopf",
+      "html": "<p>\ud835\udd3c</p>\n"
+    },
+    {
+      "name": "Epsilon",
+      "html": "<p>\u0395</p>\n"
+    },
+    {
+      "name": "Equal",
+      "html": "<p>\u2a75</p>\n"
+    },
+    {
+      "name": "EqualTilde",
+      "html": "<p>\u2242</p>\n"
+    },
+    {
+      "name": "Equilibrium",
+      "html": "<p>\u21cc</p>\n"
+    },
+    {
+      "name": "Escr",
+      "html": "<p>\u2130</p>\n"
+    },
+    {
+      "name": "Esim",
+      "html": "<p>\u2a73</p>\n"
+    },
+    {
+      "name": "Eta",
+      "html": "<p>\u0397</p>\n"
+    },
+    {
+      "name": "Euml",
+      "html": "<p>\u00cb</p>\n"
+    },
+    {
+      "name": "Exists",
+      "html": "<p>\u2203</p>\n"
+    },
+    {
+      "name": "ExponentialE",
+      "html": "<p>\u2147</p>\n"
+    },
+    {
+      "name": "Fcy",
+      "html": "<p>\u0424</p>\n"
+    },
+    {
+      "name": "Ffr",
+      "html": "<p>\ud835\udd09</p>\n"
+    },
+    {
+      "name": "FilledSmallSquare",
+      "html": "<p>\u25fc</p>\n"
+    },
+    {
+      "name": "FilledVerySmallSquare",
+      "html": "<p>\u25aa</p>\n"
+    },
+    {
+      "name": "Fopf",
+      "html": "<p>\ud835\udd3d</p>\n"
+    },
+    {
+      "name": "ForAll",
+      "html": "<p>\u2200</p>\n"
+    },
+    {
+      "name": "Fouriertrf",
+      "html": "<p>\u2131</p>\n"
+    },
+    {
+      "name": "Fscr",
+      "html": "<p>\u2131</p>\n"
+    },
+    {
+      "name": "GJcy",
+      "html": "<p>\u0403</p>\n"
+    },
+    {
+      "name": "GT",
+      "html": "<p>&gt;</p>\n"
+    },
+    {
+      "name": "Gamma",
+      "html": "<p>\u0393</p>\n"
+    },
+    {
+      "name": "Gammad",
+      "html": "<p>\u03dc</p>\n"
+    },
+    {
+      "name": "Gbreve",
+      "html": "<p>\u011e</p>\n"
+    },
+    {
+      "name": "Gcedil",
+      "html": "<p>\u0122</p>\n"
+    },
+    {
+      "name": "Gcirc",
+      "html": "<p>\u011c</p>\n"
+    },
+    {
+      "name": "Gcy",
+      "html": "<p>\u0413</p>\n"
+    },
+    {
+      "name": "Gdot",
+      "html": "<p>\u0120</p>\n"
+    },
+    {
+      "name": "Gfr",
+      "html": "<p>\ud835\udd0a</p>\n"
+    },
+    {
+      "name": "Gg",
+      "html": "<p>\u22d9</p>\n"
+    },
+    {
+      "name": "Gopf",
+      "html": "<p>\ud835\udd3e</p>\n"
+    },
+    {
+      "name": "GreaterEqual",
+      "html": "<p>\u2265</p>\n"
+    },
+    {
+      "name": "GreaterEqualLess",
+      "html": "<p>\u22db</p>\n"
+    },
+    {
+      "name": "GreaterFullEqual",
+      "html": "<p>\u2267</p>\n"
+    },
+    {
+      "name": "GreaterGreater",
+      "html": "<p>\u2aa2</p>\n"
+    },
+    {
+      "name": "GreaterLess",
+      "html": "<p>\u2277</p>\n"
+    },
+    {
+      "name": "GreaterSlantEqual",
+      "html": "<p>\u2a7e</p>\n"
+    },
+    {
+      "name": "GreaterTilde",
+      "html": "<p>\u2273</p>\n"
+    },
+    {
+      "name": "Gscr",
+      "html": "<p>\ud835\udca2</p>\n"
+    },
+    {
+      "name": "Gt",
+      "html": "<p>\u226b</p>\n"
+    },
+    {
+      "name": "HARDcy",
+      "html": "<p>\u042a</p>\n"
+    },
+    {
+      "name": "Hacek",
+      "html": "<p>\u02c7</p>\n"
+    },
+    {
+      "name": "Hat",
+      "html": "<p>^</p>\n"
+    },
+    {
+      "name": "Hcirc",
+      "html": "<p>\u0124</p>\n"
+    },
+    {
+      "name": "Hfr",
+      "html": "<p>\u210c</p>\n"
+    },
+    {
+      "name": "HilbertSpace",
+      "html": "<p>\u210b</p>\n"
+    },
+    {
+      "name": "Hopf",
+      "html": "<p>\u210d</p>\n"
+    },
+    {
+      "name": "HorizontalLine",
+      "html": "<p>\u2500</p>\n"
+    },
+    {
+      "name": "Hscr",
+      "html": "<p>\u210b</p>\n"
+    },
+    {
+      "name": "Hstrok",
+      "html": "<p>\u0126</p>\n"
+    },
+    {
+      "name": "HumpDownHump",
+      "html": "<p>\u224e</p>\n"
+    },
+    {
+      "name": "HumpEqual",
+      "html": "<p>\u224f</p>\n"
+    },
+    {
+      "name": "IEcy",
+      "html": "<p>\u0415</p>\n"
+    },
+    {
+      "name": "IJlig",
+      "html": "<p>\u0132</p>\n"
+    },
+    {
+      "name": "IOcy",
+      "html": "<p>\u0401</p>\n"
+    },
+    {
+      "name": "Iacute",
+      "html": "<p>\u00cd</p>\n"
+    },
+    {
+      "name": "Icirc",
+      "html": "<p>\u00ce</p>\n"
+    },
+    {
+      "name": "Icy",
+      "html": "<p>\u0418</p>\n"
+    },
+    {
+      "name": "Idot",
+      "html": "<p>\u0130</p>\n"
+    },
+    {
+      "name": "Ifr",
+      "html": "<p>\u2111</p>\n"
+    },
+    {
+      "name": "Igrave",
+      "html": "<p>\u00cc</p>\n"
+    },
+    {
+      "name": "Im",
+      "html": "<p>\u2111</p>\n"
+    },
+    {
+      "name": "Imacr",
+      "html": "<p>\u012a</p>\n"
+    },
+    {
+      "name": "ImaginaryI",
+      "html": "<p>\u2148</p>\n"
+    },
+    {
+      "name": "Implies",
+      "html": "<p>\u21d2</p>\n"
+    },
+    {
+      "name": "Int",
+      "html": "<p>\u222c</p>\n"
+    },
+    {
+      "name": "Integral",
+      "html": "<p>\u222b</p>\n"
+    },
+    {
+      "name": "Intersection",
+      "html": "<p>\u22c2</p>\n"
+    },
+    {
+      "name": "InvisibleComma",
+      "html": "<p>\u2063</p>\n"
+    },
+    {
+      "name": "InvisibleTimes",
+      "html": "<p>\u2062</p>\n"
+    },
+    {
+      "name": "Iogon",
+      "html": "<p>\u012e</p>\n"
+    },
+    {
+      "name": "Iopf",
+      "html": "<p>\ud835\udd40</p>\n"
+    },
+    {
+      "name": "Iota",
+      "html": "<p>\u0399</p>\n"
+    },
+    {
+      "name": "Iscr",
+      "html": "<p>\u2110</p>\n"
+    },
+    {
+      "name": "Itilde",
+      "html": "<p>\u0128</p>\n"
+    },
+    {
+      "name": "Iukcy",
+      "html": "<p>\u0406</p>\n"
+    },
+    {
+      "name": "Iuml",
+      "html": "<p>\u00cf</p>\n"
+    },
+    {
+      "name": "Jcirc",
+      "html": "<p>\u0134</p>\n"
+    },
+    {
+      "name": "Jcy",
+      "html": "<p>\u0419</p>\n"
+    },
+    {
+      "name": "Jfr",
+      "html": "<p>\ud835\udd0d</p>\n"
+    },
+    {
+      "name": "Jopf",
+      "html": "<p>\ud835\udd41</p>\n"
+    },
+    {
+      "name": "Jscr",
+      "html": "<p>\ud835\udca5</p>\n"
+    },
+    {
+      "name": "Jsercy",
+      "html": "<p>\u0408</p>\n"
+    },
+    {
+      "name": "Jukcy",
+      "html": "<p>\u0404</p>\n"
+    },
+    {
+      "name": "KHcy",
+      "html": "<p>\u0425</p>\n"
+    },
+    {
+      "name": "KJcy",
+      "html": "<p>\u040c</p>\n"
+    },
+    {
+      "name": "Kappa",
+      "html": "<p>\u039a</p>\n"
+    },
+    {
+      "name": "Kcedil",
+      "html": "<p>\u0136</p>\n"
+    },
+    {
+      "name": "Kcy",
+      "html": "<p>\u041a</p>\n"
+    },
+    {
+      "name": "Kfr",
+      "html": "<p>\ud835\udd0e</p>\n"
+    },
+    {
+      "name": "Kopf",
+      "html": "<p>\ud835\udd42</p>\n"
+    },
+    {
+      "name": "Kscr",
+      "html": "<p>\ud835\udca6</p>\n"
+    },
+    {
+      "name": "LJcy",
+      "html": "<p>\u0409</p>\n"
+    },
+    {
+      "name": "LT",
+      "html": "<p>&lt;</p>\n"
+    },
+    {
+      "name": "Lacute",
+      "html": "<p>\u0139</p>\n"
+    },
+    {
+      "name": "Lambda",
+      "html": "<p>\u039b</p>\n"
+    },
+    {
+      "name": "Lang",
+      "html": "<p>\u27ea</p>\n"
+    },
+    {
+      "name": "Laplacetrf",
+      "html": "<p>\u2112</p>\n"
+    },
+    {
+      "name": "Larr",
+      "html": "<p>\u219e</p>\n"
+    },
+    {
+      "name": "Lcaron",
+      "html": "<p>\u013d</p>\n"
+    },
+    {
+      "name": "Lcedil",
+      "html": "<p>\u013b</p>\n"
+    },
+    {
+      "name": "Lcy",
+      "html": "<p>\u041b</p>\n"
+    },
+    {
+      "name": "LeftAngleBracket",
+      "html": "<p>\u27e8</p>\n"
+    },
+    {
+      "name": "LeftArrow",
+      "html": "<p>\u2190</p>\n"
+    },
+    {
+      "name": "LeftArrowBar",
+      "html": "<p>\u21e4</p>\n"
+    },
+    {
+      "name": "LeftArrowRightArrow",
+      "html": "<p>\u21c6</p>\n"
+    },
+    {
+      "name": "LeftCeiling",
+      "html": "<p>\u2308</p>\n"
+    },
+    {
+      "name": "LeftDoubleBracket",
+      "html": "<p>\u27e6</p>\n"
+    },
+    {
+      "name": "LeftDownTeeVector",
+      "html": "<p>\u2961</p>\n"
+    },
+    {
+      "name": "LeftDownVector",
+      "html": "<p>\u21c3</p>\n"
+    },
+    {
+      "name": "LeftDownVectorBar",
+      "html": "<p>\u2959</p>\n"
+    },
+    {
+      "name": "LeftFloor",
+      "html": "<p>\u230a</p>\n"
+    },
+    {
+      "name": "LeftRightArrow",
+      "html": "<p>\u2194</p>\n"
+    },
+    {
+      "name": "LeftRightVector",
+      "html": "<p>\u294e</p>\n"
+    },
+    {
+      "name": "LeftTee",
+      "html": "<p>\u22a3</p>\n"
+    },
+    {
+      "name": "LeftTeeArrow",
+      "html": "<p>\u21a4</p>\n"
+    },
+    {
+      "name": "LeftTeeVector",
+      "html": "<p>\u295a</p>\n"
+    },
+    {
+      "name": "LeftTriangle",
+      "html": "<p>\u22b2</p>\n"
+    },
+    {
+      "name": "LeftTriangleBar",
+      "html": "<p>\u29cf</p>\n"
+    },
+    {
+      "name": "LeftTriangleEqual",
+      "html": "<p>\u22b4</p>\n"
+    },
+    {
+      "name": "LeftUpDownVector",
+      "html": "<p>\u2951</p>\n"
+    },
+    {
+      "name": "LeftUpTeeVector",
+      "html": "<p>\u2960</p>\n"
+    },
+    {
+      "name": "LeftUpVector",
+      "html": "<p>\u21bf</p>\n"
+    },
+    {
+      "name": "LeftUpVectorBar",
+      "html": "<p>\u2958</p>\n"
+    },
+    {
+      "name": "LeftVector",
+      "html": "<p>\u21bc</p>\n"
+    },
+    {
+      "name": "LeftVectorBar",
+      "html": "<p>\u2952</p>\n"
+    },
+    {
+      "name": "Leftarrow",
+      "html": "<p>\u21d0</p>\n"
+    },
+    {
+      "name": "Leftrightarrow",
+      "html": "<p>\u21d4</p>\n"
+    },
+    {
+      "name": "LessEqualGreater",
+      "html": "<p>\u22da</p>\n"
+    },
+    {
+      "name": "LessFullEqual",
+      "html": "<p>\u2266</p>\n"
+    },
+    {
+      "name": "LessGreater",
+      "html": "<p>\u2276</p>\n"
+    },
+    {
+      "name": "LessLess",
+      "html": "<p>\u2aa1</p>\n"
+    },
+    {
+      "name": "LessSlantEqual",
+      "html": "<p>\u2a7d</p>\n"
+    },
+    {
+      "name": "LessTilde",
+      "html": "<p>\u2272</p>\n"
+    },
+    {
+      "name": "Lfr",
+      "html": "<p>\ud835\udd0f</p>\n"
+    },
+    {
+      "name": "Ll",
+      "html": "<p>\u22d8</p>\n"
+    },
+    {
+      "name": "Lleftarrow",
+      "html": "<p>\u21da</p>\n"
+    },
+    {
+      "name": "Lmidot",
+      "html": "<p>\u013f</p>\n"
+    },
+    {
+      "name": "LongLeftArrow",
+      "html": "<p>\u27f5</p>\n"
+    },
+    {
+      "name": "LongLeftRightArrow",
+      "html": "<p>\u27f7</p>\n"
+    },
+    {
+      "name": "LongRightArrow",
+      "html": "<p>\u27f6</p>\n"
+    },
+    {
+      "name": "Longleftarrow",
+      "html": "<p>\u27f8</p>\n"
+    },
+    {
+      "name": "Longleftrightarrow",
+      "html": "<p>\u27fa</p>\n"
+    },
+    {
+      "name": "Longrightarrow",
+      "html": "<p>\u27f9</p>\n"
+    },
+    {
+      "name": "Lopf",
+      "html": "<p>\ud835\udd43</p>\n"
+    },
+    {
+      "name": "LowerLeftArrow",
+      "html": "<p>\u2199</p>\n"
+    },
+    {
+      "name": "LowerRightArrow",
+      "html": "<p>\u2198</p>\n"
+    },
+    {
+      "name": "Lscr",
+      "html": "<p>\u2112</p>\n"
+    },
+    {
+      "name": "Lsh",
+      "html": "<p>\u21b0</p>\n"
+    },
+    {
+      "name": "Lstrok",
+      "html": "<p>\u0141</p>\n"
+    },
+    {
+      "name": "Lt",
+      "html": "<p>\u226a</p>\n"
+    },
+    {
+      "name": "Map",
+      "html": "<p>\u2905</p>\n"
+    },
+    {
+      "name": "Mcy",
+      "html": "<p>\u041c</p>\n"
+    },
+    {
+      "name": "MediumSpace",
+      "html": "<p>\u205f</p>\n"
+    },
+    {
+      "name": "Mellintrf",
+      "html": "<p>\u2133</p>\n"
+    },
+    {
+      "name": "Mfr",
+      "html": "<p>\ud835\udd10</p>\n"
+    },
+    {
+      "name": "MinusPlus",
+      "html": "<p>\u2213</p>\n"
+    },
+    {
+      "name": "Mopf",
+      "html": "<p>\ud835\udd44</p>\n"
+    },
+    {
+      "name": "Mscr",
+      "html": "<p>\u2133</p>\n"
+    },
+    {
+      "name": "Mu",
+      "html": "<p>\u039c</p>\n"
+    },
+    {
+      "name": "NJcy",
+      "html": "<p>\u040a</p>\n"
+    },
+    {
+      "name": "Nacute",
+      "html": "<p>\u0143</p>\n"
+    },
+    {
+      "name": "Ncaron",
+      "html": "<p>\u0147</p>\n"
+    },
+    {
+      "name": "Ncedil",
+      "html": "<p>\u0145</p>\n"
+    },
+    {
+      "name": "Ncy",
+      "html": "<p>\u041d</p>\n"
+    },
+    {
+      "name": "NegativeMediumSpace",
+      "html": "<p>\u200b</p>\n"
+    },
+    {
+      "name": "NegativeThickSpace",
+      "html": "<p>\u200b</p>\n"
+    },
+    {
+      "name": "NegativeThinSpace",
+      "html": "<p>\u200b</p>\n"
+    },
+    {
+      "name": "NegativeVeryThinSpace",
+      "html": "<p>\u200b</p>\n"
+    },
+    {
+      "name": "NestedGreaterGreater",
+      "html": "<p>\u226b</p>\n"
+    },
+    {
+      "name": "NestedLessLess",
+      "html": "<p>\u226a</p>\n"
+    },
+    {
+      "name": "NewLine",
+      "html": "<p>\n</p>\n"
+    },
+    {
+      "name": "Nfr",
+      "html": "<p>\ud835\udd11</p>\n"
+    },
+    {
+      "name": "NoBreak",
+      "html": "<p>\u2060</p>\n"
+    },
+    {
+      "name": "NonBreakingSpace",
+      "html": "<p>\u00a0</p>\n"
+    },
+    {
+      "name": "Nopf",
+      "html": "<p>\u2115</p>\n"
+    },
+    {
+      "name": "Not",
+      "html": "<p>\u2aec</p>\n"
+    },
+    {
+      "name": "NotCongruent",
+      "html": "<p>\u2262</p>\n"
+    },
+    {
+      "name": "NotCupCap",
+      "html": "<p>\u226d</p>\n"
+    },
+    {
+      "name": "NotDoubleVerticalBar",
+      "html": "<p>\u2226</p>\n"
+    },
+    {
+      "name": "NotElement",
+      "html": "<p>\u2209</p>\n"
+    },
+    {
+      "name": "NotEqual",
+      "html": "<p>\u2260</p>\n"
+    },
+    {
+      "name": "NotEqualTilde",
+      "html": "<p>\u2242\u0338</p>\n"
+    },
+    {
+      "name": "NotExists",
+      "html": "<p>\u2204</p>\n"
+    },
+    {
+      "name": "NotGreater",
+      "html": "<p>\u226f</p>\n"
+    },
+    {
+      "name": "NotGreaterEqual",
+      "html": "<p>\u2271</p>\n"
+    },
+    {
+      "name": "NotGreaterFullEqual",
+      "html": "<p>\u2267\u0338</p>\n"
+    },
+    {
+      "name": "NotGreaterGreater",
+      "html": "<p>\u226b\u0338</p>\n"
+    },
+    {
+      "name": "NotGreaterLess",
+      "html": "<p>\u2279</p>\n"
+    },
+    {
+      "name": "NotGreaterSlantEqual",
+      "html": "<p>\u2a7e\u0338</p>\n"
+    },
+    {
+      "name": "NotGreaterTilde",
+      "html": "<p>\u2275</p>\n"
+    },
+    {
+      "name": "NotHumpDownHump",
+      "html": "<p>\u224e\u0338</p>\n"
+    },
+    {
+      "name": "NotHumpEqual",
+      "html": "<p>\u224f\u0338</p>\n"
+    },
+    {
+      "name": "NotLeftTriangle",
+      "html": "<p>\u22ea</p>\n"
+    },
+    {
+      "name": "NotLeftTriangleBar",
+      "html": "<p>\u29cf\u0338</p>\n"
+    },
+    {
+      "name": "NotLeftTriangleEqual",
+      "html": "<p>\u22ec</p>\n"
+    },
+    {
+      "name": "NotLess",
+      "html": "<p>\u226e</p>\n"
+    },
+    {
+      "name": "NotLessEqual",
+      "html": "<p>\u2270</p>\n"
+    },
+    {
+      "name": "NotLessGreater",
+      "html": "<p>\u2278</p>\n"
+    },
+    {
+      "name": "NotLessLess",
+      "html": "<p>\u226a\u0338</p>\n"
+    },
+    {
+      "name": "NotLessSlantEqual",
+      "html": "<p>\u2a7d\u0338</p>\n"
+    },
+    {
+      "name": "NotLessTilde",
+      "html": "<p>\u2274</p>\n"
+    },
+    {
+      "name": "NotNestedGreaterGreater",
+      "html": "<p>\u2aa2\u0338</p>\n"
+    },
+    {
+      "name": "NotNestedLessLess",
+      "html": "<p>\u2aa1\u0338</p>\n"
+    },
+    {
+      "name": "NotPrecedes",
+      "html": "<p>\u2280</p>\n"
+    },
+    {
+      "name": "NotPrecedesEqual",
+      "html": "<p>\u2aaf\u0338</p>\n"
+    },
+    {
+      "name": "NotPrecedesSlantEqual",
+      "html": "<p>\u22e0</p>\n"
+    },
+    {
+      "name": "NotReverseElement",
+      "html": "<p>\u220c</p>\n"
+    },
+    {
+      "name": "NotRightTriangle",
+      "html": "<p>\u22eb</p>\n"
+    },
+    {
+      "name": "NotRightTriangleBar",
+      "html": "<p>\u29d0\u0338</p>\n"
+    },
+    {
+      "name": "NotRightTriangleEqual",
+      "html": "<p>\u22ed</p>\n"
+    },
+    {
+      "name": "NotSquareSubset",
+      "html": "<p>\u228f\u0338</p>\n"
+    },
+    {
+      "name": "NotSquareSubsetEqual",
+      "html": "<p>\u22e2</p>\n"
+    },
+    {
+      "name": "NotSquareSuperset",
+      "html": "<p>\u2290\u0338</p>\n"
+    },
+    {
+      "name": "NotSquareSupersetEqual",
+      "html": "<p>\u22e3</p>\n"
+    },
+    {
+      "name": "NotSubset",
+      "html": "<p>\u2282\u20d2</p>\n"
+    },
+    {
+      "name": "NotSubsetEqual",
+      "html": "<p>\u2288</p>\n"
+    },
+    {
+      "name": "NotSucceeds",
+      "html": "<p>\u2281</p>\n"
+    },
+    {
+      "name": "NotSucceedsEqual",
+      "html": "<p>\u2ab0\u0338</p>\n"
+    },
+    {
+      "name": "NotSucceedsSlantEqual",
+      "html": "<p>\u22e1</p>\n"
+    },
+    {
+      "name": "NotSucceedsTilde",
+      "html": "<p>\u227f\u0338</p>\n"
+    },
+    {
+      "name": "NotSuperset",
+      "html": "<p>\u2283\u20d2</p>\n"
+    },
+    {
+      "name": "NotSupersetEqual",
+      "html": "<p>\u2289</p>\n"
+    },
+    {
+      "name": "NotTilde",
+      "html": "<p>\u2241</p>\n"
+    },
+    {
+      "name": "NotTildeEqual",
+      "html": "<p>\u2244</p>\n"
+    },
+    {
+      "name": "NotTildeFullEqual",
+      "html": "<p>\u2247</p>\n"
+    },
+    {
+      "name": "NotTildeTilde",
+      "html": "<p>\u2249</p>\n"
+    },
+    {
+      "name": "NotVerticalBar",
+      "html": "<p>\u2224</p>\n"
+    },
+    {
+      "name": "Nscr",
+      "html": "<p>\ud835\udca9</p>\n"
+    },
+    {
+      "name": "Ntilde",
+      "html": "<p>\u00d1</p>\n"
+    },
+    {
+      "name": "Nu",
+      "html": "<p>\u039d</p>\n"
+    },
+    {
+      "name": "OElig",
+      "html": "<p>\u0152</p>\n"
+    },
+    {
+      "name": "Oacute",
+      "html": "<p>\u00d3</p>\n"
+    },
+    {
+      "name": "Ocirc",
+      "html": "<p>\u00d4</p>\n"
+    },
+    {
+      "name": "Ocy",
+      "html": "<p>\u041e</p>\n"
+    },
+    {
+      "name": "Odblac",
+      "html": "<p>\u0150</p>\n"
+    },
+    {
+      "name": "Ofr",
+      "html": "<p>\ud835\udd12</p>\n"
+    },
+    {
+      "name": "Ograve",
+      "html": "<p>\u00d2</p>\n"
+    },
+    {
+      "name": "Omacr",
+      "html": "<p>\u014c</p>\n"
+    },
+    {
+      "name": "Omega",
+      "html": "<p>\u03a9</p>\n"
+    },
+    {
+      "name": "Omicron",
+      "html": "<p>\u039f</p>\n"
+    },
+    {
+      "name": "Oopf",
+      "html": "<p>\ud835\udd46</p>\n"
+    },
+    {
+      "name": "OpenCurlyDoubleQuote",
+      "html": "<p>\u201c</p>\n"
+    },
+    {
+      "name": "OpenCurlyQuote",
+      "html": "<p>\u2018</p>\n"
+    },
+    {
+      "name": "Or",
+      "html": "<p>\u2a54</p>\n"
+    },
+    {
+      "name": "Oscr",
+      "html": "<p>\ud835\udcaa</p>\n"
+    },
+    {
+      "name": "Oslash",
+      "html": "<p>\u00d8</p>\n"
+    },
+    {
+      "name": "Otilde",
+      "html": "<p>\u00d5</p>\n"
+    },
+    {
+      "name": "Otimes",
+      "html": "<p>\u2a37</p>\n"
+    },
+    {
+      "name": "Ouml",
+      "html": "<p>\u00d6</p>\n"
+    },
+    {
+      "name": "OverBar",
+      "html": "<p>\u203e</p>\n"
+    },
+    {
+      "name": "OverBrace",
+      "html": "<p>\u23de</p>\n"
+    },
+    {
+      "name": "OverBracket",
+      "html": "<p>\u23b4</p>\n"
+    },
+    {
+      "name": "OverParenthesis",
+      "html": "<p>\u23dc</p>\n"
+    },
+    {
+      "name": "PartialD",
+      "html": "<p>\u2202</p>\n"
+    },
+    {
+      "name": "Pcy",
+      "html": "<p>\u041f</p>\n"
+    },
+    {
+      "name": "Pfr",
+      "html": "<p>\ud835\udd13</p>\n"
+    },
+    {
+      "name": "Phi",
+      "html": "<p>\u03a6</p>\n"
+    },
+    {
+      "name": "Pi",
+      "html": "<p>\u03a0</p>\n"
+    },
+    {
+      "name": "PlusMinus",
+      "html": "<p>\u00b1</p>\n"
+    },
+    {
+      "name": "Poincareplane",
+      "html": "<p>\u210c</p>\n"
+    },
+    {
+      "name": "Popf",
+      "html": "<p>\u2119</p>\n"
+    },
+    {
+      "name": "Pr",
+      "html": "<p>\u2abb</p>\n"
+    },
+    {
+      "name": "Precedes",
+      "html": "<p>\u227a</p>\n"
+    },
+    {
+      "name": "PrecedesEqual",
+      "html": "<p>\u2aaf</p>\n"
+    },
+    {
+      "name": "PrecedesSlantEqual",
+      "html": "<p>\u227c</p>\n"
+    },
+    {
+      "name": "PrecedesTilde",
+      "html": "<p>\u227e</p>\n"
+    },
+    {
+      "name": "Prime",
+      "html": "<p>\u2033</p>\n"
+    },
+    {
+      "name": "Product",
+      "html": "<p>\u220f</p>\n"
+    },
+    {
+      "name": "Proportion",
+      "html": "<p>\u2237</p>\n"
+    },
+    {
+      "name": "Proportional",
+      "html": "<p>\u221d</p>\n"
+    },
+    {
+      "name": "Pscr",
+      "html": "<p>\ud835\udcab</p>\n"
+    },
+    {
+      "name": "Psi",
+      "html": "<p>\u03a8</p>\n"
+    },
+    {
+      "name": "QUOT",
+      "html": "<p>&quot;</p>\n"
+    },
+    {
+      "name": "Qfr",
+      "html": "<p>\ud835\udd14</p>\n"
+    },
+    {
+      "name": "Qopf",
+      "html": "<p>\u211a</p>\n"
+    },
+    {
+      "name": "Qscr",
+      "html": "<p>\ud835\udcac</p>\n"
+    },
+    {
+      "name": "RBarr",
+      "html": "<p>\u2910</p>\n"
+    },
+    {
+      "name": "REG",
+      "html": "<p>\u00ae</p>\n"
+    },
+    {
+      "name": "Racute",
+      "html": "<p>\u0154</p>\n"
+    },
+    {
+      "name": "Rang",
+      "html": "<p>\u27eb</p>\n"
+    },
+    {
+      "name": "Rarr",
+      "html": "<p>\u21a0</p>\n"
+    },
+    {
+      "name": "Rarrtl",
+      "html": "<p>\u2916</p>\n"
+    },
+    {
+      "name": "Rcaron",
+      "html": "<p>\u0158</p>\n"
+    },
+    {
+      "name": "Rcedil",
+      "html": "<p>\u0156</p>\n"
+    },
+    {
+      "name": "Rcy",
+      "html": "<p>\u0420</p>\n"
+    },
+    {
+      "name": "Re",
+      "html": "<p>\u211c</p>\n"
+    },
+    {
+      "name": "ReverseElement",
+      "html": "<p>\u220b</p>\n"
+    },
+    {
+      "name": "ReverseEquilibrium",
+      "html": "<p>\u21cb</p>\n"
+    },
+    {
+      "name": "ReverseUpEquilibrium",
+      "html": "<p>\u296f</p>\n"
+    },
+    {
+      "name": "Rfr",
+      "html": "<p>\u211c</p>\n"
+    },
+    {
+      "name": "Rho",
+      "html": "<p>\u03a1</p>\n"
+    },
+    {
+      "name": "RightAngleBracket",
+      "html": "<p>\u27e9</p>\n"
+    },
+    {
+      "name": "RightArrow",
+      "html": "<p>\u2192</p>\n"
+    },
+    {
+      "name": "RightArrowBar",
+      "html": "<p>\u21e5</p>\n"
+    },
+    {
+      "name": "RightArrowLeftArrow",
+      "html": "<p>\u21c4</p>\n"
+    },
+    {
+      "name": "RightCeiling",
+      "html": "<p>\u2309</p>\n"
+    },
+    {
+      "name": "RightDoubleBracket",
+      "html": "<p>\u27e7</p>\n"
+    },
+    {
+      "name": "RightDownTeeVector",
+      "html": "<p>\u295d</p>\n"
+    },
+    {
+      "name": "RightDownVector",
+      "html": "<p>\u21c2</p>\n"
+    },
+    {
+      "name": "RightDownVectorBar",
+      "html": "<p>\u2955</p>\n"
+    },
+    {
+      "name": "RightFloor",
+      "html": "<p>\u230b</p>\n"
+    },
+    {
+      "name": "RightTee",
+      "html": "<p>\u22a2</p>\n"
+    },
+    {
+      "name": "RightTeeArrow",
+      "html": "<p>\u21a6</p>\n"
+    },
+    {
+      "name": "RightTeeVector",
+      "html": "<p>\u295b</p>\n"
+    },
+    {
+      "name": "RightTriangle",
+      "html": "<p>\u22b3</p>\n"
+    },
+    {
+      "name": "RightTriangleBar",
+      "html": "<p>\u29d0</p>\n"
+    },
+    {
+      "name": "RightTriangleEqual",
+      "html": "<p>\u22b5</p>\n"
+    },
+    {
+      "name": "RightUpDownVector",
+      "html": "<p>\u294f</p>\n"
+    },
+    {
+      "name": "RightUpTeeVector",
+      "html": "<p>\u295c</p>\n"
+    },
+    {
+      "name": "RightUpVector",
+      "html": "<p>\u21be</p>\n"
+    },
+    {
+      "name": "RightUpVectorBar",
+      "html": "<p>\u2954</p>\n"
+    },
+    {
+      "name": "RightVector",
+      "html": "<p>\u21c0</p>\n"
+    },
+    {
+      "name": "RightVectorBar",
+      "html": "<p>\u2953</p>\n"
+    },
+    {
+      "name": "Rightarrow",
+      "html": "<p>\u21d2</p>\n"
+    },
+    {
+      "name": "Ropf",
+      "html": "<p>\u211d</p>\n"
+    },
+    {
+      "name": "RoundImplies",
+      "html": "<p>\u2970</p>\n"
+    },
+    {
+      "name": "Rrightarrow",
+      "html": "<p>\u21db</p>\n"
+    },
+    {
+      "name": "Rscr",
+      "html": "<p>\u211b</p>\n"
+    },
+    {
+      "name": "Rsh",
+      "html": "<p>\u21b1</p>\n"
+    },
+    {
+      "name": "RuleDelayed",
+      "html": "<p>\u29f4</p>\n"
+    },
+    {
+      "name": "SHCHcy",
+      "html": "<p>\u0429</p>\n"
+    },
+    {
+      "name": "SHcy",
+      "html": "<p>\u0428</p>\n"
+    },
+    {
+      "name": "SOFTcy",
+      "html": "<p>\u042c</p>\n"
+    },
+    {
+      "name": "Sacute",
+      "html": "<p>\u015a</p>\n"
+    },
+    {
+      "name": "Sc",
+      "html": "<p>\u2abc</p>\n"
+    },
+    {
+      "name": "Scaron",
+      "html": "<p>\u0160</p>\n"
+    },
+    {
+      "name": "Scedil",
+      "html": "<p>\u015e</p>\n"
+    },
+    {
+      "name": "Scirc",
+      "html": "<p>\u015c</p>\n"
+    },
+    {
+      "name": "Scy",
+      "html": "<p>\u0421</p>\n"
+    },
+    {
+      "name": "Sfr",
+      "html": "<p>\ud835\udd16</p>\n"
+    },
+    {
+      "name": "ShortDownArrow",
+      "html": "<p>\u2193</p>\n"
+    },
+    {
+      "name": "ShortLeftArrow",
+      "html": "<p>\u2190</p>\n"
+    },
+    {
+      "name": "ShortRightArrow",
+      "html": "<p>\u2192</p>\n"
+    },
+    {
+      "name": "ShortUpArrow",
+      "html": "<p>\u2191</p>\n"
+    },
+    {
+      "name": "Sigma",
+      "html": "<p>\u03a3</p>\n"
+    },
+    {
+      "name": "SmallCircle",
+      "html": "<p>\u2218</p>\n"
+    },
+    {
+      "name": "Sopf",
+      "html": "<p>\ud835\udd4a</p>\n"
+    },
+    {
+      "name": "Sqrt",
+      "html": "<p>\u221a</p>\n"
+    },
+    {
+      "name": "Square",
+      "html": "<p>\u25a1</p>\n"
+    },
+    {
+      "name": "SquareIntersection",
+      "html": "<p>\u2293</p>\n"
+    },
+    {
+      "name": "SquareSubset",
+      "html": "<p>\u228f</p>\n"
+    },
+    {
+      "name": "SquareSubsetEqual",
+      "html": "<p>\u2291</p>\n"
+    },
+    {
+      "name": "SquareSuperset",
+      "html": "<p>\u2290</p>\n"
+    },
+    {
+      "name": "SquareSupersetEqual",
+      "html": "<p>\u2292</p>\n"
+    },
+    {
+      "name": "SquareUnion",
+      "html": "<p>\u2294</p>\n"
+    },
+    {
+      "name": "Sscr",
+      "html": "<p>\ud835\udcae</p>\n"
+    },
+    {
+      "name": "Star",
+      "html": "<p>\u22c6</p>\n"
+    },
+    {
+      "name": "Sub",
+      "html": "<p>\u22d0</p>\n"
+    },
+    {
+      "name": "Subset",
+      "html": "<p>\u22d0</p>\n"
+    },
+    {
+      "name": "SubsetEqual",
+      "html": "<p>\u2286</p>\n"
+    },
+    {
+      "name": "Succeeds",
+      "html": "<p>\u227b</p>\n"
+    },
+    {
+      "name": "SucceedsEqual",
+      "html": "<p>\u2ab0</p>\n"
+    },
+    {
+      "name": "SucceedsSlantEqual",
+      "html": "<p>\u227d</p>\n"
+    },
+    {
+      "name": "SucceedsTilde",
+      "html": "<p>\u227f</p>\n"
+    },
+    {
+      "name": "SuchThat",
+      "html": "<p>\u220b</p>\n"
+    },
+    {
+      "name": "Sum",
+      "html": "<p>\u2211</p>\n"
+    },
+    {
+      "name": "Sup",
+      "html": "<p>\u22d1</p>\n"
+    },
+    {
+      "name": "Superset",
+      "html": "<p>\u2283</p>\n"
+    },
+    {
+      "name": "SupersetEqual",
+      "html": "<p>\u2287</p>\n"
+    },
+    {
+      "name": "Supset",
+      "html": "<p>\u22d1</p>\n"
+    },
+    {
+      "name": "THORN",
+      "html": "<p>\u00de</p>\n"
+    },
+    {
+      "name": "TRADE",
+      "html": "<p>\u2122</p>\n"
+    },
+    {
+      "name": "TSHcy",
+      "html": "<p>\u040b</p>\n"
+    },
+    {
+      "name": "TScy",
+      "html": "<p>\u0426</p>\n"
+    },
+    {
+      "name": "Tab",
+      "html": "<p>\t</p>\n"
+    },
+    {
+      "name": "Tau",
+      "html": "<p>\u03a4</p>\n"
+    },
+    {
+      "name": "Tcaron",
+      "html": "<p>\u0164</p>\n"
+    },
+    {
+      "name": "Tcedil",
+      "html": "<p>\u0162</p>\n"
+    },
+    {
+      "name": "Tcy",
+      "html": "<p>\u0422</p>\n"
+    },
+    {
+      "name": "Tfr",
+      "html": "<p>\ud835\udd17</p>\n"
+    },
+    {
+      "name": "Therefore",
+      "html": "<p>\u2234</p>\n"
+    },
+    {
+      "name": "Theta",
+      "html": "<p>\u0398</p>\n"
+    },
+    {
+      "name": "ThickSpace",
+      "html": "<p>\u205f\u200a</p>\n"
+    },
+    {
+      "name": "ThinSpace",
+      "html": "<p>\u2009</p>\n"
+    },
+    {
+      "name": "Tilde",
+      "html": "<p>\u223c</p>\n"
+    },
+    {
+      "name": "TildeEqual",
+      "html": "<p>\u2243</p>\n"
+    },
+    {
+      "name": "TildeFullEqual",
+      "html": "<p>\u2245</p>\n"
+    },
+    {
+      "name": "TildeTilde",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "Topf",
+      "html": "<p>\ud835\udd4b</p>\n"
+    },
+    {
+      "name": "TripleDot",
+      "html": "<p>\u20db</p>\n"
+    },
+    {
+      "name": "Tscr",
+      "html": "<p>\ud835\udcaf</p>\n"
+    },
+    {
+      "name": "Tstrok",
+      "html": "<p>\u0166</p>\n"
+    },
+    {
+      "name": "Uacute",
+      "html": "<p>\u00da</p>\n"
+    },
+    {
+      "name": "Uarr",
+      "html": "<p>\u219f</p>\n"
+    },
+    {
+      "name": "Uarrocir",
+      "html": "<p>\u2949</p>\n"
+    },
+    {
+      "name": "Ubrcy",
+      "html": "<p>\u040e</p>\n"
+    },
+    {
+      "name": "Ubreve",
+      "html": "<p>\u016c</p>\n"
+    },
+    {
+      "name": "Ucirc",
+      "html": "<p>\u00db</p>\n"
+    },
+    {
+      "name": "Ucy",
+      "html": "<p>\u0423</p>\n"
+    },
+    {
+      "name": "Udblac",
+      "html": "<p>\u0170</p>\n"
+    },
+    {
+      "name": "Ufr",
+      "html": "<p>\ud835\udd18</p>\n"
+    },
+    {
+      "name": "Ugrave",
+      "html": "<p>\u00d9</p>\n"
+    },
+    {
+      "name": "Umacr",
+      "html": "<p>\u016a</p>\n"
+    },
+    {
+      "name": "UnderBar",
+      "html": "<p>_</p>\n"
+    },
+    {
+      "name": "UnderBrace",
+      "html": "<p>\u23df</p>\n"
+    },
+    {
+      "name": "UnderBracket",
+      "html": "<p>\u23b5</p>\n"
+    },
+    {
+      "name": "UnderParenthesis",
+      "html": "<p>\u23dd</p>\n"
+    },
+    {
+      "name": "Union",
+      "html": "<p>\u22c3</p>\n"
+    },
+    {
+      "name": "UnionPlus",
+      "html": "<p>\u228e</p>\n"
+    },
+    {
+      "name": "Uogon",
+      "html": "<p>\u0172</p>\n"
+    },
+    {
+      "name": "Uopf",
+      "html": "<p>\ud835\udd4c</p>\n"
+    },
+    {
+      "name": "UpArrow",
+      "html": "<p>\u2191</p>\n"
+    },
+    {
+      "name": "UpArrowBar",
+      "html": "<p>\u2912</p>\n"
+    },
+    {
+      "name": "UpArrowDownArrow",
+      "html": "<p>\u21c5</p>\n"
+    },
+    {
+      "name": "UpDownArrow",
+      "html": "<p>\u2195</p>\n"
+    },
+    {
+      "name": "UpEquilibrium",
+      "html": "<p>\u296e</p>\n"
+    },
+    {
+      "name": "UpTee",
+      "html": "<p>\u22a5</p>\n"
+    },
+    {
+      "name": "UpTeeArrow",
+      "html": "<p>\u21a5</p>\n"
+    },
+    {
+      "name": "Uparrow",
+      "html": "<p>\u21d1</p>\n"
+    },
+    {
+      "name": "Updownarrow",
+      "html": "<p>\u21d5</p>\n"
+    },
+    {
+      "name": "UpperLeftArrow",
+      "html": "<p>\u2196</p>\n"
+    },
+    {
+      "name": "UpperRightArrow",
+      "html": "<p>\u2197</p>\n"
+    },
+    {
+      "name": "Upsi",
+      "html": "<p>\u03d2</p>\n"
+    },
+    {
+      "name": "Upsilon",
+      "html": "<p>\u03a5</p>\n"
+    },
+    {
+      "name": "Uring",
+      "html": "<p>\u016e</p>\n"
+    },
+    {
+      "name": "Uscr",
+      "html": "<p>\ud835\udcb0</p>\n"
+    },
+    {
+      "name": "Utilde",
+      "html": "<p>\u0168</p>\n"
+    },
+    {
+      "name": "Uuml",
+      "html": "<p>\u00dc</p>\n"
+    },
+    {
+      "name": "VDash",
+      "html": "<p>\u22ab</p>\n"
+    },
+    {
+      "name": "Vbar",
+      "html": "<p>\u2aeb</p>\n"
+    },
+    {
+      "name": "Vcy",
+      "html": "<p>\u0412</p>\n"
+    },
+    {
+      "name": "Vdash",
+      "html": "<p>\u22a9</p>\n"
+    },
+    {
+      "name": "Vdashl",
+      "html": "<p>\u2ae6</p>\n"
+    },
+    {
+      "name": "Vee",
+      "html": "<p>\u22c1</p>\n"
+    },
+    {
+      "name": "Verbar",
+      "html": "<p>\u2016</p>\n"
+    },
+    {
+      "name": "Vert",
+      "html": "<p>\u2016</p>\n"
+    },
+    {
+      "name": "VerticalBar",
+      "html": "<p>\u2223</p>\n"
+    },
+    {
+      "name": "VerticalLine",
+      "html": "<p>|</p>\n"
+    },
+    {
+      "name": "VerticalSeparator",
+      "html": "<p>\u2758</p>\n"
+    },
+    {
+      "name": "VerticalTilde",
+      "html": "<p>\u2240</p>\n"
+    },
+    {
+      "name": "VeryThinSpace",
+      "html": "<p>\u200a</p>\n"
+    },
+    {
+      "name": "Vfr",
+      "html": "<p>\ud835\udd19</p>\n"
+    },
+    {
+      "name": "Vopf",
+      "html": "<p>\ud835\udd4d</p>\n"
+    },
+    {
+      "name": "Vscr",
+      "html": "<p>\ud835\udcb1</p>\n"
+    },
+    {
+      "name": "Vvdash",
+      "html": "<p>\u22aa</p>\n"
+    },
+    {
+      "name": "Wcirc",
+      "html": "<p>\u0174</p>\n"
+    },
+    {
+      "name": "Wedge",
+      "html": "<p>\u22c0</p>\n"
+    },
+    {
+      "name": "Wfr",
+      "html": "<p>\ud835\udd1a</p>\n"
+    },
+    {
+      "name": "Wopf",
+      "html": "<p>\ud835\udd4e</p>\n"
+    },
+    {
+      "name": "Wscr",
+      "html": "<p>\ud835\udcb2</p>\n"
+    },
+    {
+      "name": "Xfr",
+      "html": "<p>\ud835\udd1b</p>\n"
+    },
+    {
+      "name": "Xi",
+      "html": "<p>\u039e</p>\n"
+    },
+    {
+      "name": "Xopf",
+      "html": "<p>\ud835\udd4f</p>\n"
+    },
+    {
+      "name": "Xscr",
+      "html": "<p>\ud835\udcb3</p>\n"
+    },
+    {
+      "name": "YAcy",
+      "html": "<p>\u042f</p>\n"
+    },
+    {
+      "name": "YIcy",
+      "html": "<p>\u0407</p>\n"
+    },
+    {
+      "name": "YUcy",
+      "html": "<p>\u042e</p>\n"
+    },
+    {
+      "name": "Yacute",
+      "html": "<p>\u00dd</p>\n"
+    },
+    {
+      "name": "Ycirc",
+      "html": "<p>\u0176</p>\n"
+    },
+    {
+      "name": "Ycy",
+      "html": "<p>\u042b</p>\n"
+    },
+    {
+      "name": "Yfr",
+      "html": "<p>\ud835\udd1c</p>\n"
+    },
+    {
+      "name": "Yopf",
+      "html": "<p>\ud835\udd50</p>\n"
+    },
+    {
+      "name": "Yscr",
+      "html": "<p>\ud835\udcb4</p>\n"
+    },
+    {
+      "name": "Yuml",
+      "html": "<p>\u0178</p>\n"
+    },
+    {
+      "name": "ZHcy",
+      "html": "<p>\u0416</p>\n"
+    },
+    {
+      "name": "Zacute",
+      "html": "<p>\u0179</p>\n"
+    },
+    {
+      "name": "Zcaron",
+      "html": "<p>\u017d</p>\n"
+    },
+    {
+      "name": "Zcy",
+      "html": "<p>\u0417</p>\n"
+    },
+    {
+      "name": "Zdot",
+      "html": "<p>\u017b</p>\n"
+    },
+    {
+      "name": "ZeroWidthSpace",
+      "html": "<p>\u200b</p>\n"
+    },
+    {
+      "name": "Zeta",
+      "html": "<p>\u0396</p>\n"
+    },
+    {
+      "name": "Zfr",
+      "html": "<p>\u2128</p>\n"
+    },
+    {
+      "name": "Zopf",
+      "html": "<p>\u2124</p>\n"
+    },
+    {
+      "name": "Zscr",
+      "html": "<p>\ud835\udcb5</p>\n"
+    },
+    {
+      "name": "aacute",
+      "html": "<p>\u00e1</p>\n"
+    },
+    {
+      "name": "abreve",
+      "html": "<p>\u0103</p>\n"
+    },
+    {
+      "name": "ac",
+      "html": "<p>\u223e</p>\n"
+    },
+    {
+      "name": "acE",
+      "html": "<p>\u223e\u0333</p>\n"
+    },
+    {
+      "name": "acd",
+      "html": "<p>\u223f</p>\n"
+    },
+    {
+      "name": "acirc",
+      "html": "<p>\u00e2</p>\n"
+    },
+    {
+      "name": "acute",
+      "html": "<p>\u00b4</p>\n"
+    },
+    {
+      "name": "acy",
+      "html": "<p>\u0430</p>\n"
+    },
+    {
+      "name": "aelig",
+      "html": "<p>\u00e6</p>\n"
+    },
+    {
+      "name": "af",
+      "html": "<p>\u2061</p>\n"
+    },
+    {
+      "name": "afr",
+      "html": "<p>\ud835\udd1e</p>\n"
+    },
+    {
+      "name": "agrave",
+      "html": "<p>\u00e0</p>\n"
+    },
+    {
+      "name": "alefsym",
+      "html": "<p>\u2135</p>\n"
+    },
+    {
+      "name": "aleph",
+      "html": "<p>\u2135</p>\n"
+    },
+    {
+      "name": "alpha",
+      "html": "<p>\u03b1</p>\n"
+    },
+    {
+      "name": "amacr",
+      "html": "<p>\u0101</p>\n"
+    },
+    {
+      "name": "amalg",
+      "html": "<p>\u2a3f</p>\n"
+    },
+    {
+      "name": "amp",
+      "html": "<p>&amp;</p>\n"
+    },
+    {
+      "name": "and",
+      "html": "<p>\u2227</p>\n"
+    },
+    {
+      "name": "andand",
+      "html": "<p>\u2a55</p>\n"
+    },
+    {
+      "name": "andd",
+      "html": "<p>\u2a5c</p>\n"
+    },
+    {
+      "name": "andslope",
+      "html": "<p>\u2a58</p>\n"
+    },
+    {
+      "name": "andv",
+      "html": "<p>\u2a5a</p>\n"
+    },
+    {
+      "name": "ang",
+      "html": "<p>\u2220</p>\n"
+    },
+    {
+      "name": "ange",
+      "html": "<p>\u29a4</p>\n"
+    },
+    {
+      "name": "angle",
+      "html": "<p>\u2220</p>\n"
+    },
+    {
+      "name": "angmsd",
+      "html": "<p>\u2221</p>\n"
+    },
+    {
+      "name": "angmsdaa",
+      "html": "<p>\u29a8</p>\n"
+    },
+    {
+      "name": "angmsdab",
+      "html": "<p>\u29a9</p>\n"
+    },
+    {
+      "name": "angmsdac",
+      "html": "<p>\u29aa</p>\n"
+    },
+    {
+      "name": "angmsdad",
+      "html": "<p>\u29ab</p>\n"
+    },
+    {
+      "name": "angmsdae",
+      "html": "<p>\u29ac</p>\n"
+    },
+    {
+      "name": "angmsdaf",
+      "html": "<p>\u29ad</p>\n"
+    },
+    {
+      "name": "angmsdag",
+      "html": "<p>\u29ae</p>\n"
+    },
+    {
+      "name": "angmsdah",
+      "html": "<p>\u29af</p>\n"
+    },
+    {
+      "name": "angrt",
+      "html": "<p>\u221f</p>\n"
+    },
+    {
+      "name": "angrtvb",
+      "html": "<p>\u22be</p>\n"
+    },
+    {
+      "name": "angrtvbd",
+      "html": "<p>\u299d</p>\n"
+    },
+    {
+      "name": "angsph",
+      "html": "<p>\u2222</p>\n"
+    },
+    {
+      "name": "angst",
+      "html": "<p>\u00c5</p>\n"
+    },
+    {
+      "name": "angzarr",
+      "html": "<p>\u237c</p>\n"
+    },
+    {
+      "name": "aogon",
+      "html": "<p>\u0105</p>\n"
+    },
+    {
+      "name": "aopf",
+      "html": "<p>\ud835\udd52</p>\n"
+    },
+    {
+      "name": "ap",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "apE",
+      "html": "<p>\u2a70</p>\n"
+    },
+    {
+      "name": "apacir",
+      "html": "<p>\u2a6f</p>\n"
+    },
+    {
+      "name": "ape",
+      "html": "<p>\u224a</p>\n"
+    },
+    {
+      "name": "apid",
+      "html": "<p>\u224b</p>\n"
+    },
+    {
+      "name": "apos",
+      "html": "<p>'</p>\n"
+    },
+    {
+      "name": "approx",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "approxeq",
+      "html": "<p>\u224a</p>\n"
+    },
+    {
+      "name": "aring",
+      "html": "<p>\u00e5</p>\n"
+    },
+    {
+      "name": "ascr",
+      "html": "<p>\ud835\udcb6</p>\n"
+    },
+    {
+      "name": "ast",
+      "html": "<p>*</p>\n"
+    },
+    {
+      "name": "asymp",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "asympeq",
+      "html": "<p>\u224d</p>\n"
+    },
+    {
+      "name": "atilde",
+      "html": "<p>\u00e3</p>\n"
+    },
+    {
+      "name": "auml",
+      "html": "<p>\u00e4</p>\n"
+    },
+    {
+      "name": "awconint",
+      "html": "<p>\u2233</p>\n"
+    },
+    {
+      "name": "awint",
+      "html": "<p>\u2a11</p>\n"
+    },
+    {
+      "name": "bNot",
+      "html": "<p>\u2aed</p>\n"
+    },
+    {
+      "name": "backcong",
+      "html": "<p>\u224c</p>\n"
+    },
+    {
+      "name": "backepsilon",
+      "html": "<p>\u03f6</p>\n"
+    },
+    {
+      "name": "backprime",
+      "html": "<p>\u2035</p>\n"
+    },
+    {
+      "name": "backsim",
+      "html": "<p>\u223d</p>\n"
+    },
+    {
+      "name": "backsimeq",
+      "html": "<p>\u22cd</p>\n"
+    },
+    {
+      "name": "barvee",
+      "html": "<p>\u22bd</p>\n"
+    },
+    {
+      "name": "barwed",
+      "html": "<p>\u2305</p>\n"
+    },
+    {
+      "name": "barwedge",
+      "html": "<p>\u2305</p>\n"
+    },
+    {
+      "name": "bbrk",
+      "html": "<p>\u23b5</p>\n"
+    },
+    {
+      "name": "bbrktbrk",
+      "html": "<p>\u23b6</p>\n"
+    },
+    {
+      "name": "bcong",
+      "html": "<p>\u224c</p>\n"
+    },
+    {
+      "name": "bcy",
+      "html": "<p>\u0431</p>\n"
+    },
+    {
+      "name": "bdquo",
+      "html": "<p>\u201e</p>\n"
+    },
+    {
+      "name": "becaus",
+      "html": "<p>\u2235</p>\n"
+    },
+    {
+      "name": "because",
+      "html": "<p>\u2235</p>\n"
+    },
+    {
+      "name": "bemptyv",
+      "html": "<p>\u29b0</p>\n"
+    },
+    {
+      "name": "bepsi",
+      "html": "<p>\u03f6</p>\n"
+    },
+    {
+      "name": "bernou",
+      "html": "<p>\u212c</p>\n"
+    },
+    {
+      "name": "beta",
+      "html": "<p>\u03b2</p>\n"
+    },
+    {
+      "name": "beth",
+      "html": "<p>\u2136</p>\n"
+    },
+    {
+      "name": "between",
+      "html": "<p>\u226c</p>\n"
+    },
+    {
+      "name": "bfr",
+      "html": "<p>\ud835\udd1f</p>\n"
+    },
+    {
+      "name": "bigcap",
+      "html": "<p>\u22c2</p>\n"
+    },
+    {
+      "name": "bigcirc",
+      "html": "<p>\u25ef</p>\n"
+    },
+    {
+      "name": "bigcup",
+      "html": "<p>\u22c3</p>\n"
+    },
+    {
+      "name": "bigodot",
+      "html": "<p>\u2a00</p>\n"
+    },
+    {
+      "name": "bigoplus",
+      "html": "<p>\u2a01</p>\n"
+    },
+    {
+      "name": "bigotimes",
+      "html": "<p>\u2a02</p>\n"
+    },
+    {
+      "name": "bigsqcup",
+      "html": "<p>\u2a06</p>\n"
+    },
+    {
+      "name": "bigstar",
+      "html": "<p>\u2605</p>\n"
+    },
+    {
+      "name": "bigtriangledown",
+      "html": "<p>\u25bd</p>\n"
+    },
+    {
+      "name": "bigtriangleup",
+      "html": "<p>\u25b3</p>\n"
+    },
+    {
+      "name": "biguplus",
+      "html": "<p>\u2a04</p>\n"
+    },
+    {
+      "name": "bigvee",
+      "html": "<p>\u22c1</p>\n"
+    },
+    {
+      "name": "bigwedge",
+      "html": "<p>\u22c0</p>\n"
+    },
+    {
+      "name": "bkarow",
+      "html": "<p>\u290d</p>\n"
+    },
+    {
+      "name": "blacklozenge",
+      "html": "<p>\u29eb</p>\n"
+    },
+    {
+      "name": "blacksquare",
+      "html": "<p>\u25aa</p>\n"
+    },
+    {
+      "name": "blacktriangle",
+      "html": "<p>\u25b4</p>\n"
+    },
+    {
+      "name": "blacktriangledown",
+      "html": "<p>\u25be</p>\n"
+    },
+    {
+      "name": "blacktriangleleft",
+      "html": "<p>\u25c2</p>\n"
+    },
+    {
+      "name": "blacktriangleright",
+      "html": "<p>\u25b8</p>\n"
+    },
+    {
+      "name": "blank",
+      "html": "<p>\u2423</p>\n"
+    },
+    {
+      "name": "blk12",
+      "html": "<p>\u2592</p>\n"
+    },
+    {
+      "name": "blk14",
+      "html": "<p>\u2591</p>\n"
+    },
+    {
+      "name": "blk34",
+      "html": "<p>\u2593</p>\n"
+    },
+    {
+      "name": "block",
+      "html": "<p>\u2588</p>\n"
+    },
+    {
+      "name": "bne",
+      "html": "<p>=\u20e5</p>\n"
+    },
+    {
+      "name": "bnequiv",
+      "html": "<p>\u2261\u20e5</p>\n"
+    },
+    {
+      "name": "bnot",
+      "html": "<p>\u2310</p>\n"
+    },
+    {
+      "name": "bopf",
+      "html": "<p>\ud835\udd53</p>\n"
+    },
+    {
+      "name": "bot",
+      "html": "<p>\u22a5</p>\n"
+    },
+    {
+      "name": "bottom",
+      "html": "<p>\u22a5</p>\n"
+    },
+    {
+      "name": "bowtie",
+      "html": "<p>\u22c8</p>\n"
+    },
+    {
+      "name": "boxDL",
+      "html": "<p>\u2557</p>\n"
+    },
+    {
+      "name": "boxDR",
+      "html": "<p>\u2554</p>\n"
+    },
+    {
+      "name": "boxDl",
+      "html": "<p>\u2556</p>\n"
+    },
+    {
+      "name": "boxDr",
+      "html": "<p>\u2553</p>\n"
+    },
+    {
+      "name": "boxH",
+      "html": "<p>\u2550</p>\n"
+    },
+    {
+      "name": "boxHD",
+      "html": "<p>\u2566</p>\n"
+    },
+    {
+      "name": "boxHU",
+      "html": "<p>\u2569</p>\n"
+    },
+    {
+      "name": "boxHd",
+      "html": "<p>\u2564</p>\n"
+    },
+    {
+      "name": "boxHu",
+      "html": "<p>\u2567</p>\n"
+    },
+    {
+      "name": "boxUL",
+      "html": "<p>\u255d</p>\n"
+    },
+    {
+      "name": "boxUR",
+      "html": "<p>\u255a</p>\n"
+    },
+    {
+      "name": "boxUl",
+      "html": "<p>\u255c</p>\n"
+    },
+    {
+      "name": "boxUr",
+      "html": "<p>\u2559</p>\n"
+    },
+    {
+      "name": "boxV",
+      "html": "<p>\u2551</p>\n"
+    },
+    {
+      "name": "boxVH",
+      "html": "<p>\u256c</p>\n"
+    },
+    {
+      "name": "boxVL",
+      "html": "<p>\u2563</p>\n"
+    },
+    {
+      "name": "boxVR",
+      "html": "<p>\u2560</p>\n"
+    },
+    {
+      "name": "boxVh",
+      "html": "<p>\u256b</p>\n"
+    },
+    {
+      "name": "boxVl",
+      "html": "<p>\u2562</p>\n"
+    },
+    {
+      "name": "boxVr",
+      "html": "<p>\u255f</p>\n"
+    },
+    {
+      "name": "boxbox",
+      "html": "<p>\u29c9</p>\n"
+    },
+    {
+      "name": "boxdL",
+      "html": "<p>\u2555</p>\n"
+    },
+    {
+      "name": "boxdR",
+      "html": "<p>\u2552</p>\n"
+    },
+    {
+      "name": "boxdl",
+      "html": "<p>\u2510</p>\n"
+    },
+    {
+      "name": "boxdr",
+      "html": "<p>\u250c</p>\n"
+    },
+    {
+      "name": "boxh",
+      "html": "<p>\u2500</p>\n"
+    },
+    {
+      "name": "boxhD",
+      "html": "<p>\u2565</p>\n"
+    },
+    {
+      "name": "boxhU",
+      "html": "<p>\u2568</p>\n"
+    },
+    {
+      "name": "boxhd",
+      "html": "<p>\u252c</p>\n"
+    },
+    {
+      "name": "boxhu",
+      "html": "<p>\u2534</p>\n"
+    },
+    {
+      "name": "boxminus",
+      "html": "<p>\u229f</p>\n"
+    },
+    {
+      "name": "boxplus",
+      "html": "<p>\u229e</p>\n"
+    },
+    {
+      "name": "boxtimes",
+      "html": "<p>\u22a0</p>\n"
+    },
+    {
+      "name": "boxuL",
+      "html": "<p>\u255b</p>\n"
+    },
+    {
+      "name": "boxuR",
+      "html": "<p>\u2558</p>\n"
+    },
+    {
+      "name": "boxul",
+      "html": "<p>\u2518</p>\n"
+    },
+    {
+      "name": "boxur",
+      "html": "<p>\u2514</p>\n"
+    },
+    {
+      "name": "boxv",
+      "html": "<p>\u2502</p>\n"
+    },
+    {
+      "name": "boxvH",
+      "html": "<p>\u256a</p>\n"
+    },
+    {
+      "name": "boxvL",
+      "html": "<p>\u2561</p>\n"
+    },
+    {
+      "name": "boxvR",
+      "html": "<p>\u255e</p>\n"
+    },
+    {
+      "name": "boxvh",
+      "html": "<p>\u253c</p>\n"
+    },
+    {
+      "name": "boxvl",
+      "html": "<p>\u2524</p>\n"
+    },
+    {
+      "name": "boxvr",
+      "html": "<p>\u251c</p>\n"
+    },
+    {
+      "name": "bprime",
+      "html": "<p>\u2035</p>\n"
+    },
+    {
+      "name": "breve",
+      "html": "<p>\u02d8</p>\n"
+    },
+    {
+      "name": "brvbar",
+      "html": "<p>\u00a6</p>\n"
+    },
+    {
+      "name": "bscr",
+      "html": "<p>\ud835\udcb7</p>\n"
+    },
+    {
+      "name": "bsemi",
+      "html": "<p>\u204f</p>\n"
+    },
+    {
+      "name": "bsim",
+      "html": "<p>\u223d</p>\n"
+    },
+    {
+      "name": "bsime",
+      "html": "<p>\u22cd</p>\n"
+    },
+    {
+      "name": "bsol",
+      "html": "<p>\\</p>\n"
+    },
+    {
+      "name": "bsolb",
+      "html": "<p>\u29c5</p>\n"
+    },
+    {
+      "name": "bsolhsub",
+      "html": "<p>\u27c8</p>\n"
+    },
+    {
+      "name": "bull",
+      "html": "<p>\u2022</p>\n"
+    },
+    {
+      "name": "bullet",
+      "html": "<p>\u2022</p>\n"
+    },
+    {
+      "name": "bump",
+      "html": "<p>\u224e</p>\n"
+    },
+    {
+      "name": "bumpE",
+      "html": "<p>\u2aae</p>\n"
+    },
+    {
+      "name": "bumpe",
+      "html": "<p>\u224f</p>\n"
+    },
+    {
+      "name": "bumpeq",
+      "html": "<p>\u224f</p>\n"
+    },
+    {
+      "name": "cacute",
+      "html": "<p>\u0107</p>\n"
+    },
+    {
+      "name": "cap",
+      "html": "<p>\u2229</p>\n"
+    },
+    {
+      "name": "capand",
+      "html": "<p>\u2a44</p>\n"
+    },
+    {
+      "name": "capbrcup",
+      "html": "<p>\u2a49</p>\n"
+    },
+    {
+      "name": "capcap",
+      "html": "<p>\u2a4b</p>\n"
+    },
+    {
+      "name": "capcup",
+      "html": "<p>\u2a47</p>\n"
+    },
+    {
+      "name": "capdot",
+      "html": "<p>\u2a40</p>\n"
+    },
+    {
+      "name": "caps",
+      "html": "<p>\u2229\ufe00</p>\n"
+    },
+    {
+      "name": "caret",
+      "html": "<p>\u2041</p>\n"
+    },
+    {
+      "name": "caron",
+      "html": "<p>\u02c7</p>\n"
+    },
+    {
+      "name": "ccaps",
+      "html": "<p>\u2a4d</p>\n"
+    },
+    {
+      "name": "ccaron",
+      "html": "<p>\u010d</p>\n"
+    },
+    {
+      "name": "ccedil",
+      "html": "<p>\u00e7</p>\n"
+    },
+    {
+      "name": "ccirc",
+      "html": "<p>\u0109</p>\n"
+    },
+    {
+      "name": "ccups",
+      "html": "<p>\u2a4c</p>\n"
+    },
+    {
+      "name": "ccupssm",
+      "html": "<p>\u2a50</p>\n"
+    },
+    {
+      "name": "cdot",
+      "html": "<p>\u010b</p>\n"
+    },
+    {
+      "name": "cedil",
+      "html": "<p>\u00b8</p>\n"
+    },
+    {
+      "name": "cemptyv",
+      "html": "<p>\u29b2</p>\n"
+    },
+    {
+      "name": "cent",
+      "html": "<p>\u00a2</p>\n"
+    },
+    {
+      "name": "centerdot",
+      "html": "<p>\u00b7</p>\n"
+    },
+    {
+      "name": "cfr",
+      "html": "<p>\ud835\udd20</p>\n"
+    },
+    {
+      "name": "chcy",
+      "html": "<p>\u0447</p>\n"
+    },
+    {
+      "name": "check",
+      "html": "<p>\u2713</p>\n"
+    },
+    {
+      "name": "checkmark",
+      "html": "<p>\u2713</p>\n"
+    },
+    {
+      "name": "chi",
+      "html": "<p>\u03c7</p>\n"
+    },
+    {
+      "name": "cir",
+      "html": "<p>\u25cb</p>\n"
+    },
+    {
+      "name": "cirE",
+      "html": "<p>\u29c3</p>\n"
+    },
+    {
+      "name": "circ",
+      "html": "<p>\u02c6</p>\n"
+    },
+    {
+      "name": "circeq",
+      "html": "<p>\u2257</p>\n"
+    },
+    {
+      "name": "circlearrowleft",
+      "html": "<p>\u21ba</p>\n"
+    },
+    {
+      "name": "circlearrowright",
+      "html": "<p>\u21bb</p>\n"
+    },
+    {
+      "name": "circledR",
+      "html": "<p>\u00ae</p>\n"
+    },
+    {
+      "name": "circledS",
+      "html": "<p>\u24c8</p>\n"
+    },
+    {
+      "name": "circledast",
+      "html": "<p>\u229b</p>\n"
+    },
+    {
+      "name": "circledcirc",
+      "html": "<p>\u229a</p>\n"
+    },
+    {
+      "name": "circleddash",
+      "html": "<p>\u229d</p>\n"
+    },
+    {
+      "name": "cire",
+      "html": "<p>\u2257</p>\n"
+    },
+    {
+      "name": "cirfnint",
+      "html": "<p>\u2a10</p>\n"
+    },
+    {
+      "name": "cirmid",
+      "html": "<p>\u2aef</p>\n"
+    },
+    {
+      "name": "cirscir",
+      "html": "<p>\u29c2</p>\n"
+    },
+    {
+      "name": "clubs",
+      "html": "<p>\u2663</p>\n"
+    },
+    {
+      "name": "clubsuit",
+      "html": "<p>\u2663</p>\n"
+    },
+    {
+      "name": "colon",
+      "html": "<p>:</p>\n"
+    },
+    {
+      "name": "colone",
+      "html": "<p>\u2254</p>\n"
+    },
+    {
+      "name": "coloneq",
+      "html": "<p>\u2254</p>\n"
+    },
+    {
+      "name": "comma",
+      "html": "<p>,</p>\n"
+    },
+    {
+      "name": "commat",
+      "html": "<p>@</p>\n"
+    },
+    {
+      "name": "comp",
+      "html": "<p>\u2201</p>\n"
+    },
+    {
+      "name": "compfn",
+      "html": "<p>\u2218</p>\n"
+    },
+    {
+      "name": "complement",
+      "html": "<p>\u2201</p>\n"
+    },
+    {
+      "name": "complexes",
+      "html": "<p>\u2102</p>\n"
+    },
+    {
+      "name": "cong",
+      "html": "<p>\u2245</p>\n"
+    },
+    {
+      "name": "congdot",
+      "html": "<p>\u2a6d</p>\n"
+    },
+    {
+      "name": "conint",
+      "html": "<p>\u222e</p>\n"
+    },
+    {
+      "name": "copf",
+      "html": "<p>\ud835\udd54</p>\n"
+    },
+    {
+      "name": "coprod",
+      "html": "<p>\u2210</p>\n"
+    },
+    {
+      "name": "copy",
+      "html": "<p>\u00a9</p>\n"
+    },
+    {
+      "name": "copysr",
+      "html": "<p>\u2117</p>\n"
+    },
+    {
+      "name": "crarr",
+      "html": "<p>\u21b5</p>\n"
+    },
+    {
+      "name": "cross",
+      "html": "<p>\u2717</p>\n"
+    },
+    {
+      "name": "cscr",
+      "html": "<p>\ud835\udcb8</p>\n"
+    },
+    {
+      "name": "csub",
+      "html": "<p>\u2acf</p>\n"
+    },
+    {
+      "name": "csube",
+      "html": "<p>\u2ad1</p>\n"
+    },
+    {
+      "name": "csup",
+      "html": "<p>\u2ad0</p>\n"
+    },
+    {
+      "name": "csupe",
+      "html": "<p>\u2ad2</p>\n"
+    },
+    {
+      "name": "ctdot",
+      "html": "<p>\u22ef</p>\n"
+    },
+    {
+      "name": "cudarrl",
+      "html": "<p>\u2938</p>\n"
+    },
+    {
+      "name": "cudarrr",
+      "html": "<p>\u2935</p>\n"
+    },
+    {
+      "name": "cuepr",
+      "html": "<p>\u22de</p>\n"
+    },
+    {
+      "name": "cuesc",
+      "html": "<p>\u22df</p>\n"
+    },
+    {
+      "name": "cularr",
+      "html": "<p>\u21b6</p>\n"
+    },
+    {
+      "name": "cularrp",
+      "html": "<p>\u293d</p>\n"
+    },
+    {
+      "name": "cup",
+      "html": "<p>\u222a</p>\n"
+    },
+    {
+      "name": "cupbrcap",
+      "html": "<p>\u2a48</p>\n"
+    },
+    {
+      "name": "cupcap",
+      "html": "<p>\u2a46</p>\n"
+    },
+    {
+      "name": "cupcup",
+      "html": "<p>\u2a4a</p>\n"
+    },
+    {
+      "name": "cupdot",
+      "html": "<p>\u228d</p>\n"
+    },
+    {
+      "name": "cupor",
+      "html": "<p>\u2a45</p>\n"
+    },
+    {
+      "name": "cups",
+      "html": "<p>\u222a\ufe00</p>\n"
+    },
+    {
+      "name": "curarr",
+      "html": "<p>\u21b7</p>\n"
+    },
+    {
+      "name": "curarrm",
+      "html": "<p>\u293c</p>\n"
+    },
+    {
+      "name": "curlyeqprec",
+      "html": "<p>\u22de</p>\n"
+    },
+    {
+      "name": "curlyeqsucc",
+      "html": "<p>\u22df</p>\n"
+    },
+    {
+      "name": "curlyvee",
+      "html": "<p>\u22ce</p>\n"
+    },
+    {
+      "name": "curlywedge",
+      "html": "<p>\u22cf</p>\n"
+    },
+    {
+      "name": "curren",
+      "html": "<p>\u00a4</p>\n"
+    },
+    {
+      "name": "curvearrowleft",
+      "html": "<p>\u21b6</p>\n"
+    },
+    {
+      "name": "curvearrowright",
+      "html": "<p>\u21b7</p>\n"
+    },
+    {
+      "name": "cuvee",
+      "html": "<p>\u22ce</p>\n"
+    },
+    {
+      "name": "cuwed",
+      "html": "<p>\u22cf</p>\n"
+    },
+    {
+      "name": "cwconint",
+      "html": "<p>\u2232</p>\n"
+    },
+    {
+      "name": "cwint",
+      "html": "<p>\u2231</p>\n"
+    },
+    {
+      "name": "cylcty",
+      "html": "<p>\u232d</p>\n"
+    },
+    {
+      "name": "dArr",
+      "html": "<p>\u21d3</p>\n"
+    },
+    {
+      "name": "dHar",
+      "html": "<p>\u2965</p>\n"
+    },
+    {
+      "name": "dagger",
+      "html": "<p>\u2020</p>\n"
+    },
+    {
+      "name": "daleth",
+      "html": "<p>\u2138</p>\n"
+    },
+    {
+      "name": "darr",
+      "html": "<p>\u2193</p>\n"
+    },
+    {
+      "name": "dash",
+      "html": "<p>\u2010</p>\n"
+    },
+    {
+      "name": "dashv",
+      "html": "<p>\u22a3</p>\n"
+    },
+    {
+      "name": "dbkarow",
+      "html": "<p>\u290f</p>\n"
+    },
+    {
+      "name": "dblac",
+      "html": "<p>\u02dd</p>\n"
+    },
+    {
+      "name": "dcaron",
+      "html": "<p>\u010f</p>\n"
+    },
+    {
+      "name": "dcy",
+      "html": "<p>\u0434</p>\n"
+    },
+    {
+      "name": "dd",
+      "html": "<p>\u2146</p>\n"
+    },
+    {
+      "name": "ddagger",
+      "html": "<p>\u2021</p>\n"
+    },
+    {
+      "name": "ddarr",
+      "html": "<p>\u21ca</p>\n"
+    },
+    {
+      "name": "ddotseq",
+      "html": "<p>\u2a77</p>\n"
+    },
+    {
+      "name": "deg",
+      "html": "<p>\u00b0</p>\n"
+    },
+    {
+      "name": "delta",
+      "html": "<p>\u03b4</p>\n"
+    },
+    {
+      "name": "demptyv",
+      "html": "<p>\u29b1</p>\n"
+    },
+    {
+      "name": "dfisht",
+      "html": "<p>\u297f</p>\n"
+    },
+    {
+      "name": "dfr",
+      "html": "<p>\ud835\udd21</p>\n"
+    },
+    {
+      "name": "dharl",
+      "html": "<p>\u21c3</p>\n"
+    },
+    {
+      "name": "dharr",
+      "html": "<p>\u21c2</p>\n"
+    },
+    {
+      "name": "diam",
+      "html": "<p>\u22c4</p>\n"
+    },
+    {
+      "name": "diamond",
+      "html": "<p>\u22c4</p>\n"
+    },
+    {
+      "name": "diamondsuit",
+      "html": "<p>\u2666</p>\n"
+    },
+    {
+      "name": "diams",
+      "html": "<p>\u2666</p>\n"
+    },
+    {
+      "name": "die",
+      "html": "<p>\u00a8</p>\n"
+    },
+    {
+      "name": "digamma",
+      "html": "<p>\u03dd</p>\n"
+    },
+    {
+      "name": "disin",
+      "html": "<p>\u22f2</p>\n"
+    },
+    {
+      "name": "div",
+      "html": "<p>\u00f7</p>\n"
+    },
+    {
+      "name": "divide",
+      "html": "<p>\u00f7</p>\n"
+    },
+    {
+      "name": "divideontimes",
+      "html": "<p>\u22c7</p>\n"
+    },
+    {
+      "name": "divonx",
+      "html": "<p>\u22c7</p>\n"
+    },
+    {
+      "name": "djcy",
+      "html": "<p>\u0452</p>\n"
+    },
+    {
+      "name": "dlcorn",
+      "html": "<p>\u231e</p>\n"
+    },
+    {
+      "name": "dlcrop",
+      "html": "<p>\u230d</p>\n"
+    },
+    {
+      "name": "dollar",
+      "html": "<p>$</p>\n"
+    },
+    {
+      "name": "dopf",
+      "html": "<p>\ud835\udd55</p>\n"
+    },
+    {
+      "name": "dot",
+      "html": "<p>\u02d9</p>\n"
+    },
+    {
+      "name": "doteq",
+      "html": "<p>\u2250</p>\n"
+    },
+    {
+      "name": "doteqdot",
+      "html": "<p>\u2251</p>\n"
+    },
+    {
+      "name": "dotminus",
+      "html": "<p>\u2238</p>\n"
+    },
+    {
+      "name": "dotplus",
+      "html": "<p>\u2214</p>\n"
+    },
+    {
+      "name": "dotsquare",
+      "html": "<p>\u22a1</p>\n"
+    },
+    {
+      "name": "doublebarwedge",
+      "html": "<p>\u2306</p>\n"
+    },
+    {
+      "name": "downarrow",
+      "html": "<p>\u2193</p>\n"
+    },
+    {
+      "name": "downdownarrows",
+      "html": "<p>\u21ca</p>\n"
+    },
+    {
+      "name": "downharpoonleft",
+      "html": "<p>\u21c3</p>\n"
+    },
+    {
+      "name": "downharpoonright",
+      "html": "<p>\u21c2</p>\n"
+    },
+    {
+      "name": "drbkarow",
+      "html": "<p>\u2910</p>\n"
+    },
+    {
+      "name": "drcorn",
+      "html": "<p>\u231f</p>\n"
+    },
+    {
+      "name": "drcrop",
+      "html": "<p>\u230c</p>\n"
+    },
+    {
+      "name": "dscr",
+      "html": "<p>\ud835\udcb9</p>\n"
+    },
+    {
+      "name": "dscy",
+      "html": "<p>\u0455</p>\n"
+    },
+    {
+      "name": "dsol",
+      "html": "<p>\u29f6</p>\n"
+    },
+    {
+      "name": "dstrok",
+      "html": "<p>\u0111</p>\n"
+    },
+    {
+      "name": "dtdot",
+      "html": "<p>\u22f1</p>\n"
+    },
+    {
+      "name": "dtri",
+      "html": "<p>\u25bf</p>\n"
+    },
+    {
+      "name": "dtrif",
+      "html": "<p>\u25be</p>\n"
+    },
+    {
+      "name": "duarr",
+      "html": "<p>\u21f5</p>\n"
+    },
+    {
+      "name": "duhar",
+      "html": "<p>\u296f</p>\n"
+    },
+    {
+      "name": "dwangle",
+      "html": "<p>\u29a6</p>\n"
+    },
+    {
+      "name": "dzcy",
+      "html": "<p>\u045f</p>\n"
+    },
+    {
+      "name": "dzigrarr",
+      "html": "<p>\u27ff</p>\n"
+    },
+    {
+      "name": "eDDot",
+      "html": "<p>\u2a77</p>\n"
+    },
+    {
+      "name": "eDot",
+      "html": "<p>\u2251</p>\n"
+    },
+    {
+      "name": "eacute",
+      "html": "<p>\u00e9</p>\n"
+    },
+    {
+      "name": "easter",
+      "html": "<p>\u2a6e</p>\n"
+    },
+    {
+      "name": "ecaron",
+      "html": "<p>\u011b</p>\n"
+    },
+    {
+      "name": "ecir",
+      "html": "<p>\u2256</p>\n"
+    },
+    {
+      "name": "ecirc",
+      "html": "<p>\u00ea</p>\n"
+    },
+    {
+      "name": "ecolon",
+      "html": "<p>\u2255</p>\n"
+    },
+    {
+      "name": "ecy",
+      "html": "<p>\u044d</p>\n"
+    },
+    {
+      "name": "edot",
+      "html": "<p>\u0117</p>\n"
+    },
+    {
+      "name": "ee",
+      "html": "<p>\u2147</p>\n"
+    },
+    {
+      "name": "efDot",
+      "html": "<p>\u2252</p>\n"
+    },
+    {
+      "name": "efr",
+      "html": "<p>\ud835\udd22</p>\n"
+    },
+    {
+      "name": "eg",
+      "html": "<p>\u2a9a</p>\n"
+    },
+    {
+      "name": "egrave",
+      "html": "<p>\u00e8</p>\n"
+    },
+    {
+      "name": "egs",
+      "html": "<p>\u2a96</p>\n"
+    },
+    {
+      "name": "egsdot",
+      "html": "<p>\u2a98</p>\n"
+    },
+    {
+      "name": "el",
+      "html": "<p>\u2a99</p>\n"
+    },
+    {
+      "name": "elinters",
+      "html": "<p>\u23e7</p>\n"
+    },
+    {
+      "name": "ell",
+      "html": "<p>\u2113</p>\n"
+    },
+    {
+      "name": "els",
+      "html": "<p>\u2a95</p>\n"
+    },
+    {
+      "name": "elsdot",
+      "html": "<p>\u2a97</p>\n"
+    },
+    {
+      "name": "emacr",
+      "html": "<p>\u0113</p>\n"
+    },
+    {
+      "name": "empty",
+      "html": "<p>\u2205</p>\n"
+    },
+    {
+      "name": "emptyset",
+      "html": "<p>\u2205</p>\n"
+    },
+    {
+      "name": "emptyv",
+      "html": "<p>\u2205</p>\n"
+    },
+    {
+      "name": "emsp",
+      "html": "<p>\u2003</p>\n"
+    },
+    {
+      "name": "emsp13",
+      "html": "<p>\u2004</p>\n"
+    },
+    {
+      "name": "emsp14",
+      "html": "<p>\u2005</p>\n"
+    },
+    {
+      "name": "eng",
+      "html": "<p>\u014b</p>\n"
+    },
+    {
+      "name": "ensp",
+      "html": "<p>\u2002</p>\n"
+    },
+    {
+      "name": "eogon",
+      "html": "<p>\u0119</p>\n"
+    },
+    {
+      "name": "eopf",
+      "html": "<p>\ud835\udd56</p>\n"
+    },
+    {
+      "name": "epar",
+      "html": "<p>\u22d5</p>\n"
+    },
+    {
+      "name": "eparsl",
+      "html": "<p>\u29e3</p>\n"
+    },
+    {
+      "name": "eplus",
+      "html": "<p>\u2a71</p>\n"
+    },
+    {
+      "name": "epsi",
+      "html": "<p>\u03b5</p>\n"
+    },
+    {
+      "name": "epsilon",
+      "html": "<p>\u03b5</p>\n"
+    },
+    {
+      "name": "epsiv",
+      "html": "<p>\u03f5</p>\n"
+    },
+    {
+      "name": "eqcirc",
+      "html": "<p>\u2256</p>\n"
+    },
+    {
+      "name": "eqcolon",
+      "html": "<p>\u2255</p>\n"
+    },
+    {
+      "name": "eqsim",
+      "html": "<p>\u2242</p>\n"
+    },
+    {
+      "name": "eqslantgtr",
+      "html": "<p>\u2a96</p>\n"
+    },
+    {
+      "name": "eqslantless",
+      "html": "<p>\u2a95</p>\n"
+    },
+    {
+      "name": "equals",
+      "html": "<p>=</p>\n"
+    },
+    {
+      "name": "equest",
+      "html": "<p>\u225f</p>\n"
+    },
+    {
+      "name": "equiv",
+      "html": "<p>\u2261</p>\n"
+    },
+    {
+      "name": "equivDD",
+      "html": "<p>\u2a78</p>\n"
+    },
+    {
+      "name": "eqvparsl",
+      "html": "<p>\u29e5</p>\n"
+    },
+    {
+      "name": "erDot",
+      "html": "<p>\u2253</p>\n"
+    },
+    {
+      "name": "erarr",
+      "html": "<p>\u2971</p>\n"
+    },
+    {
+      "name": "escr",
+      "html": "<p>\u212f</p>\n"
+    },
+    {
+      "name": "esdot",
+      "html": "<p>\u2250</p>\n"
+    },
+    {
+      "name": "esim",
+      "html": "<p>\u2242</p>\n"
+    },
+    {
+      "name": "eta",
+      "html": "<p>\u03b7</p>\n"
+    },
+    {
+      "name": "eth",
+      "html": "<p>\u00f0</p>\n"
+    },
+    {
+      "name": "euml",
+      "html": "<p>\u00eb</p>\n"
+    },
+    {
+      "name": "euro",
+      "html": "<p>\u20ac</p>\n"
+    },
+    {
+      "name": "excl",
+      "html": "<p>!</p>\n"
+    },
+    {
+      "name": "exist",
+      "html": "<p>\u2203</p>\n"
+    },
+    {
+      "name": "expectation",
+      "html": "<p>\u2130</p>\n"
+    },
+    {
+      "name": "exponentiale",
+      "html": "<p>\u2147</p>\n"
+    },
+    {
+      "name": "fallingdotseq",
+      "html": "<p>\u2252</p>\n"
+    },
+    {
+      "name": "fcy",
+      "html": "<p>\u0444</p>\n"
+    },
+    {
+      "name": "female",
+      "html": "<p>\u2640</p>\n"
+    },
+    {
+      "name": "ffilig",
+      "html": "<p>\ufb03</p>\n"
+    },
+    {
+      "name": "fflig",
+      "html": "<p>\ufb00</p>\n"
+    },
+    {
+      "name": "ffllig",
+      "html": "<p>\ufb04</p>\n"
+    },
+    {
+      "name": "ffr",
+      "html": "<p>\ud835\udd23</p>\n"
+    },
+    {
+      "name": "filig",
+      "html": "<p>\ufb01</p>\n"
+    },
+    {
+      "name": "fjlig",
+      "html": "<p>fj</p>\n"
+    },
+    {
+      "name": "flat",
+      "html": "<p>\u266d</p>\n"
+    },
+    {
+      "name": "fllig",
+      "html": "<p>\ufb02</p>\n"
+    },
+    {
+      "name": "fltns",
+      "html": "<p>\u25b1</p>\n"
+    },
+    {
+      "name": "fnof",
+      "html": "<p>\u0192</p>\n"
+    },
+    {
+      "name": "fopf",
+      "html": "<p>\ud835\udd57</p>\n"
+    },
+    {
+      "name": "forall",
+      "html": "<p>\u2200</p>\n"
+    },
+    {
+      "name": "fork",
+      "html": "<p>\u22d4</p>\n"
+    },
+    {
+      "name": "forkv",
+      "html": "<p>\u2ad9</p>\n"
+    },
+    {
+      "name": "fpartint",
+      "html": "<p>\u2a0d</p>\n"
+    },
+    {
+      "name": "frac12",
+      "html": "<p>\u00bd</p>\n"
+    },
+    {
+      "name": "frac13",
+      "html": "<p>\u2153</p>\n"
+    },
+    {
+      "name": "frac14",
+      "html": "<p>\u00bc</p>\n"
+    },
+    {
+      "name": "frac15",
+      "html": "<p>\u2155</p>\n"
+    },
+    {
+      "name": "frac16",
+      "html": "<p>\u2159</p>\n"
+    },
+    {
+      "name": "frac18",
+      "html": "<p>\u215b</p>\n"
+    },
+    {
+      "name": "frac23",
+      "html": "<p>\u2154</p>\n"
+    },
+    {
+      "name": "frac25",
+      "html": "<p>\u2156</p>\n"
+    },
+    {
+      "name": "frac34",
+      "html": "<p>\u00be</p>\n"
+    },
+    {
+      "name": "frac35",
+      "html": "<p>\u2157</p>\n"
+    },
+    {
+      "name": "frac38",
+      "html": "<p>\u215c</p>\n"
+    },
+    {
+      "name": "frac45",
+      "html": "<p>\u2158</p>\n"
+    },
+    {
+      "name": "frac56",
+      "html": "<p>\u215a</p>\n"
+    },
+    {
+      "name": "frac58",
+      "html": "<p>\u215d</p>\n"
+    },
+    {
+      "name": "frac78",
+      "html": "<p>\u215e</p>\n"
+    },
+    {
+      "name": "frasl",
+      "html": "<p>\u2044</p>\n"
+    },
+    {
+      "name": "frown",
+      "html": "<p>\u2322</p>\n"
+    },
+    {
+      "name": "fscr",
+      "html": "<p>\ud835\udcbb</p>\n"
+    },
+    {
+      "name": "gE",
+      "html": "<p>\u2267</p>\n"
+    },
+    {
+      "name": "gEl",
+      "html": "<p>\u2a8c</p>\n"
+    },
+    {
+      "name": "gacute",
+      "html": "<p>\u01f5</p>\n"
+    },
+    {
+      "name": "gamma",
+      "html": "<p>\u03b3</p>\n"
+    },
+    {
+      "name": "gammad",
+      "html": "<p>\u03dd</p>\n"
+    },
+    {
+      "name": "gap",
+      "html": "<p>\u2a86</p>\n"
+    },
+    {
+      "name": "gbreve",
+      "html": "<p>\u011f</p>\n"
+    },
+    {
+      "name": "gcirc",
+      "html": "<p>\u011d</p>\n"
+    },
+    {
+      "name": "gcy",
+      "html": "<p>\u0433</p>\n"
+    },
+    {
+      "name": "gdot",
+      "html": "<p>\u0121</p>\n"
+    },
+    {
+      "name": "ge",
+      "html": "<p>\u2265</p>\n"
+    },
+    {
+      "name": "gel",
+      "html": "<p>\u22db</p>\n"
+    },
+    {
+      "name": "geq",
+      "html": "<p>\u2265</p>\n"
+    },
+    {
+      "name": "geqq",
+      "html": "<p>\u2267</p>\n"
+    },
+    {
+      "name": "geqslant",
+      "html": "<p>\u2a7e</p>\n"
+    },
+    {
+      "name": "ges",
+      "html": "<p>\u2a7e</p>\n"
+    },
+    {
+      "name": "gescc",
+      "html": "<p>\u2aa9</p>\n"
+    },
+    {
+      "name": "gesdot",
+      "html": "<p>\u2a80</p>\n"
+    },
+    {
+      "name": "gesdoto",
+      "html": "<p>\u2a82</p>\n"
+    },
+    {
+      "name": "gesdotol",
+      "html": "<p>\u2a84</p>\n"
+    },
+    {
+      "name": "gesl",
+      "html": "<p>\u22db\ufe00</p>\n"
+    },
+    {
+      "name": "gesles",
+      "html": "<p>\u2a94</p>\n"
+    },
+    {
+      "name": "gfr",
+      "html": "<p>\ud835\udd24</p>\n"
+    },
+    {
+      "name": "gg",
+      "html": "<p>\u226b</p>\n"
+    },
+    {
+      "name": "ggg",
+      "html": "<p>\u22d9</p>\n"
+    },
+    {
+      "name": "gimel",
+      "html": "<p>\u2137</p>\n"
+    },
+    {
+      "name": "gjcy",
+      "html": "<p>\u0453</p>\n"
+    },
+    {
+      "name": "gl",
+      "html": "<p>\u2277</p>\n"
+    },
+    {
+      "name": "glE",
+      "html": "<p>\u2a92</p>\n"
+    },
+    {
+      "name": "gla",
+      "html": "<p>\u2aa5</p>\n"
+    },
+    {
+      "name": "glj",
+      "html": "<p>\u2aa4</p>\n"
+    },
+    {
+      "name": "gnE",
+      "html": "<p>\u2269</p>\n"
+    },
+    {
+      "name": "gnap",
+      "html": "<p>\u2a8a</p>\n"
+    },
+    {
+      "name": "gnapprox",
+      "html": "<p>\u2a8a</p>\n"
+    },
+    {
+      "name": "gne",
+      "html": "<p>\u2a88</p>\n"
+    },
+    {
+      "name": "gneq",
+      "html": "<p>\u2a88</p>\n"
+    },
+    {
+      "name": "gneqq",
+      "html": "<p>\u2269</p>\n"
+    },
+    {
+      "name": "gnsim",
+      "html": "<p>\u22e7</p>\n"
+    },
+    {
+      "name": "gopf",
+      "html": "<p>\ud835\udd58</p>\n"
+    },
+    {
+      "name": "grave",
+      "html": "<p>`</p>\n"
+    },
+    {
+      "name": "gscr",
+      "html": "<p>\u210a</p>\n"
+    },
+    {
+      "name": "gsim",
+      "html": "<p>\u2273</p>\n"
+    },
+    {
+      "name": "gsime",
+      "html": "<p>\u2a8e</p>\n"
+    },
+    {
+      "name": "gsiml",
+      "html": "<p>\u2a90</p>\n"
+    },
+    {
+      "name": "gt",
+      "html": "<p>&gt;</p>\n"
+    },
+    {
+      "name": "gtcc",
+      "html": "<p>\u2aa7</p>\n"
+    },
+    {
+      "name": "gtcir",
+      "html": "<p>\u2a7a</p>\n"
+    },
+    {
+      "name": "gtdot",
+      "html": "<p>\u22d7</p>\n"
+    },
+    {
+      "name": "gtlPar",
+      "html": "<p>\u2995</p>\n"
+    },
+    {
+      "name": "gtquest",
+      "html": "<p>\u2a7c</p>\n"
+    },
+    {
+      "name": "gtrapprox",
+      "html": "<p>\u2a86</p>\n"
+    },
+    {
+      "name": "gtrarr",
+      "html": "<p>\u2978</p>\n"
+    },
+    {
+      "name": "gtrdot",
+      "html": "<p>\u22d7</p>\n"
+    },
+    {
+      "name": "gtreqless",
+      "html": "<p>\u22db</p>\n"
+    },
+    {
+      "name": "gtreqqless",
+      "html": "<p>\u2a8c</p>\n"
+    },
+    {
+      "name": "gtrless",
+      "html": "<p>\u2277</p>\n"
+    },
+    {
+      "name": "gtrsim",
+      "html": "<p>\u2273</p>\n"
+    },
+    {
+      "name": "gvertneqq",
+      "html": "<p>\u2269\ufe00</p>\n"
+    },
+    {
+      "name": "gvnE",
+      "html": "<p>\u2269\ufe00</p>\n"
+    },
+    {
+      "name": "hArr",
+      "html": "<p>\u21d4</p>\n"
+    },
+    {
+      "name": "hairsp",
+      "html": "<p>\u200a</p>\n"
+    },
+    {
+      "name": "half",
+      "html": "<p>\u00bd</p>\n"
+    },
+    {
+      "name": "hamilt",
+      "html": "<p>\u210b</p>\n"
+    },
+    {
+      "name": "hardcy",
+      "html": "<p>\u044a</p>\n"
+    },
+    {
+      "name": "harr",
+      "html": "<p>\u2194</p>\n"
+    },
+    {
+      "name": "harrcir",
+      "html": "<p>\u2948</p>\n"
+    },
+    {
+      "name": "harrw",
+      "html": "<p>\u21ad</p>\n"
+    },
+    {
+      "name": "hbar",
+      "html": "<p>\u210f</p>\n"
+    },
+    {
+      "name": "hcirc",
+      "html": "<p>\u0125</p>\n"
+    },
+    {
+      "name": "hearts",
+      "html": "<p>\u2665</p>\n"
+    },
+    {
+      "name": "heartsuit",
+      "html": "<p>\u2665</p>\n"
+    },
+    {
+      "name": "hellip",
+      "html": "<p>\u2026</p>\n"
+    },
+    {
+      "name": "hercon",
+      "html": "<p>\u22b9</p>\n"
+    },
+    {
+      "name": "hfr",
+      "html": "<p>\ud835\udd25</p>\n"
+    },
+    {
+      "name": "hksearow",
+      "html": "<p>\u2925</p>\n"
+    },
+    {
+      "name": "hkswarow",
+      "html": "<p>\u2926</p>\n"
+    },
+    {
+      "name": "hoarr",
+      "html": "<p>\u21ff</p>\n"
+    },
+    {
+      "name": "homtht",
+      "html": "<p>\u223b</p>\n"
+    },
+    {
+      "name": "hookleftarrow",
+      "html": "<p>\u21a9</p>\n"
+    },
+    {
+      "name": "hookrightarrow",
+      "html": "<p>\u21aa</p>\n"
+    },
+    {
+      "name": "hopf",
+      "html": "<p>\ud835\udd59</p>\n"
+    },
+    {
+      "name": "horbar",
+      "html": "<p>\u2015</p>\n"
+    },
+    {
+      "name": "hscr",
+      "html": "<p>\ud835\udcbd</p>\n"
+    },
+    {
+      "name": "hslash",
+      "html": "<p>\u210f</p>\n"
+    },
+    {
+      "name": "hstrok",
+      "html": "<p>\u0127</p>\n"
+    },
+    {
+      "name": "hybull",
+      "html": "<p>\u2043</p>\n"
+    },
+    {
+      "name": "hyphen",
+      "html": "<p>\u2010</p>\n"
+    },
+    {
+      "name": "iacute",
+      "html": "<p>\u00ed</p>\n"
+    },
+    {
+      "name": "ic",
+      "html": "<p>\u2063</p>\n"
+    },
+    {
+      "name": "icirc",
+      "html": "<p>\u00ee</p>\n"
+    },
+    {
+      "name": "icy",
+      "html": "<p>\u0438</p>\n"
+    },
+    {
+      "name": "iecy",
+      "html": "<p>\u0435</p>\n"
+    },
+    {
+      "name": "iexcl",
+      "html": "<p>\u00a1</p>\n"
+    },
+    {
+      "name": "iff",
+      "html": "<p>\u21d4</p>\n"
+    },
+    {
+      "name": "ifr",
+      "html": "<p>\ud835\udd26</p>\n"
+    },
+    {
+      "name": "igrave",
+      "html": "<p>\u00ec</p>\n"
+    },
+    {
+      "name": "ii",
+      "html": "<p>\u2148</p>\n"
+    },
+    {
+      "name": "iiiint",
+      "html": "<p>\u2a0c</p>\n"
+    },
+    {
+      "name": "iiint",
+      "html": "<p>\u222d</p>\n"
+    },
+    {
+      "name": "iinfin",
+      "html": "<p>\u29dc</p>\n"
+    },
+    {
+      "name": "iiota",
+      "html": "<p>\u2129</p>\n"
+    },
+    {
+      "name": "ijlig",
+      "html": "<p>\u0133</p>\n"
+    },
+    {
+      "name": "imacr",
+      "html": "<p>\u012b</p>\n"
+    },
+    {
+      "name": "image",
+      "html": "<p>\u2111</p>\n"
+    },
+    {
+      "name": "imagline",
+      "html": "<p>\u2110</p>\n"
+    },
+    {
+      "name": "imagpart",
+      "html": "<p>\u2111</p>\n"
+    },
+    {
+      "name": "imath",
+      "html": "<p>\u0131</p>\n"
+    },
+    {
+      "name": "imof",
+      "html": "<p>\u22b7</p>\n"
+    },
+    {
+      "name": "imped",
+      "html": "<p>\u01b5</p>\n"
+    },
+    {
+      "name": "in",
+      "html": "<p>\u2208</p>\n"
+    },
+    {
+      "name": "incare",
+      "html": "<p>\u2105</p>\n"
+    },
+    {
+      "name": "infin",
+      "html": "<p>\u221e</p>\n"
+    },
+    {
+      "name": "infintie",
+      "html": "<p>\u29dd</p>\n"
+    },
+    {
+      "name": "inodot",
+      "html": "<p>\u0131</p>\n"
+    },
+    {
+      "name": "int",
+      "html": "<p>\u222b</p>\n"
+    },
+    {
+      "name": "intcal",
+      "html": "<p>\u22ba</p>\n"
+    },
+    {
+      "name": "integers",
+      "html": "<p>\u2124</p>\n"
+    },
+    {
+      "name": "intercal",
+      "html": "<p>\u22ba</p>\n"
+    },
+    {
+      "name": "intlarhk",
+      "html": "<p>\u2a17</p>\n"
+    },
+    {
+      "name": "intprod",
+      "html": "<p>\u2a3c</p>\n"
+    },
+    {
+      "name": "iocy",
+      "html": "<p>\u0451</p>\n"
+    },
+    {
+      "name": "iogon",
+      "html": "<p>\u012f</p>\n"
+    },
+    {
+      "name": "iopf",
+      "html": "<p>\ud835\udd5a</p>\n"
+    },
+    {
+      "name": "iota",
+      "html": "<p>\u03b9</p>\n"
+    },
+    {
+      "name": "iprod",
+      "html": "<p>\u2a3c</p>\n"
+    },
+    {
+      "name": "iquest",
+      "html": "<p>\u00bf</p>\n"
+    },
+    {
+      "name": "iscr",
+      "html": "<p>\ud835\udcbe</p>\n"
+    },
+    {
+      "name": "isin",
+      "html": "<p>\u2208</p>\n"
+    },
+    {
+      "name": "isinE",
+      "html": "<p>\u22f9</p>\n"
+    },
+    {
+      "name": "isindot",
+      "html": "<p>\u22f5</p>\n"
+    },
+    {
+      "name": "isins",
+      "html": "<p>\u22f4</p>\n"
+    },
+    {
+      "name": "isinsv",
+      "html": "<p>\u22f3</p>\n"
+    },
+    {
+      "name": "isinv",
+      "html": "<p>\u2208</p>\n"
+    },
+    {
+      "name": "it",
+      "html": "<p>\u2062</p>\n"
+    },
+    {
+      "name": "itilde",
+      "html": "<p>\u0129</p>\n"
+    },
+    {
+      "name": "iukcy",
+      "html": "<p>\u0456</p>\n"
+    },
+    {
+      "name": "iuml",
+      "html": "<p>\u00ef</p>\n"
+    },
+    {
+      "name": "jcirc",
+      "html": "<p>\u0135</p>\n"
+    },
+    {
+      "name": "jcy",
+      "html": "<p>\u0439</p>\n"
+    },
+    {
+      "name": "jfr",
+      "html": "<p>\ud835\udd27</p>\n"
+    },
+    {
+      "name": "jmath",
+      "html": "<p>\u0237</p>\n"
+    },
+    {
+      "name": "jopf",
+      "html": "<p>\ud835\udd5b</p>\n"
+    },
+    {
+      "name": "jscr",
+      "html": "<p>\ud835\udcbf</p>\n"
+    },
+    {
+      "name": "jsercy",
+      "html": "<p>\u0458</p>\n"
+    },
+    {
+      "name": "jukcy",
+      "html": "<p>\u0454</p>\n"
+    },
+    {
+      "name": "kappa",
+      "html": "<p>\u03ba</p>\n"
+    },
+    {
+      "name": "kappav",
+      "html": "<p>\u03f0</p>\n"
+    },
+    {
+      "name": "kcedil",
+      "html": "<p>\u0137</p>\n"
+    },
+    {
+      "name": "kcy",
+      "html": "<p>\u043a</p>\n"
+    },
+    {
+      "name": "kfr",
+      "html": "<p>\ud835\udd28</p>\n"
+    },
+    {
+      "name": "kgreen",
+      "html": "<p>\u0138</p>\n"
+    },
+    {
+      "name": "khcy",
+      "html": "<p>\u0445</p>\n"
+    },
+    {
+      "name": "kjcy",
+      "html": "<p>\u045c</p>\n"
+    },
+    {
+      "name": "kopf",
+      "html": "<p>\ud835\udd5c</p>\n"
+    },
+    {
+      "name": "kscr",
+      "html": "<p>\ud835\udcc0</p>\n"
+    },
+    {
+      "name": "lAarr",
+      "html": "<p>\u21da</p>\n"
+    },
+    {
+      "name": "lArr",
+      "html": "<p>\u21d0</p>\n"
+    },
+    {
+      "name": "lAtail",
+      "html": "<p>\u291b</p>\n"
+    },
+    {
+      "name": "lBarr",
+      "html": "<p>\u290e</p>\n"
+    },
+    {
+      "name": "lE",
+      "html": "<p>\u2266</p>\n"
+    },
+    {
+      "name": "lEg",
+      "html": "<p>\u2a8b</p>\n"
+    },
+    {
+      "name": "lHar",
+      "html": "<p>\u2962</p>\n"
+    },
+    {
+      "name": "lacute",
+      "html": "<p>\u013a</p>\n"
+    },
+    {
+      "name": "laemptyv",
+      "html": "<p>\u29b4</p>\n"
+    },
+    {
+      "name": "lagran",
+      "html": "<p>\u2112</p>\n"
+    },
+    {
+      "name": "lambda",
+      "html": "<p>\u03bb</p>\n"
+    },
+    {
+      "name": "lang",
+      "html": "<p>\u27e8</p>\n"
+    },
+    {
+      "name": "langd",
+      "html": "<p>\u2991</p>\n"
+    },
+    {
+      "name": "langle",
+      "html": "<p>\u27e8</p>\n"
+    },
+    {
+      "name": "lap",
+      "html": "<p>\u2a85</p>\n"
+    },
+    {
+      "name": "laquo",
+      "html": "<p>\u00ab</p>\n"
+    },
+    {
+      "name": "larr",
+      "html": "<p>\u2190</p>\n"
+    },
+    {
+      "name": "larrb",
+      "html": "<p>\u21e4</p>\n"
+    },
+    {
+      "name": "larrbfs",
+      "html": "<p>\u291f</p>\n"
+    },
+    {
+      "name": "larrfs",
+      "html": "<p>\u291d</p>\n"
+    },
+    {
+      "name": "larrhk",
+      "html": "<p>\u21a9</p>\n"
+    },
+    {
+      "name": "larrlp",
+      "html": "<p>\u21ab</p>\n"
+    },
+    {
+      "name": "larrpl",
+      "html": "<p>\u2939</p>\n"
+    },
+    {
+      "name": "larrsim",
+      "html": "<p>\u2973</p>\n"
+    },
+    {
+      "name": "larrtl",
+      "html": "<p>\u21a2</p>\n"
+    },
+    {
+      "name": "lat",
+      "html": "<p>\u2aab</p>\n"
+    },
+    {
+      "name": "latail",
+      "html": "<p>\u2919</p>\n"
+    },
+    {
+      "name": "late",
+      "html": "<p>\u2aad</p>\n"
+    },
+    {
+      "name": "lates",
+      "html": "<p>\u2aad\ufe00</p>\n"
+    },
+    {
+      "name": "lbarr",
+      "html": "<p>\u290c</p>\n"
+    },
+    {
+      "name": "lbbrk",
+      "html": "<p>\u2772</p>\n"
+    },
+    {
+      "name": "lbrace",
+      "html": "<p>{</p>\n"
+    },
+    {
+      "name": "lbrack",
+      "html": "<p>[</p>\n"
+    },
+    {
+      "name": "lbrke",
+      "html": "<p>\u298b</p>\n"
+    },
+    {
+      "name": "lbrksld",
+      "html": "<p>\u298f</p>\n"
+    },
+    {
+      "name": "lbrkslu",
+      "html": "<p>\u298d</p>\n"
+    },
+    {
+      "name": "lcaron",
+      "html": "<p>\u013e</p>\n"
+    },
+    {
+      "name": "lcedil",
+      "html": "<p>\u013c</p>\n"
+    },
+    {
+      "name": "lceil",
+      "html": "<p>\u2308</p>\n"
+    },
+    {
+      "name": "lcub",
+      "html": "<p>{</p>\n"
+    },
+    {
+      "name": "lcy",
+      "html": "<p>\u043b</p>\n"
+    },
+    {
+      "name": "ldca",
+      "html": "<p>\u2936</p>\n"
+    },
+    {
+      "name": "ldquo",
+      "html": "<p>\u201c</p>\n"
+    },
+    {
+      "name": "ldquor",
+      "html": "<p>\u201e</p>\n"
+    },
+    {
+      "name": "ldrdhar",
+      "html": "<p>\u2967</p>\n"
+    },
+    {
+      "name": "ldrushar",
+      "html": "<p>\u294b</p>\n"
+    },
+    {
+      "name": "ldsh",
+      "html": "<p>\u21b2</p>\n"
+    },
+    {
+      "name": "le",
+      "html": "<p>\u2264</p>\n"
+    },
+    {
+      "name": "leftarrow",
+      "html": "<p>\u2190</p>\n"
+    },
+    {
+      "name": "leftarrowtail",
+      "html": "<p>\u21a2</p>\n"
+    },
+    {
+      "name": "leftharpoondown",
+      "html": "<p>\u21bd</p>\n"
+    },
+    {
+      "name": "leftharpoonup",
+      "html": "<p>\u21bc</p>\n"
+    },
+    {
+      "name": "leftleftarrows",
+      "html": "<p>\u21c7</p>\n"
+    },
+    {
+      "name": "leftrightarrow",
+      "html": "<p>\u2194</p>\n"
+    },
+    {
+      "name": "leftrightarrows",
+      "html": "<p>\u21c6</p>\n"
+    },
+    {
+      "name": "leftrightharpoons",
+      "html": "<p>\u21cb</p>\n"
+    },
+    {
+      "name": "leftrightsquigarrow",
+      "html": "<p>\u21ad</p>\n"
+    },
+    {
+      "name": "leftthreetimes",
+      "html": "<p>\u22cb</p>\n"
+    },
+    {
+      "name": "leg",
+      "html": "<p>\u22da</p>\n"
+    },
+    {
+      "name": "leq",
+      "html": "<p>\u2264</p>\n"
+    },
+    {
+      "name": "leqq",
+      "html": "<p>\u2266</p>\n"
+    },
+    {
+      "name": "leqslant",
+      "html": "<p>\u2a7d</p>\n"
+    },
+    {
+      "name": "les",
+      "html": "<p>\u2a7d</p>\n"
+    },
+    {
+      "name": "lescc",
+      "html": "<p>\u2aa8</p>\n"
+    },
+    {
+      "name": "lesdot",
+      "html": "<p>\u2a7f</p>\n"
+    },
+    {
+      "name": "lesdoto",
+      "html": "<p>\u2a81</p>\n"
+    },
+    {
+      "name": "lesdotor",
+      "html": "<p>\u2a83</p>\n"
+    },
+    {
+      "name": "lesg",
+      "html": "<p>\u22da\ufe00</p>\n"
+    },
+    {
+      "name": "lesges",
+      "html": "<p>\u2a93</p>\n"
+    },
+    {
+      "name": "lessapprox",
+      "html": "<p>\u2a85</p>\n"
+    },
+    {
+      "name": "lessdot",
+      "html": "<p>\u22d6</p>\n"
+    },
+    {
+      "name": "lesseqgtr",
+      "html": "<p>\u22da</p>\n"
+    },
+    {
+      "name": "lesseqqgtr",
+      "html": "<p>\u2a8b</p>\n"
+    },
+    {
+      "name": "lessgtr",
+      "html": "<p>\u2276</p>\n"
+    },
+    {
+      "name": "lesssim",
+      "html": "<p>\u2272</p>\n"
+    },
+    {
+      "name": "lfisht",
+      "html": "<p>\u297c</p>\n"
+    },
+    {
+      "name": "lfloor",
+      "html": "<p>\u230a</p>\n"
+    },
+    {
+      "name": "lfr",
+      "html": "<p>\ud835\udd29</p>\n"
+    },
+    {
+      "name": "lg",
+      "html": "<p>\u2276</p>\n"
+    },
+    {
+      "name": "lgE",
+      "html": "<p>\u2a91</p>\n"
+    },
+    {
+      "name": "lhard",
+      "html": "<p>\u21bd</p>\n"
+    },
+    {
+      "name": "lharu",
+      "html": "<p>\u21bc</p>\n"
+    },
+    {
+      "name": "lharul",
+      "html": "<p>\u296a</p>\n"
+    },
+    {
+      "name": "lhblk",
+      "html": "<p>\u2584</p>\n"
+    },
+    {
+      "name": "ljcy",
+      "html": "<p>\u0459</p>\n"
+    },
+    {
+      "name": "ll",
+      "html": "<p>\u226a</p>\n"
+    },
+    {
+      "name": "llarr",
+      "html": "<p>\u21c7</p>\n"
+    },
+    {
+      "name": "llcorner",
+      "html": "<p>\u231e</p>\n"
+    },
+    {
+      "name": "llhard",
+      "html": "<p>\u296b</p>\n"
+    },
+    {
+      "name": "lltri",
+      "html": "<p>\u25fa</p>\n"
+    },
+    {
+      "name": "lmidot",
+      "html": "<p>\u0140</p>\n"
+    },
+    {
+      "name": "lmoust",
+      "html": "<p>\u23b0</p>\n"
+    },
+    {
+      "name": "lmoustache",
+      "html": "<p>\u23b0</p>\n"
+    },
+    {
+      "name": "lnE",
+      "html": "<p>\u2268</p>\n"
+    },
+    {
+      "name": "lnap",
+      "html": "<p>\u2a89</p>\n"
+    },
+    {
+      "name": "lnapprox",
+      "html": "<p>\u2a89</p>\n"
+    },
+    {
+      "name": "lne",
+      "html": "<p>\u2a87</p>\n"
+    },
+    {
+      "name": "lneq",
+      "html": "<p>\u2a87</p>\n"
+    },
+    {
+      "name": "lneqq",
+      "html": "<p>\u2268</p>\n"
+    },
+    {
+      "name": "lnsim",
+      "html": "<p>\u22e6</p>\n"
+    },
+    {
+      "name": "loang",
+      "html": "<p>\u27ec</p>\n"
+    },
+    {
+      "name": "loarr",
+      "html": "<p>\u21fd</p>\n"
+    },
+    {
+      "name": "lobrk",
+      "html": "<p>\u27e6</p>\n"
+    },
+    {
+      "name": "longleftarrow",
+      "html": "<p>\u27f5</p>\n"
+    },
+    {
+      "name": "longleftrightarrow",
+      "html": "<p>\u27f7</p>\n"
+    },
+    {
+      "name": "longmapsto",
+      "html": "<p>\u27fc</p>\n"
+    },
+    {
+      "name": "longrightarrow",
+      "html": "<p>\u27f6</p>\n"
+    },
+    {
+      "name": "looparrowleft",
+      "html": "<p>\u21ab</p>\n"
+    },
+    {
+      "name": "looparrowright",
+      "html": "<p>\u21ac</p>\n"
+    },
+    {
+      "name": "lopar",
+      "html": "<p>\u2985</p>\n"
+    },
+    {
+      "name": "lopf",
+      "html": "<p>\ud835\udd5d</p>\n"
+    },
+    {
+      "name": "loplus",
+      "html": "<p>\u2a2d</p>\n"
+    },
+    {
+      "name": "lotimes",
+      "html": "<p>\u2a34</p>\n"
+    },
+    {
+      "name": "lowast",
+      "html": "<p>\u2217</p>\n"
+    },
+    {
+      "name": "lowbar",
+      "html": "<p>_</p>\n"
+    },
+    {
+      "name": "loz",
+      "html": "<p>\u25ca</p>\n"
+    },
+    {
+      "name": "lozenge",
+      "html": "<p>\u25ca</p>\n"
+    },
+    {
+      "name": "lozf",
+      "html": "<p>\u29eb</p>\n"
+    },
+    {
+      "name": "lpar",
+      "html": "<p>(</p>\n"
+    },
+    {
+      "name": "lparlt",
+      "html": "<p>\u2993</p>\n"
+    },
+    {
+      "name": "lrarr",
+      "html": "<p>\u21c6</p>\n"
+    },
+    {
+      "name": "lrcorner",
+      "html": "<p>\u231f</p>\n"
+    },
+    {
+      "name": "lrhar",
+      "html": "<p>\u21cb</p>\n"
+    },
+    {
+      "name": "lrhard",
+      "html": "<p>\u296d</p>\n"
+    },
+    {
+      "name": "lrm",
+      "html": "<p>\u200e</p>\n"
+    },
+    {
+      "name": "lrtri",
+      "html": "<p>\u22bf</p>\n"
+    },
+    {
+      "name": "lsaquo",
+      "html": "<p>\u2039</p>\n"
+    },
+    {
+      "name": "lscr",
+      "html": "<p>\ud835\udcc1</p>\n"
+    },
+    {
+      "name": "lsh",
+      "html": "<p>\u21b0</p>\n"
+    },
+    {
+      "name": "lsim",
+      "html": "<p>\u2272</p>\n"
+    },
+    {
+      "name": "lsime",
+      "html": "<p>\u2a8d</p>\n"
+    },
+    {
+      "name": "lsimg",
+      "html": "<p>\u2a8f</p>\n"
+    },
+    {
+      "name": "lsqb",
+      "html": "<p>[</p>\n"
+    },
+    {
+      "name": "lsquo",
+      "html": "<p>\u2018</p>\n"
+    },
+    {
+      "name": "lsquor",
+      "html": "<p>\u201a</p>\n"
+    },
+    {
+      "name": "lstrok",
+      "html": "<p>\u0142</p>\n"
+    },
+    {
+      "name": "lt",
+      "html": "<p>&lt;</p>\n"
+    },
+    {
+      "name": "ltcc",
+      "html": "<p>\u2aa6</p>\n"
+    },
+    {
+      "name": "ltcir",
+      "html": "<p>\u2a79</p>\n"
+    },
+    {
+      "name": "ltdot",
+      "html": "<p>\u22d6</p>\n"
+    },
+    {
+      "name": "lthree",
+      "html": "<p>\u22cb</p>\n"
+    },
+    {
+      "name": "ltimes",
+      "html": "<p>\u22c9</p>\n"
+    },
+    {
+      "name": "ltlarr",
+      "html": "<p>\u2976</p>\n"
+    },
+    {
+      "name": "ltquest",
+      "html": "<p>\u2a7b</p>\n"
+    },
+    {
+      "name": "ltrPar",
+      "html": "<p>\u2996</p>\n"
+    },
+    {
+      "name": "ltri",
+      "html": "<p>\u25c3</p>\n"
+    },
+    {
+      "name": "ltrie",
+      "html": "<p>\u22b4</p>\n"
+    },
+    {
+      "name": "ltrif",
+      "html": "<p>\u25c2</p>\n"
+    },
+    {
+      "name": "lurdshar",
+      "html": "<p>\u294a</p>\n"
+    },
+    {
+      "name": "luruhar",
+      "html": "<p>\u2966</p>\n"
+    },
+    {
+      "name": "lvertneqq",
+      "html": "<p>\u2268\ufe00</p>\n"
+    },
+    {
+      "name": "lvnE",
+      "html": "<p>\u2268\ufe00</p>\n"
+    },
+    {
+      "name": "mDDot",
+      "html": "<p>\u223a</p>\n"
+    },
+    {
+      "name": "macr",
+      "html": "<p>\u00af</p>\n"
+    },
+    {
+      "name": "male",
+      "html": "<p>\u2642</p>\n"
+    },
+    {
+      "name": "malt",
+      "html": "<p>\u2720</p>\n"
+    },
+    {
+      "name": "maltese",
+      "html": "<p>\u2720</p>\n"
+    },
+    {
+      "name": "map",
+      "html": "<p>\u21a6</p>\n"
+    },
+    {
+      "name": "mapsto",
+      "html": "<p>\u21a6</p>\n"
+    },
+    {
+      "name": "mapstodown",
+      "html": "<p>\u21a7</p>\n"
+    },
+    {
+      "name": "mapstoleft",
+      "html": "<p>\u21a4</p>\n"
+    },
+    {
+      "name": "mapstoup",
+      "html": "<p>\u21a5</p>\n"
+    },
+    {
+      "name": "marker",
+      "html": "<p>\u25ae</p>\n"
+    },
+    {
+      "name": "mcomma",
+      "html": "<p>\u2a29</p>\n"
+    },
+    {
+      "name": "mcy",
+      "html": "<p>\u043c</p>\n"
+    },
+    {
+      "name": "mdash",
+      "html": "<p>\u2014</p>\n"
+    },
+    {
+      "name": "measuredangle",
+      "html": "<p>\u2221</p>\n"
+    },
+    {
+      "name": "mfr",
+      "html": "<p>\ud835\udd2a</p>\n"
+    },
+    {
+      "name": "mho",
+      "html": "<p>\u2127</p>\n"
+    },
+    {
+      "name": "micro",
+      "html": "<p>\u00b5</p>\n"
+    },
+    {
+      "name": "mid",
+      "html": "<p>\u2223</p>\n"
+    },
+    {
+      "name": "midast",
+      "html": "<p>*</p>\n"
+    },
+    {
+      "name": "midcir",
+      "html": "<p>\u2af0</p>\n"
+    },
+    {
+      "name": "middot",
+      "html": "<p>\u00b7</p>\n"
+    },
+    {
+      "name": "minus",
+      "html": "<p>\u2212</p>\n"
+    },
+    {
+      "name": "minusb",
+      "html": "<p>\u229f</p>\n"
+    },
+    {
+      "name": "minusd",
+      "html": "<p>\u2238</p>\n"
+    },
+    {
+      "name": "minusdu",
+      "html": "<p>\u2a2a</p>\n"
+    },
+    {
+      "name": "mlcp",
+      "html": "<p>\u2adb</p>\n"
+    },
+    {
+      "name": "mldr",
+      "html": "<p>\u2026</p>\n"
+    },
+    {
+      "name": "mnplus",
+      "html": "<p>\u2213</p>\n"
+    },
+    {
+      "name": "models",
+      "html": "<p>\u22a7</p>\n"
+    },
+    {
+      "name": "mopf",
+      "html": "<p>\ud835\udd5e</p>\n"
+    },
+    {
+      "name": "mp",
+      "html": "<p>\u2213</p>\n"
+    },
+    {
+      "name": "mscr",
+      "html": "<p>\ud835\udcc2</p>\n"
+    },
+    {
+      "name": "mstpos",
+      "html": "<p>\u223e</p>\n"
+    },
+    {
+      "name": "mu",
+      "html": "<p>\u03bc</p>\n"
+    },
+    {
+      "name": "multimap",
+      "html": "<p>\u22b8</p>\n"
+    },
+    {
+      "name": "mumap",
+      "html": "<p>\u22b8</p>\n"
+    },
+    {
+      "name": "nGg",
+      "html": "<p>\u22d9\u0338</p>\n"
+    },
+    {
+      "name": "nGt",
+      "html": "<p>\u226b\u20d2</p>\n"
+    },
+    {
+      "name": "nGtv",
+      "html": "<p>\u226b\u0338</p>\n"
+    },
+    {
+      "name": "nLeftarrow",
+      "html": "<p>\u21cd</p>\n"
+    },
+    {
+      "name": "nLeftrightarrow",
+      "html": "<p>\u21ce</p>\n"
+    },
+    {
+      "name": "nLl",
+      "html": "<p>\u22d8\u0338</p>\n"
+    },
+    {
+      "name": "nLt",
+      "html": "<p>\u226a\u20d2</p>\n"
+    },
+    {
+      "name": "nLtv",
+      "html": "<p>\u226a\u0338</p>\n"
+    },
+    {
+      "name": "nRightarrow",
+      "html": "<p>\u21cf</p>\n"
+    },
+    {
+      "name": "nVDash",
+      "html": "<p>\u22af</p>\n"
+    },
+    {
+      "name": "nVdash",
+      "html": "<p>\u22ae</p>\n"
+    },
+    {
+      "name": "nabla",
+      "html": "<p>\u2207</p>\n"
+    },
+    {
+      "name": "nacute",
+      "html": "<p>\u0144</p>\n"
+    },
+    {
+      "name": "nang",
+      "html": "<p>\u2220\u20d2</p>\n"
+    },
+    {
+      "name": "nap",
+      "html": "<p>\u2249</p>\n"
+    },
+    {
+      "name": "napE",
+      "html": "<p>\u2a70\u0338</p>\n"
+    },
+    {
+      "name": "napid",
+      "html": "<p>\u224b\u0338</p>\n"
+    },
+    {
+      "name": "napos",
+      "html": "<p>\u0149</p>\n"
+    },
+    {
+      "name": "napprox",
+      "html": "<p>\u2249</p>\n"
+    },
+    {
+      "name": "natur",
+      "html": "<p>\u266e</p>\n"
+    },
+    {
+      "name": "natural",
+      "html": "<p>\u266e</p>\n"
+    },
+    {
+      "name": "naturals",
+      "html": "<p>\u2115</p>\n"
+    },
+    {
+      "name": "nbsp",
+      "html": "<p>\u00a0</p>\n"
+    },
+    {
+      "name": "nbump",
+      "html": "<p>\u224e\u0338</p>\n"
+    },
+    {
+      "name": "nbumpe",
+      "html": "<p>\u224f\u0338</p>\n"
+    },
+    {
+      "name": "ncap",
+      "html": "<p>\u2a43</p>\n"
+    },
+    {
+      "name": "ncaron",
+      "html": "<p>\u0148</p>\n"
+    },
+    {
+      "name": "ncedil",
+      "html": "<p>\u0146</p>\n"
+    },
+    {
+      "name": "ncong",
+      "html": "<p>\u2247</p>\n"
+    },
+    {
+      "name": "ncongdot",
+      "html": "<p>\u2a6d\u0338</p>\n"
+    },
+    {
+      "name": "ncup",
+      "html": "<p>\u2a42</p>\n"
+    },
+    {
+      "name": "ncy",
+      "html": "<p>\u043d</p>\n"
+    },
+    {
+      "name": "ndash",
+      "html": "<p>\u2013</p>\n"
+    },
+    {
+      "name": "ne",
+      "html": "<p>\u2260</p>\n"
+    },
+    {
+      "name": "neArr",
+      "html": "<p>\u21d7</p>\n"
+    },
+    {
+      "name": "nearhk",
+      "html": "<p>\u2924</p>\n"
+    },
+    {
+      "name": "nearr",
+      "html": "<p>\u2197</p>\n"
+    },
+    {
+      "name": "nearrow",
+      "html": "<p>\u2197</p>\n"
+    },
+    {
+      "name": "nedot",
+      "html": "<p>\u2250\u0338</p>\n"
+    },
+    {
+      "name": "nequiv",
+      "html": "<p>\u2262</p>\n"
+    },
+    {
+      "name": "nesear",
+      "html": "<p>\u2928</p>\n"
+    },
+    {
+      "name": "nesim",
+      "html": "<p>\u2242\u0338</p>\n"
+    },
+    {
+      "name": "nexist",
+      "html": "<p>\u2204</p>\n"
+    },
+    {
+      "name": "nexists",
+      "html": "<p>\u2204</p>\n"
+    },
+    {
+      "name": "nfr",
+      "html": "<p>\ud835\udd2b</p>\n"
+    },
+    {
+      "name": "ngE",
+      "html": "<p>\u2267\u0338</p>\n"
+    },
+    {
+      "name": "nge",
+      "html": "<p>\u2271</p>\n"
+    },
+    {
+      "name": "ngeq",
+      "html": "<p>\u2271</p>\n"
+    },
+    {
+      "name": "ngeqq",
+      "html": "<p>\u2267\u0338</p>\n"
+    },
+    {
+      "name": "ngeqslant",
+      "html": "<p>\u2a7e\u0338</p>\n"
+    },
+    {
+      "name": "nges",
+      "html": "<p>\u2a7e\u0338</p>\n"
+    },
+    {
+      "name": "ngsim",
+      "html": "<p>\u2275</p>\n"
+    },
+    {
+      "name": "ngt",
+      "html": "<p>\u226f</p>\n"
+    },
+    {
+      "name": "ngtr",
+      "html": "<p>\u226f</p>\n"
+    },
+    {
+      "name": "nhArr",
+      "html": "<p>\u21ce</p>\n"
+    },
+    {
+      "name": "nharr",
+      "html": "<p>\u21ae</p>\n"
+    },
+    {
+      "name": "nhpar",
+      "html": "<p>\u2af2</p>\n"
+    },
+    {
+      "name": "ni",
+      "html": "<p>\u220b</p>\n"
+    },
+    {
+      "name": "nis",
+      "html": "<p>\u22fc</p>\n"
+    },
+    {
+      "name": "nisd",
+      "html": "<p>\u22fa</p>\n"
+    },
+    {
+      "name": "niv",
+      "html": "<p>\u220b</p>\n"
+    },
+    {
+      "name": "njcy",
+      "html": "<p>\u045a</p>\n"
+    },
+    {
+      "name": "nlArr",
+      "html": "<p>\u21cd</p>\n"
+    },
+    {
+      "name": "nlE",
+      "html": "<p>\u2266\u0338</p>\n"
+    },
+    {
+      "name": "nlarr",
+      "html": "<p>\u219a</p>\n"
+    },
+    {
+      "name": "nldr",
+      "html": "<p>\u2025</p>\n"
+    },
+    {
+      "name": "nle",
+      "html": "<p>\u2270</p>\n"
+    },
+    {
+      "name": "nleftarrow",
+      "html": "<p>\u219a</p>\n"
+    },
+    {
+      "name": "nleftrightarrow",
+      "html": "<p>\u21ae</p>\n"
+    },
+    {
+      "name": "nleq",
+      "html": "<p>\u2270</p>\n"
+    },
+    {
+      "name": "nleqq",
+      "html": "<p>\u2266\u0338</p>\n"
+    },
+    {
+      "name": "nleqslant",
+      "html": "<p>\u2a7d\u0338</p>\n"
+    },
+    {
+      "name": "nles",
+      "html": "<p>\u2a7d\u0338</p>\n"
+    },
+    {
+      "name": "nless",
+      "html": "<p>\u226e</p>\n"
+    },
+    {
+      "name": "nlsim",
+      "html": "<p>\u2274</p>\n"
+    },
+    {
+      "name": "nlt",
+      "html": "<p>\u226e</p>\n"
+    },
+    {
+      "name": "nltri",
+      "html": "<p>\u22ea</p>\n"
+    },
+    {
+      "name": "nltrie",
+      "html": "<p>\u22ec</p>\n"
+    },
+    {
+      "name": "nmid",
+      "html": "<p>\u2224</p>\n"
+    },
+    {
+      "name": "nopf",
+      "html": "<p>\ud835\udd5f</p>\n"
+    },
+    {
+      "name": "not",
+      "html": "<p>\u00ac</p>\n"
+    },
+    {
+      "name": "notin",
+      "html": "<p>\u2209</p>\n"
+    },
+    {
+      "name": "notinE",
+      "html": "<p>\u22f9\u0338</p>\n"
+    },
+    {
+      "name": "notindot",
+      "html": "<p>\u22f5\u0338</p>\n"
+    },
+    {
+      "name": "notinva",
+      "html": "<p>\u2209</p>\n"
+    },
+    {
+      "name": "notinvb",
+      "html": "<p>\u22f7</p>\n"
+    },
+    {
+      "name": "notinvc",
+      "html": "<p>\u22f6</p>\n"
+    },
+    {
+      "name": "notni",
+      "html": "<p>\u220c</p>\n"
+    },
+    {
+      "name": "notniva",
+      "html": "<p>\u220c</p>\n"
+    },
+    {
+      "name": "notnivb",
+      "html": "<p>\u22fe</p>\n"
+    },
+    {
+      "name": "notnivc",
+      "html": "<p>\u22fd</p>\n"
+    },
+    {
+      "name": "npar",
+      "html": "<p>\u2226</p>\n"
+    },
+    {
+      "name": "nparallel",
+      "html": "<p>\u2226</p>\n"
+    },
+    {
+      "name": "nparsl",
+      "html": "<p>\u2afd\u20e5</p>\n"
+    },
+    {
+      "name": "npart",
+      "html": "<p>\u2202\u0338</p>\n"
+    },
+    {
+      "name": "npolint",
+      "html": "<p>\u2a14</p>\n"
+    },
+    {
+      "name": "npr",
+      "html": "<p>\u2280</p>\n"
+    },
+    {
+      "name": "nprcue",
+      "html": "<p>\u22e0</p>\n"
+    },
+    {
+      "name": "npre",
+      "html": "<p>\u2aaf\u0338</p>\n"
+    },
+    {
+      "name": "nprec",
+      "html": "<p>\u2280</p>\n"
+    },
+    {
+      "name": "npreceq",
+      "html": "<p>\u2aaf\u0338</p>\n"
+    },
+    {
+      "name": "nrArr",
+      "html": "<p>\u21cf</p>\n"
+    },
+    {
+      "name": "nrarr",
+      "html": "<p>\u219b</p>\n"
+    },
+    {
+      "name": "nrarrc",
+      "html": "<p>\u2933\u0338</p>\n"
+    },
+    {
+      "name": "nrarrw",
+      "html": "<p>\u219d\u0338</p>\n"
+    },
+    {
+      "name": "nrightarrow",
+      "html": "<p>\u219b</p>\n"
+    },
+    {
+      "name": "nrtri",
+      "html": "<p>\u22eb</p>\n"
+    },
+    {
+      "name": "nrtrie",
+      "html": "<p>\u22ed</p>\n"
+    },
+    {
+      "name": "nsc",
+      "html": "<p>\u2281</p>\n"
+    },
+    {
+      "name": "nsccue",
+      "html": "<p>\u22e1</p>\n"
+    },
+    {
+      "name": "nsce",
+      "html": "<p>\u2ab0\u0338</p>\n"
+    },
+    {
+      "name": "nscr",
+      "html": "<p>\ud835\udcc3</p>\n"
+    },
+    {
+      "name": "nshortmid",
+      "html": "<p>\u2224</p>\n"
+    },
+    {
+      "name": "nshortparallel",
+      "html": "<p>\u2226</p>\n"
+    },
+    {
+      "name": "nsim",
+      "html": "<p>\u2241</p>\n"
+    },
+    {
+      "name": "nsime",
+      "html": "<p>\u2244</p>\n"
+    },
+    {
+      "name": "nsimeq",
+      "html": "<p>\u2244</p>\n"
+    },
+    {
+      "name": "nsmid",
+      "html": "<p>\u2224</p>\n"
+    },
+    {
+      "name": "nspar",
+      "html": "<p>\u2226</p>\n"
+    },
+    {
+      "name": "nsqsube",
+      "html": "<p>\u22e2</p>\n"
+    },
+    {
+      "name": "nsqsupe",
+      "html": "<p>\u22e3</p>\n"
+    },
+    {
+      "name": "nsub",
+      "html": "<p>\u2284</p>\n"
+    },
+    {
+      "name": "nsubE",
+      "html": "<p>\u2ac5\u0338</p>\n"
+    },
+    {
+      "name": "nsube",
+      "html": "<p>\u2288</p>\n"
+    },
+    {
+      "name": "nsubset",
+      "html": "<p>\u2282\u20d2</p>\n"
+    },
+    {
+      "name": "nsubseteq",
+      "html": "<p>\u2288</p>\n"
+    },
+    {
+      "name": "nsubseteqq",
+      "html": "<p>\u2ac5\u0338</p>\n"
+    },
+    {
+      "name": "nsucc",
+      "html": "<p>\u2281</p>\n"
+    },
+    {
+      "name": "nsucceq",
+      "html": "<p>\u2ab0\u0338</p>\n"
+    },
+    {
+      "name": "nsup",
+      "html": "<p>\u2285</p>\n"
+    },
+    {
+      "name": "nsupE",
+      "html": "<p>\u2ac6\u0338</p>\n"
+    },
+    {
+      "name": "nsupe",
+      "html": "<p>\u2289</p>\n"
+    },
+    {
+      "name": "nsupset",
+      "html": "<p>\u2283\u20d2</p>\n"
+    },
+    {
+      "name": "nsupseteq",
+      "html": "<p>\u2289</p>\n"
+    },
+    {
+      "name": "nsupseteqq",
+      "html": "<p>\u2ac6\u0338</p>\n"
+    },
+    {
+      "name": "ntgl",
+      "html": "<p>\u2279</p>\n"
+    },
+    {
+      "name": "ntilde",
+      "html": "<p>\u00f1</p>\n"
+    },
+    {
+      "name": "ntlg",
+      "html": "<p>\u2278</p>\n"
+    },
+    {
+      "name": "ntriangleleft",
+      "html": "<p>\u22ea</p>\n"
+    },
+    {
+      "name": "ntrianglelefteq",
+      "html": "<p>\u22ec</p>\n"
+    },
+    {
+      "name": "ntriangleright",
+      "html": "<p>\u22eb</p>\n"
+    },
+    {
+      "name": "ntrianglerighteq",
+      "html": "<p>\u22ed</p>\n"
+    },
+    {
+      "name": "nu",
+      "html": "<p>\u03bd</p>\n"
+    },
+    {
+      "name": "num",
+      "html": "<p>#</p>\n"
+    },
+    {
+      "name": "numero",
+      "html": "<p>\u2116</p>\n"
+    },
+    {
+      "name": "numsp",
+      "html": "<p>\u2007</p>\n"
+    },
+    {
+      "name": "nvDash",
+      "html": "<p>\u22ad</p>\n"
+    },
+    {
+      "name": "nvHarr",
+      "html": "<p>\u2904</p>\n"
+    },
+    {
+      "name": "nvap",
+      "html": "<p>\u224d\u20d2</p>\n"
+    },
+    {
+      "name": "nvdash",
+      "html": "<p>\u22ac</p>\n"
+    },
+    {
+      "name": "nvge",
+      "html": "<p>\u2265\u20d2</p>\n"
+    },
+    {
+      "name": "nvgt",
+      "html": "<p>&gt;\u20d2</p>\n"
+    },
+    {
+      "name": "nvinfin",
+      "html": "<p>\u29de</p>\n"
+    },
+    {
+      "name": "nvlArr",
+      "html": "<p>\u2902</p>\n"
+    },
+    {
+      "name": "nvle",
+      "html": "<p>\u2264\u20d2</p>\n"
+    },
+    {
+      "name": "nvlt",
+      "html": "<p>&lt;\u20d2</p>\n"
+    },
+    {
+      "name": "nvltrie",
+      "html": "<p>\u22b4\u20d2</p>\n"
+    },
+    {
+      "name": "nvrArr",
+      "html": "<p>\u2903</p>\n"
+    },
+    {
+      "name": "nvrtrie",
+      "html": "<p>\u22b5\u20d2</p>\n"
+    },
+    {
+      "name": "nvsim",
+      "html": "<p>\u223c\u20d2</p>\n"
+    },
+    {
+      "name": "nwArr",
+      "html": "<p>\u21d6</p>\n"
+    },
+    {
+      "name": "nwarhk",
+      "html": "<p>\u2923</p>\n"
+    },
+    {
+      "name": "nwarr",
+      "html": "<p>\u2196</p>\n"
+    },
+    {
+      "name": "nwarrow",
+      "html": "<p>\u2196</p>\n"
+    },
+    {
+      "name": "nwnear",
+      "html": "<p>\u2927</p>\n"
+    },
+    {
+      "name": "oS",
+      "html": "<p>\u24c8</p>\n"
+    },
+    {
+      "name": "oacute",
+      "html": "<p>\u00f3</p>\n"
+    },
+    {
+      "name": "oast",
+      "html": "<p>\u229b</p>\n"
+    },
+    {
+      "name": "ocir",
+      "html": "<p>\u229a</p>\n"
+    },
+    {
+      "name": "ocirc",
+      "html": "<p>\u00f4</p>\n"
+    },
+    {
+      "name": "ocy",
+      "html": "<p>\u043e</p>\n"
+    },
+    {
+      "name": "odash",
+      "html": "<p>\u229d</p>\n"
+    },
+    {
+      "name": "odblac",
+      "html": "<p>\u0151</p>\n"
+    },
+    {
+      "name": "odiv",
+      "html": "<p>\u2a38</p>\n"
+    },
+    {
+      "name": "odot",
+      "html": "<p>\u2299</p>\n"
+    },
+    {
+      "name": "odsold",
+      "html": "<p>\u29bc</p>\n"
+    },
+    {
+      "name": "oelig",
+      "html": "<p>\u0153</p>\n"
+    },
+    {
+      "name": "ofcir",
+      "html": "<p>\u29bf</p>\n"
+    },
+    {
+      "name": "ofr",
+      "html": "<p>\ud835\udd2c</p>\n"
+    },
+    {
+      "name": "ogon",
+      "html": "<p>\u02db</p>\n"
+    },
+    {
+      "name": "ograve",
+      "html": "<p>\u00f2</p>\n"
+    },
+    {
+      "name": "ogt",
+      "html": "<p>\u29c1</p>\n"
+    },
+    {
+      "name": "ohbar",
+      "html": "<p>\u29b5</p>\n"
+    },
+    {
+      "name": "ohm",
+      "html": "<p>\u03a9</p>\n"
+    },
+    {
+      "name": "oint",
+      "html": "<p>\u222e</p>\n"
+    },
+    {
+      "name": "olarr",
+      "html": "<p>\u21ba</p>\n"
+    },
+    {
+      "name": "olcir",
+      "html": "<p>\u29be</p>\n"
+    },
+    {
+      "name": "olcross",
+      "html": "<p>\u29bb</p>\n"
+    },
+    {
+      "name": "oline",
+      "html": "<p>\u203e</p>\n"
+    },
+    {
+      "name": "olt",
+      "html": "<p>\u29c0</p>\n"
+    },
+    {
+      "name": "omacr",
+      "html": "<p>\u014d</p>\n"
+    },
+    {
+      "name": "omega",
+      "html": "<p>\u03c9</p>\n"
+    },
+    {
+      "name": "omicron",
+      "html": "<p>\u03bf</p>\n"
+    },
+    {
+      "name": "omid",
+      "html": "<p>\u29b6</p>\n"
+    },
+    {
+      "name": "ominus",
+      "html": "<p>\u2296</p>\n"
+    },
+    {
+      "name": "oopf",
+      "html": "<p>\ud835\udd60</p>\n"
+    },
+    {
+      "name": "opar",
+      "html": "<p>\u29b7</p>\n"
+    },
+    {
+      "name": "operp",
+      "html": "<p>\u29b9</p>\n"
+    },
+    {
+      "name": "oplus",
+      "html": "<p>\u2295</p>\n"
+    },
+    {
+      "name": "or",
+      "html": "<p>\u2228</p>\n"
+    },
+    {
+      "name": "orarr",
+      "html": "<p>\u21bb</p>\n"
+    },
+    {
+      "name": "ord",
+      "html": "<p>\u2a5d</p>\n"
+    },
+    {
+      "name": "order",
+      "html": "<p>\u2134</p>\n"
+    },
+    {
+      "name": "orderof",
+      "html": "<p>\u2134</p>\n"
+    },
+    {
+      "name": "ordf",
+      "html": "<p>\u00aa</p>\n"
+    },
+    {
+      "name": "ordm",
+      "html": "<p>\u00ba</p>\n"
+    },
+    {
+      "name": "origof",
+      "html": "<p>\u22b6</p>\n"
+    },
+    {
+      "name": "oror",
+      "html": "<p>\u2a56</p>\n"
+    },
+    {
+      "name": "orslope",
+      "html": "<p>\u2a57</p>\n"
+    },
+    {
+      "name": "orv",
+      "html": "<p>\u2a5b</p>\n"
+    },
+    {
+      "name": "oscr",
+      "html": "<p>\u2134</p>\n"
+    },
+    {
+      "name": "oslash",
+      "html": "<p>\u00f8</p>\n"
+    },
+    {
+      "name": "osol",
+      "html": "<p>\u2298</p>\n"
+    },
+    {
+      "name": "otilde",
+      "html": "<p>\u00f5</p>\n"
+    },
+    {
+      "name": "otimes",
+      "html": "<p>\u2297</p>\n"
+    },
+    {
+      "name": "otimesas",
+      "html": "<p>\u2a36</p>\n"
+    },
+    {
+      "name": "ouml",
+      "html": "<p>\u00f6</p>\n"
+    },
+    {
+      "name": "ovbar",
+      "html": "<p>\u233d</p>\n"
+    },
+    {
+      "name": "par",
+      "html": "<p>\u2225</p>\n"
+    },
+    {
+      "name": "para",
+      "html": "<p>\u00b6</p>\n"
+    },
+    {
+      "name": "parallel",
+      "html": "<p>\u2225</p>\n"
+    },
+    {
+      "name": "parsim",
+      "html": "<p>\u2af3</p>\n"
+    },
+    {
+      "name": "parsl",
+      "html": "<p>\u2afd</p>\n"
+    },
+    {
+      "name": "part",
+      "html": "<p>\u2202</p>\n"
+    },
+    {
+      "name": "pcy",
+      "html": "<p>\u043f</p>\n"
+    },
+    {
+      "name": "percnt",
+      "html": "<p>%</p>\n"
+    },
+    {
+      "name": "period",
+      "html": "<p>.</p>\n"
+    },
+    {
+      "name": "permil",
+      "html": "<p>\u2030</p>\n"
+    },
+    {
+      "name": "perp",
+      "html": "<p>\u22a5</p>\n"
+    },
+    {
+      "name": "pertenk",
+      "html": "<p>\u2031</p>\n"
+    },
+    {
+      "name": "pfr",
+      "html": "<p>\ud835\udd2d</p>\n"
+    },
+    {
+      "name": "phi",
+      "html": "<p>\u03c6</p>\n"
+    },
+    {
+      "name": "phiv",
+      "html": "<p>\u03d5</p>\n"
+    },
+    {
+      "name": "phmmat",
+      "html": "<p>\u2133</p>\n"
+    },
+    {
+      "name": "phone",
+      "html": "<p>\u260e</p>\n"
+    },
+    {
+      "name": "pi",
+      "html": "<p>\u03c0</p>\n"
+    },
+    {
+      "name": "pitchfork",
+      "html": "<p>\u22d4</p>\n"
+    },
+    {
+      "name": "piv",
+      "html": "<p>\u03d6</p>\n"
+    },
+    {
+      "name": "planck",
+      "html": "<p>\u210f</p>\n"
+    },
+    {
+      "name": "planckh",
+      "html": "<p>\u210e</p>\n"
+    },
+    {
+      "name": "plankv",
+      "html": "<p>\u210f</p>\n"
+    },
+    {
+      "name": "plus",
+      "html": "<p>+</p>\n"
+    },
+    {
+      "name": "plusacir",
+      "html": "<p>\u2a23</p>\n"
+    },
+    {
+      "name": "plusb",
+      "html": "<p>\u229e</p>\n"
+    },
+    {
+      "name": "pluscir",
+      "html": "<p>\u2a22</p>\n"
+    },
+    {
+      "name": "plusdo",
+      "html": "<p>\u2214</p>\n"
+    },
+    {
+      "name": "plusdu",
+      "html": "<p>\u2a25</p>\n"
+    },
+    {
+      "name": "pluse",
+      "html": "<p>\u2a72</p>\n"
+    },
+    {
+      "name": "plusmn",
+      "html": "<p>\u00b1</p>\n"
+    },
+    {
+      "name": "plussim",
+      "html": "<p>\u2a26</p>\n"
+    },
+    {
+      "name": "plustwo",
+      "html": "<p>\u2a27</p>\n"
+    },
+    {
+      "name": "pm",
+      "html": "<p>\u00b1</p>\n"
+    },
+    {
+      "name": "pointint",
+      "html": "<p>\u2a15</p>\n"
+    },
+    {
+      "name": "popf",
+      "html": "<p>\ud835\udd61</p>\n"
+    },
+    {
+      "name": "pound",
+      "html": "<p>\u00a3</p>\n"
+    },
+    {
+      "name": "pr",
+      "html": "<p>\u227a</p>\n"
+    },
+    {
+      "name": "prE",
+      "html": "<p>\u2ab3</p>\n"
+    },
+    {
+      "name": "prap",
+      "html": "<p>\u2ab7</p>\n"
+    },
+    {
+      "name": "prcue",
+      "html": "<p>\u227c</p>\n"
+    },
+    {
+      "name": "pre",
+      "html": "<p>\u2aaf</p>\n"
+    },
+    {
+      "name": "prec",
+      "html": "<p>\u227a</p>\n"
+    },
+    {
+      "name": "precapprox",
+      "html": "<p>\u2ab7</p>\n"
+    },
+    {
+      "name": "preccurlyeq",
+      "html": "<p>\u227c</p>\n"
+    },
+    {
+      "name": "preceq",
+      "html": "<p>\u2aaf</p>\n"
+    },
+    {
+      "name": "precnapprox",
+      "html": "<p>\u2ab9</p>\n"
+    },
+    {
+      "name": "precneqq",
+      "html": "<p>\u2ab5</p>\n"
+    },
+    {
+      "name": "precnsim",
+      "html": "<p>\u22e8</p>\n"
+    },
+    {
+      "name": "precsim",
+      "html": "<p>\u227e</p>\n"
+    },
+    {
+      "name": "prime",
+      "html": "<p>\u2032</p>\n"
+    },
+    {
+      "name": "primes",
+      "html": "<p>\u2119</p>\n"
+    },
+    {
+      "name": "prnE",
+      "html": "<p>\u2ab5</p>\n"
+    },
+    {
+      "name": "prnap",
+      "html": "<p>\u2ab9</p>\n"
+    },
+    {
+      "name": "prnsim",
+      "html": "<p>\u22e8</p>\n"
+    },
+    {
+      "name": "prod",
+      "html": "<p>\u220f</p>\n"
+    },
+    {
+      "name": "profalar",
+      "html": "<p>\u232e</p>\n"
+    },
+    {
+      "name": "profline",
+      "html": "<p>\u2312</p>\n"
+    },
+    {
+      "name": "profsurf",
+      "html": "<p>\u2313</p>\n"
+    },
+    {
+      "name": "prop",
+      "html": "<p>\u221d</p>\n"
+    },
+    {
+      "name": "propto",
+      "html": "<p>\u221d</p>\n"
+    },
+    {
+      "name": "prsim",
+      "html": "<p>\u227e</p>\n"
+    },
+    {
+      "name": "prurel",
+      "html": "<p>\u22b0</p>\n"
+    },
+    {
+      "name": "pscr",
+      "html": "<p>\ud835\udcc5</p>\n"
+    },
+    {
+      "name": "psi",
+      "html": "<p>\u03c8</p>\n"
+    },
+    {
+      "name": "puncsp",
+      "html": "<p>\u2008</p>\n"
+    },
+    {
+      "name": "qfr",
+      "html": "<p>\ud835\udd2e</p>\n"
+    },
+    {
+      "name": "qint",
+      "html": "<p>\u2a0c</p>\n"
+    },
+    {
+      "name": "qopf",
+      "html": "<p>\ud835\udd62</p>\n"
+    },
+    {
+      "name": "qprime",
+      "html": "<p>\u2057</p>\n"
+    },
+    {
+      "name": "qscr",
+      "html": "<p>\ud835\udcc6</p>\n"
+    },
+    {
+      "name": "quaternions",
+      "html": "<p>\u210d</p>\n"
+    },
+    {
+      "name": "quatint",
+      "html": "<p>\u2a16</p>\n"
+    },
+    {
+      "name": "quest",
+      "html": "<p>?</p>\n"
+    },
+    {
+      "name": "questeq",
+      "html": "<p>\u225f</p>\n"
+    },
+    {
+      "name": "quot",
+      "html": "<p>&quot;</p>\n"
+    },
+    {
+      "name": "rAarr",
+      "html": "<p>\u21db</p>\n"
+    },
+    {
+      "name": "rArr",
+      "html": "<p>\u21d2</p>\n"
+    },
+    {
+      "name": "rAtail",
+      "html": "<p>\u291c</p>\n"
+    },
+    {
+      "name": "rBarr",
+      "html": "<p>\u290f</p>\n"
+    },
+    {
+      "name": "rHar",
+      "html": "<p>\u2964</p>\n"
+    },
+    {
+      "name": "race",
+      "html": "<p>\u223d\u0331</p>\n"
+    },
+    {
+      "name": "racute",
+      "html": "<p>\u0155</p>\n"
+    },
+    {
+      "name": "radic",
+      "html": "<p>\u221a</p>\n"
+    },
+    {
+      "name": "raemptyv",
+      "html": "<p>\u29b3</p>\n"
+    },
+    {
+      "name": "rang",
+      "html": "<p>\u27e9</p>\n"
+    },
+    {
+      "name": "rangd",
+      "html": "<p>\u2992</p>\n"
+    },
+    {
+      "name": "range",
+      "html": "<p>\u29a5</p>\n"
+    },
+    {
+      "name": "rangle",
+      "html": "<p>\u27e9</p>\n"
+    },
+    {
+      "name": "raquo",
+      "html": "<p>\u00bb</p>\n"
+    },
+    {
+      "name": "rarr",
+      "html": "<p>\u2192</p>\n"
+    },
+    {
+      "name": "rarrap",
+      "html": "<p>\u2975</p>\n"
+    },
+    {
+      "name": "rarrb",
+      "html": "<p>\u21e5</p>\n"
+    },
+    {
+      "name": "rarrbfs",
+      "html": "<p>\u2920</p>\n"
+    },
+    {
+      "name": "rarrc",
+      "html": "<p>\u2933</p>\n"
+    },
+    {
+      "name": "rarrfs",
+      "html": "<p>\u291e</p>\n"
+    },
+    {
+      "name": "rarrhk",
+      "html": "<p>\u21aa</p>\n"
+    },
+    {
+      "name": "rarrlp",
+      "html": "<p>\u21ac</p>\n"
+    },
+    {
+      "name": "rarrpl",
+      "html": "<p>\u2945</p>\n"
+    },
+    {
+      "name": "rarrsim",
+      "html": "<p>\u2974</p>\n"
+    },
+    {
+      "name": "rarrtl",
+      "html": "<p>\u21a3</p>\n"
+    },
+    {
+      "name": "rarrw",
+      "html": "<p>\u219d</p>\n"
+    },
+    {
+      "name": "ratail",
+      "html": "<p>\u291a</p>\n"
+    },
+    {
+      "name": "ratio",
+      "html": "<p>\u2236</p>\n"
+    },
+    {
+      "name": "rationals",
+      "html": "<p>\u211a</p>\n"
+    },
+    {
+      "name": "rbarr",
+      "html": "<p>\u290d</p>\n"
+    },
+    {
+      "name": "rbbrk",
+      "html": "<p>\u2773</p>\n"
+    },
+    {
+      "name": "rbrace",
+      "html": "<p>}</p>\n"
+    },
+    {
+      "name": "rbrack",
+      "html": "<p>]</p>\n"
+    },
+    {
+      "name": "rbrke",
+      "html": "<p>\u298c</p>\n"
+    },
+    {
+      "name": "rbrksld",
+      "html": "<p>\u298e</p>\n"
+    },
+    {
+      "name": "rbrkslu",
+      "html": "<p>\u2990</p>\n"
+    },
+    {
+      "name": "rcaron",
+      "html": "<p>\u0159</p>\n"
+    },
+    {
+      "name": "rcedil",
+      "html": "<p>\u0157</p>\n"
+    },
+    {
+      "name": "rceil",
+      "html": "<p>\u2309</p>\n"
+    },
+    {
+      "name": "rcub",
+      "html": "<p>}</p>\n"
+    },
+    {
+      "name": "rcy",
+      "html": "<p>\u0440</p>\n"
+    },
+    {
+      "name": "rdca",
+      "html": "<p>\u2937</p>\n"
+    },
+    {
+      "name": "rdldhar",
+      "html": "<p>\u2969</p>\n"
+    },
+    {
+      "name": "rdquo",
+      "html": "<p>\u201d</p>\n"
+    },
+    {
+      "name": "rdquor",
+      "html": "<p>\u201d</p>\n"
+    },
+    {
+      "name": "rdsh",
+      "html": "<p>\u21b3</p>\n"
+    },
+    {
+      "name": "real",
+      "html": "<p>\u211c</p>\n"
+    },
+    {
+      "name": "realine",
+      "html": "<p>\u211b</p>\n"
+    },
+    {
+      "name": "realpart",
+      "html": "<p>\u211c</p>\n"
+    },
+    {
+      "name": "reals",
+      "html": "<p>\u211d</p>\n"
+    },
+    {
+      "name": "rect",
+      "html": "<p>\u25ad</p>\n"
+    },
+    {
+      "name": "reg",
+      "html": "<p>\u00ae</p>\n"
+    },
+    {
+      "name": "rfisht",
+      "html": "<p>\u297d</p>\n"
+    },
+    {
+      "name": "rfloor",
+      "html": "<p>\u230b</p>\n"
+    },
+    {
+      "name": "rfr",
+      "html": "<p>\ud835\udd2f</p>\n"
+    },
+    {
+      "name": "rhard",
+      "html": "<p>\u21c1</p>\n"
+    },
+    {
+      "name": "rharu",
+      "html": "<p>\u21c0</p>\n"
+    },
+    {
+      "name": "rharul",
+      "html": "<p>\u296c</p>\n"
+    },
+    {
+      "name": "rho",
+      "html": "<p>\u03c1</p>\n"
+    },
+    {
+      "name": "rhov",
+      "html": "<p>\u03f1</p>\n"
+    },
+    {
+      "name": "rightarrow",
+      "html": "<p>\u2192</p>\n"
+    },
+    {
+      "name": "rightarrowtail",
+      "html": "<p>\u21a3</p>\n"
+    },
+    {
+      "name": "rightharpoondown",
+      "html": "<p>\u21c1</p>\n"
+    },
+    {
+      "name": "rightharpoonup",
+      "html": "<p>\u21c0</p>\n"
+    },
+    {
+      "name": "rightleftarrows",
+      "html": "<p>\u21c4</p>\n"
+    },
+    {
+      "name": "rightleftharpoons",
+      "html": "<p>\u21cc</p>\n"
+    },
+    {
+      "name": "rightrightarrows",
+      "html": "<p>\u21c9</p>\n"
+    },
+    {
+      "name": "rightsquigarrow",
+      "html": "<p>\u219d</p>\n"
+    },
+    {
+      "name": "rightthreetimes",
+      "html": "<p>\u22cc</p>\n"
+    },
+    {
+      "name": "ring",
+      "html": "<p>\u02da</p>\n"
+    },
+    {
+      "name": "risingdotseq",
+      "html": "<p>\u2253</p>\n"
+    },
+    {
+      "name": "rlarr",
+      "html": "<p>\u21c4</p>\n"
+    },
+    {
+      "name": "rlhar",
+      "html": "<p>\u21cc</p>\n"
+    },
+    {
+      "name": "rlm",
+      "html": "<p>\u200f</p>\n"
+    },
+    {
+      "name": "rmoust",
+      "html": "<p>\u23b1</p>\n"
+    },
+    {
+      "name": "rmoustache",
+      "html": "<p>\u23b1</p>\n"
+    },
+    {
+      "name": "rnmid",
+      "html": "<p>\u2aee</p>\n"
+    },
+    {
+      "name": "roang",
+      "html": "<p>\u27ed</p>\n"
+    },
+    {
+      "name": "roarr",
+      "html": "<p>\u21fe</p>\n"
+    },
+    {
+      "name": "robrk",
+      "html": "<p>\u27e7</p>\n"
+    },
+    {
+      "name": "ropar",
+      "html": "<p>\u2986</p>\n"
+    },
+    {
+      "name": "ropf",
+      "html": "<p>\ud835\udd63</p>\n"
+    },
+    {
+      "name": "roplus",
+      "html": "<p>\u2a2e</p>\n"
+    },
+    {
+      "name": "rotimes",
+      "html": "<p>\u2a35</p>\n"
+    },
+    {
+      "name": "rpar",
+      "html": "<p>)</p>\n"
+    },
+    {
+      "name": "rpargt",
+      "html": "<p>\u2994</p>\n"
+    },
+    {
+      "name": "rppolint",
+      "html": "<p>\u2a12</p>\n"
+    },
+    {
+      "name": "rrarr",
+      "html": "<p>\u21c9</p>\n"
+    },
+    {
+      "name": "rsaquo",
+      "html": "<p>\u203a</p>\n"
+    },
+    {
+      "name": "rscr",
+      "html": "<p>\ud835\udcc7</p>\n"
+    },
+    {
+      "name": "rsh",
+      "html": "<p>\u21b1</p>\n"
+    },
+    {
+      "name": "rsqb",
+      "html": "<p>]</p>\n"
+    },
+    {
+      "name": "rsquo",
+      "html": "<p>\u2019</p>\n"
+    },
+    {
+      "name": "rsquor",
+      "html": "<p>\u2019</p>\n"
+    },
+    {
+      "name": "rthree",
+      "html": "<p>\u22cc</p>\n"
+    },
+    {
+      "name": "rtimes",
+      "html": "<p>\u22ca</p>\n"
+    },
+    {
+      "name": "rtri",
+      "html": "<p>\u25b9</p>\n"
+    },
+    {
+      "name": "rtrie",
+      "html": "<p>\u22b5</p>\n"
+    },
+    {
+      "name": "rtrif",
+      "html": "<p>\u25b8</p>\n"
+    },
+    {
+      "name": "rtriltri",
+      "html": "<p>\u29ce</p>\n"
+    },
+    {
+      "name": "ruluhar",
+      "html": "<p>\u2968</p>\n"
+    },
+    {
+      "name": "rx",
+      "html": "<p>\u211e</p>\n"
+    },
+    {
+      "name": "sacute",
+      "html": "<p>\u015b</p>\n"
+    },
+    {
+      "name": "sbquo",
+      "html": "<p>\u201a</p>\n"
+    },
+    {
+      "name": "sc",
+      "html": "<p>\u227b</p>\n"
+    },
+    {
+      "name": "scE",
+      "html": "<p>\u2ab4</p>\n"
+    },
+    {
+      "name": "scap",
+      "html": "<p>\u2ab8</p>\n"
+    },
+    {
+      "name": "scaron",
+      "html": "<p>\u0161</p>\n"
+    },
+    {
+      "name": "sccue",
+      "html": "<p>\u227d</p>\n"
+    },
+    {
+      "name": "sce",
+      "html": "<p>\u2ab0</p>\n"
+    },
+    {
+      "name": "scedil",
+      "html": "<p>\u015f</p>\n"
+    },
+    {
+      "name": "scirc",
+      "html": "<p>\u015d</p>\n"
+    },
+    {
+      "name": "scnE",
+      "html": "<p>\u2ab6</p>\n"
+    },
+    {
+      "name": "scnap",
+      "html": "<p>\u2aba</p>\n"
+    },
+    {
+      "name": "scnsim",
+      "html": "<p>\u22e9</p>\n"
+    },
+    {
+      "name": "scpolint",
+      "html": "<p>\u2a13</p>\n"
+    },
+    {
+      "name": "scsim",
+      "html": "<p>\u227f</p>\n"
+    },
+    {
+      "name": "scy",
+      "html": "<p>\u0441</p>\n"
+    },
+    {
+      "name": "sdot",
+      "html": "<p>\u22c5</p>\n"
+    },
+    {
+      "name": "sdotb",
+      "html": "<p>\u22a1</p>\n"
+    },
+    {
+      "name": "sdote",
+      "html": "<p>\u2a66</p>\n"
+    },
+    {
+      "name": "seArr",
+      "html": "<p>\u21d8</p>\n"
+    },
+    {
+      "name": "searhk",
+      "html": "<p>\u2925</p>\n"
+    },
+    {
+      "name": "searr",
+      "html": "<p>\u2198</p>\n"
+    },
+    {
+      "name": "searrow",
+      "html": "<p>\u2198</p>\n"
+    },
+    {
+      "name": "sect",
+      "html": "<p>\u00a7</p>\n"
+    },
+    {
+      "name": "semi",
+      "html": "<p>;</p>\n"
+    },
+    {
+      "name": "seswar",
+      "html": "<p>\u2929</p>\n"
+    },
+    {
+      "name": "setminus",
+      "html": "<p>\u2216</p>\n"
+    },
+    {
+      "name": "setmn",
+      "html": "<p>\u2216</p>\n"
+    },
+    {
+      "name": "sext",
+      "html": "<p>\u2736</p>\n"
+    },
+    {
+      "name": "sfr",
+      "html": "<p>\ud835\udd30</p>\n"
+    },
+    {
+      "name": "sfrown",
+      "html": "<p>\u2322</p>\n"
+    },
+    {
+      "name": "sharp",
+      "html": "<p>\u266f</p>\n"
+    },
+    {
+      "name": "shchcy",
+      "html": "<p>\u0449</p>\n"
+    },
+    {
+      "name": "shcy",
+      "html": "<p>\u0448</p>\n"
+    },
+    {
+      "name": "shortmid",
+      "html": "<p>\u2223</p>\n"
+    },
+    {
+      "name": "shortparallel",
+      "html": "<p>\u2225</p>\n"
+    },
+    {
+      "name": "shy",
+      "html": "<p>\u00ad</p>\n"
+    },
+    {
+      "name": "sigma",
+      "html": "<p>\u03c3</p>\n"
+    },
+    {
+      "name": "sigmaf",
+      "html": "<p>\u03c2</p>\n"
+    },
+    {
+      "name": "sigmav",
+      "html": "<p>\u03c2</p>\n"
+    },
+    {
+      "name": "sim",
+      "html": "<p>\u223c</p>\n"
+    },
+    {
+      "name": "simdot",
+      "html": "<p>\u2a6a</p>\n"
+    },
+    {
+      "name": "sime",
+      "html": "<p>\u2243</p>\n"
+    },
+    {
+      "name": "simeq",
+      "html": "<p>\u2243</p>\n"
+    },
+    {
+      "name": "simg",
+      "html": "<p>\u2a9e</p>\n"
+    },
+    {
+      "name": "simgE",
+      "html": "<p>\u2aa0</p>\n"
+    },
+    {
+      "name": "siml",
+      "html": "<p>\u2a9d</p>\n"
+    },
+    {
+      "name": "simlE",
+      "html": "<p>\u2a9f</p>\n"
+    },
+    {
+      "name": "simne",
+      "html": "<p>\u2246</p>\n"
+    },
+    {
+      "name": "simplus",
+      "html": "<p>\u2a24</p>\n"
+    },
+    {
+      "name": "simrarr",
+      "html": "<p>\u2972</p>\n"
+    },
+    {
+      "name": "slarr",
+      "html": "<p>\u2190</p>\n"
+    },
+    {
+      "name": "smallsetminus",
+      "html": "<p>\u2216</p>\n"
+    },
+    {
+      "name": "smashp",
+      "html": "<p>\u2a33</p>\n"
+    },
+    {
+      "name": "smeparsl",
+      "html": "<p>\u29e4</p>\n"
+    },
+    {
+      "name": "smid",
+      "html": "<p>\u2223</p>\n"
+    },
+    {
+      "name": "smile",
+      "html": "<p>\u2323</p>\n"
+    },
+    {
+      "name": "smt",
+      "html": "<p>\u2aaa</p>\n"
+    },
+    {
+      "name": "smte",
+      "html": "<p>\u2aac</p>\n"
+    },
+    {
+      "name": "smtes",
+      "html": "<p>\u2aac\ufe00</p>\n"
+    },
+    {
+      "name": "softcy",
+      "html": "<p>\u044c</p>\n"
+    },
+    {
+      "name": "sol",
+      "html": "<p>/</p>\n"
+    },
+    {
+      "name": "solb",
+      "html": "<p>\u29c4</p>\n"
+    },
+    {
+      "name": "solbar",
+      "html": "<p>\u233f</p>\n"
+    },
+    {
+      "name": "sopf",
+      "html": "<p>\ud835\udd64</p>\n"
+    },
+    {
+      "name": "spades",
+      "html": "<p>\u2660</p>\n"
+    },
+    {
+      "name": "spadesuit",
+      "html": "<p>\u2660</p>\n"
+    },
+    {
+      "name": "spar",
+      "html": "<p>\u2225</p>\n"
+    },
+    {
+      "name": "sqcap",
+      "html": "<p>\u2293</p>\n"
+    },
+    {
+      "name": "sqcaps",
+      "html": "<p>\u2293\ufe00</p>\n"
+    },
+    {
+      "name": "sqcup",
+      "html": "<p>\u2294</p>\n"
+    },
+    {
+      "name": "sqcups",
+      "html": "<p>\u2294\ufe00</p>\n"
+    },
+    {
+      "name": "sqsub",
+      "html": "<p>\u228f</p>\n"
+    },
+    {
+      "name": "sqsube",
+      "html": "<p>\u2291</p>\n"
+    },
+    {
+      "name": "sqsubset",
+      "html": "<p>\u228f</p>\n"
+    },
+    {
+      "name": "sqsubseteq",
+      "html": "<p>\u2291</p>\n"
+    },
+    {
+      "name": "sqsup",
+      "html": "<p>\u2290</p>\n"
+    },
+    {
+      "name": "sqsupe",
+      "html": "<p>\u2292</p>\n"
+    },
+    {
+      "name": "sqsupset",
+      "html": "<p>\u2290</p>\n"
+    },
+    {
+      "name": "sqsupseteq",
+      "html": "<p>\u2292</p>\n"
+    },
+    {
+      "name": "squ",
+      "html": "<p>\u25a1</p>\n"
+    },
+    {
+      "name": "square",
+      "html": "<p>\u25a1</p>\n"
+    },
+    {
+      "name": "squarf",
+      "html": "<p>\u25aa</p>\n"
+    },
+    {
+      "name": "squf",
+      "html": "<p>\u25aa</p>\n"
+    },
+    {
+      "name": "srarr",
+      "html": "<p>\u2192</p>\n"
+    },
+    {
+      "name": "sscr",
+      "html": "<p>\ud835\udcc8</p>\n"
+    },
+    {
+      "name": "ssetmn",
+      "html": "<p>\u2216</p>\n"
+    },
+    {
+      "name": "ssmile",
+      "html": "<p>\u2323</p>\n"
+    },
+    {
+      "name": "sstarf",
+      "html": "<p>\u22c6</p>\n"
+    },
+    {
+      "name": "star",
+      "html": "<p>\u2606</p>\n"
+    },
+    {
+      "name": "starf",
+      "html": "<p>\u2605</p>\n"
+    },
+    {
+      "name": "straightepsilon",
+      "html": "<p>\u03f5</p>\n"
+    },
+    {
+      "name": "straightphi",
+      "html": "<p>\u03d5</p>\n"
+    },
+    {
+      "name": "strns",
+      "html": "<p>\u00af</p>\n"
+    },
+    {
+      "name": "sub",
+      "html": "<p>\u2282</p>\n"
+    },
+    {
+      "name": "subE",
+      "html": "<p>\u2ac5</p>\n"
+    },
+    {
+      "name": "subdot",
+      "html": "<p>\u2abd</p>\n"
+    },
+    {
+      "name": "sube",
+      "html": "<p>\u2286</p>\n"
+    },
+    {
+      "name": "subedot",
+      "html": "<p>\u2ac3</p>\n"
+    },
+    {
+      "name": "submult",
+      "html": "<p>\u2ac1</p>\n"
+    },
+    {
+      "name": "subnE",
+      "html": "<p>\u2acb</p>\n"
+    },
+    {
+      "name": "subne",
+      "html": "<p>\u228a</p>\n"
+    },
+    {
+      "name": "subplus",
+      "html": "<p>\u2abf</p>\n"
+    },
+    {
+      "name": "subrarr",
+      "html": "<p>\u2979</p>\n"
+    },
+    {
+      "name": "subset",
+      "html": "<p>\u2282</p>\n"
+    },
+    {
+      "name": "subseteq",
+      "html": "<p>\u2286</p>\n"
+    },
+    {
+      "name": "subseteqq",
+      "html": "<p>\u2ac5</p>\n"
+    },
+    {
+      "name": "subsetneq",
+      "html": "<p>\u228a</p>\n"
+    },
+    {
+      "name": "subsetneqq",
+      "html": "<p>\u2acb</p>\n"
+    },
+    {
+      "name": "subsim",
+      "html": "<p>\u2ac7</p>\n"
+    },
+    {
+      "name": "subsub",
+      "html": "<p>\u2ad5</p>\n"
+    },
+    {
+      "name": "subsup",
+      "html": "<p>\u2ad3</p>\n"
+    },
+    {
+      "name": "succ",
+      "html": "<p>\u227b</p>\n"
+    },
+    {
+      "name": "succapprox",
+      "html": "<p>\u2ab8</p>\n"
+    },
+    {
+      "name": "succcurlyeq",
+      "html": "<p>\u227d</p>\n"
+    },
+    {
+      "name": "succeq",
+      "html": "<p>\u2ab0</p>\n"
+    },
+    {
+      "name": "succnapprox",
+      "html": "<p>\u2aba</p>\n"
+    },
+    {
+      "name": "succneqq",
+      "html": "<p>\u2ab6</p>\n"
+    },
+    {
+      "name": "succnsim",
+      "html": "<p>\u22e9</p>\n"
+    },
+    {
+      "name": "succsim",
+      "html": "<p>\u227f</p>\n"
+    },
+    {
+      "name": "sum",
+      "html": "<p>\u2211</p>\n"
+    },
+    {
+      "name": "sung",
+      "html": "<p>\u266a</p>\n"
+    },
+    {
+      "name": "sup",
+      "html": "<p>\u2283</p>\n"
+    },
+    {
+      "name": "sup1",
+      "html": "<p>\u00b9</p>\n"
+    },
+    {
+      "name": "sup2",
+      "html": "<p>\u00b2</p>\n"
+    },
+    {
+      "name": "sup3",
+      "html": "<p>\u00b3</p>\n"
+    },
+    {
+      "name": "supE",
+      "html": "<p>\u2ac6</p>\n"
+    },
+    {
+      "name": "supdot",
+      "html": "<p>\u2abe</p>\n"
+    },
+    {
+      "name": "supdsub",
+      "html": "<p>\u2ad8</p>\n"
+    },
+    {
+      "name": "supe",
+      "html": "<p>\u2287</p>\n"
+    },
+    {
+      "name": "supedot",
+      "html": "<p>\u2ac4</p>\n"
+    },
+    {
+      "name": "suphsol",
+      "html": "<p>\u27c9</p>\n"
+    },
+    {
+      "name": "suphsub",
+      "html": "<p>\u2ad7</p>\n"
+    },
+    {
+      "name": "suplarr",
+      "html": "<p>\u297b</p>\n"
+    },
+    {
+      "name": "supmult",
+      "html": "<p>\u2ac2</p>\n"
+    },
+    {
+      "name": "supnE",
+      "html": "<p>\u2acc</p>\n"
+    },
+    {
+      "name": "supne",
+      "html": "<p>\u228b</p>\n"
+    },
+    {
+      "name": "supplus",
+      "html": "<p>\u2ac0</p>\n"
+    },
+    {
+      "name": "supset",
+      "html": "<p>\u2283</p>\n"
+    },
+    {
+      "name": "supseteq",
+      "html": "<p>\u2287</p>\n"
+    },
+    {
+      "name": "supseteqq",
+      "html": "<p>\u2ac6</p>\n"
+    },
+    {
+      "name": "supsetneq",
+      "html": "<p>\u228b</p>\n"
+    },
+    {
+      "name": "supsetneqq",
+      "html": "<p>\u2acc</p>\n"
+    },
+    {
+      "name": "supsim",
+      "html": "<p>\u2ac8</p>\n"
+    },
+    {
+      "name": "supsub",
+      "html": "<p>\u2ad4</p>\n"
+    },
+    {
+      "name": "supsup",
+      "html": "<p>\u2ad6</p>\n"
+    },
+    {
+      "name": "swArr",
+      "html": "<p>\u21d9</p>\n"
+    },
+    {
+      "name": "swarhk",
+      "html": "<p>\u2926</p>\n"
+    },
+    {
+      "name": "swarr",
+      "html": "<p>\u2199</p>\n"
+    },
+    {
+      "name": "swarrow",
+      "html": "<p>\u2199</p>\n"
+    },
+    {
+      "name": "swnwar",
+      "html": "<p>\u292a</p>\n"
+    },
+    {
+      "name": "szlig",
+      "html": "<p>\u00df</p>\n"
+    },
+    {
+      "name": "target",
+      "html": "<p>\u2316</p>\n"
+    },
+    {
+      "name": "tau",
+      "html": "<p>\u03c4</p>\n"
+    },
+    {
+      "name": "tbrk",
+      "html": "<p>\u23b4</p>\n"
+    },
+    {
+      "name": "tcaron",
+      "html": "<p>\u0165</p>\n"
+    },
+    {
+      "name": "tcedil",
+      "html": "<p>\u0163</p>\n"
+    },
+    {
+      "name": "tcy",
+      "html": "<p>\u0442</p>\n"
+    },
+    {
+      "name": "tdot",
+      "html": "<p>\u20db</p>\n"
+    },
+    {
+      "name": "telrec",
+      "html": "<p>\u2315</p>\n"
+    },
+    {
+      "name": "tfr",
+      "html": "<p>\ud835\udd31</p>\n"
+    },
+    {
+      "name": "there4",
+      "html": "<p>\u2234</p>\n"
+    },
+    {
+      "name": "therefore",
+      "html": "<p>\u2234</p>\n"
+    },
+    {
+      "name": "theta",
+      "html": "<p>\u03b8</p>\n"
+    },
+    {
+      "name": "thetasym",
+      "html": "<p>\u03d1</p>\n"
+    },
+    {
+      "name": "thetav",
+      "html": "<p>\u03d1</p>\n"
+    },
+    {
+      "name": "thickapprox",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "thicksim",
+      "html": "<p>\u223c</p>\n"
+    },
+    {
+      "name": "thinsp",
+      "html": "<p>\u2009</p>\n"
+    },
+    {
+      "name": "thkap",
+      "html": "<p>\u2248</p>\n"
+    },
+    {
+      "name": "thksim",
+      "html": "<p>\u223c</p>\n"
+    },
+    {
+      "name": "thorn",
+      "html": "<p>\u00fe</p>\n"
+    },
+    {
+      "name": "tilde",
+      "html": "<p>\u02dc</p>\n"
+    },
+    {
+      "name": "times",
+      "html": "<p>\u00d7</p>\n"
+    },
+    {
+      "name": "timesb",
+      "html": "<p>\u22a0</p>\n"
+    },
+    {
+      "name": "timesbar",
+      "html": "<p>\u2a31</p>\n"
+    },
+    {
+      "name": "timesd",
+      "html": "<p>\u2a30</p>\n"
+    },
+    {
+      "name": "tint",
+      "html": "<p>\u222d</p>\n"
+    },
+    {
+      "name": "toea",
+      "html": "<p>\u2928</p>\n"
+    },
+    {
+      "name": "top",
+      "html": "<p>\u22a4</p>\n"
+    },
+    {
+      "name": "topbot",
+      "html": "<p>\u2336</p>\n"
+    },
+    {
+      "name": "topcir",
+      "html": "<p>\u2af1</p>\n"
+    },
+    {
+      "name": "topf",
+      "html": "<p>\ud835\udd65</p>\n"
+    },
+    {
+      "name": "topfork",
+      "html": "<p>\u2ada</p>\n"
+    },
+    {
+      "name": "tosa",
+      "html": "<p>\u2929</p>\n"
+    },
+    {
+      "name": "tprime",
+      "html": "<p>\u2034</p>\n"
+    },
+    {
+      "name": "trade",
+      "html": "<p>\u2122</p>\n"
+    },
+    {
+      "name": "triangle",
+      "html": "<p>\u25b5</p>\n"
+    },
+    {
+      "name": "triangledown",
+      "html": "<p>\u25bf</p>\n"
+    },
+    {
+      "name": "triangleleft",
+      "html": "<p>\u25c3</p>\n"
+    },
+    {
+      "name": "trianglelefteq",
+      "html": "<p>\u22b4</p>\n"
+    },
+    {
+      "name": "triangleq",
+      "html": "<p>\u225c</p>\n"
+    },
+    {
+      "name": "triangleright",
+      "html": "<p>\u25b9</p>\n"
+    },
+    {
+      "name": "trianglerighteq",
+      "html": "<p>\u22b5</p>\n"
+    },
+    {
+      "name": "tridot",
+      "html": "<p>\u25ec</p>\n"
+    },
+    {
+      "name": "trie",
+      "html": "<p>\u225c</p>\n"
+    },
+    {
+      "name": "triminus",
+      "html": "<p>\u2a3a</p>\n"
+    },
+    {
+      "name": "triplus",
+      "html": "<p>\u2a39</p>\n"
+    },
+    {
+      "name": "trisb",
+      "html": "<p>\u29cd</p>\n"
+    },
+    {
+      "name": "tritime",
+      "html": "<p>\u2a3b</p>\n"
+    },
+    {
+      "name": "trpezium",
+      "html": "<p>\u23e2</p>\n"
+    },
+    {
+      "name": "tscr",
+      "html": "<p>\ud835\udcc9</p>\n"
+    },
+    {
+      "name": "tscy",
+      "html": "<p>\u0446</p>\n"
+    },
+    {
+      "name": "tshcy",
+      "html": "<p>\u045b</p>\n"
+    },
+    {
+      "name": "tstrok",
+      "html": "<p>\u0167</p>\n"
+    },
+    {
+      "name": "twixt",
+      "html": "<p>\u226c</p>\n"
+    },
+    {
+      "name": "twoheadleftarrow",
+      "html": "<p>\u219e</p>\n"
+    },
+    {
+      "name": "twoheadrightarrow",
+      "html": "<p>\u21a0</p>\n"
+    },
+    {
+      "name": "uArr",
+      "html": "<p>\u21d1</p>\n"
+    },
+    {
+      "name": "uHar",
+      "html": "<p>\u2963</p>\n"
+    },
+    {
+      "name": "uacute",
+      "html": "<p>\u00fa</p>\n"
+    },
+    {
+      "name": "uarr",
+      "html": "<p>\u2191</p>\n"
+    },
+    {
+      "name": "ubrcy",
+      "html": "<p>\u045e</p>\n"
+    },
+    {
+      "name": "ubreve",
+      "html": "<p>\u016d</p>\n"
+    },
+    {
+      "name": "ucirc",
+      "html": "<p>\u00fb</p>\n"
+    },
+    {
+      "name": "ucy",
+      "html": "<p>\u0443</p>\n"
+    },
+    {
+      "name": "udarr",
+      "html": "<p>\u21c5</p>\n"
+    },
+    {
+      "name": "udblac",
+      "html": "<p>\u0171</p>\n"
+    },
+    {
+      "name": "udhar",
+      "html": "<p>\u296e</p>\n"
+    },
+    {
+      "name": "ufisht",
+      "html": "<p>\u297e</p>\n"
+    },
+    {
+      "name": "ufr",
+      "html": "<p>\ud835\udd32</p>\n"
+    },
+    {
+      "name": "ugrave",
+      "html": "<p>\u00f9</p>\n"
+    },
+    {
+      "name": "uharl",
+      "html": "<p>\u21bf</p>\n"
+    },
+    {
+      "name": "uharr",
+      "html": "<p>\u21be</p>\n"
+    },
+    {
+      "name": "uhblk",
+      "html": "<p>\u2580</p>\n"
+    },
+    {
+      "name": "ulcorn",
+      "html": "<p>\u231c</p>\n"
+    },
+    {
+      "name": "ulcorner",
+      "html": "<p>\u231c</p>\n"
+    },
+    {
+      "name": "ulcrop",
+      "html": "<p>\u230f</p>\n"
+    },
+    {
+      "name": "ultri",
+      "html": "<p>\u25f8</p>\n"
+    },
+    {
+      "name": "umacr",
+      "html": "<p>\u016b</p>\n"
+    },
+    {
+      "name": "uml",
+      "html": "<p>\u00a8</p>\n"
+    },
+    {
+      "name": "uogon",
+      "html": "<p>\u0173</p>\n"
+    },
+    {
+      "name": "uopf",
+      "html": "<p>\ud835\udd66</p>\n"
+    },
+    {
+      "name": "uparrow",
+      "html": "<p>\u2191</p>\n"
+    },
+    {
+      "name": "updownarrow",
+      "html": "<p>\u2195</p>\n"
+    },
+    {
+      "name": "upharpoonleft",
+      "html": "<p>\u21bf</p>\n"
+    },
+    {
+      "name": "upharpoonright",
+      "html": "<p>\u21be</p>\n"
+    },
+    {
+      "name": "uplus",
+      "html": "<p>\u228e</p>\n"
+    },
+    {
+      "name": "upsi",
+      "html": "<p>\u03c5</p>\n"
+    },
+    {
+      "name": "upsih",
+      "html": "<p>\u03d2</p>\n"
+    },
+    {
+      "name": "upsilon",
+      "html": "<p>\u03c5</p>\n"
+    },
+    {
+      "name": "upuparrows",
+      "html": "<p>\u21c8</p>\n"
+    },
+    {
+      "name": "urcorn",
+      "html": "<p>\u231d</p>\n"
+    },
+    {
+      "name": "urcorner",
+      "html": "<p>\u231d</p>\n"
+    },
+    {
+      "name": "urcrop",
+      "html": "<p>\u230e</p>\n"
+    },
+    {
+      "name": "uring",
+      "html": "<p>\u016f</p>\n"
+    },
+    {
+      "name": "urtri",
+      "html": "<p>\u25f9</p>\n"
+    },
+    {
+      "name": "uscr",
+      "html": "<p>\ud835\udcca</p>\n"
+    },
+    {
+      "name": "utdot",
+      "html": "<p>\u22f0</p>\n"
+    },
+    {
+      "name": "utilde",
+      "html": "<p>\u0169</p>\n"
+    },
+    {
+      "name": "utri",
+      "html": "<p>\u25b5</p>\n"
+    },
+    {
+      "name": "utrif",
+      "html": "<p>\u25b4</p>\n"
+    },
+    {
+      "name": "uuarr",
+      "html": "<p>\u21c8</p>\n"
+    },
+    {
+      "name": "uuml",
+      "html": "<p>\u00fc</p>\n"
+    },
+    {
+      "name": "uwangle",
+      "html": "<p>\u29a7</p>\n"
+    },
+    {
+      "name": "vArr",
+      "html": "<p>\u21d5</p>\n"
+    },
+    {
+      "name": "vBar",
+      "html": "<p>\u2ae8</p>\n"
+    },
+    {
+      "name": "vBarv",
+      "html": "<p>\u2ae9</p>\n"
+    },
+    {
+      "name": "vDash",
+      "html": "<p>\u22a8</p>\n"
+    },
+    {
+      "name": "vangrt",
+      "html": "<p>\u299c</p>\n"
+    },
+    {
+      "name": "varepsilon",
+      "html": "<p>\u03f5</p>\n"
+    },
+    {
+      "name": "varkappa",
+      "html": "<p>\u03f0</p>\n"
+    },
+    {
+      "name": "varnothing",
+      "html": "<p>\u2205</p>\n"
+    },
+    {
+      "name": "varphi",
+      "html": "<p>\u03d5</p>\n"
+    },
+    {
+      "name": "varpi",
+      "html": "<p>\u03d6</p>\n"
+    },
+    {
+      "name": "varpropto",
+      "html": "<p>\u221d</p>\n"
+    },
+    {
+      "name": "varr",
+      "html": "<p>\u2195</p>\n"
+    },
+    {
+      "name": "varrho",
+      "html": "<p>\u03f1</p>\n"
+    },
+    {
+      "name": "varsigma",
+      "html": "<p>\u03c2</p>\n"
+    },
+    {
+      "name": "varsubsetneq",
+      "html": "<p>\u228a\ufe00</p>\n"
+    },
+    {
+      "name": "varsubsetneqq",
+      "html": "<p>\u2acb\ufe00</p>\n"
+    },
+    {
+      "name": "varsupsetneq",
+      "html": "<p>\u228b\ufe00</p>\n"
+    },
+    {
+      "name": "varsupsetneqq",
+      "html": "<p>\u2acc\ufe00</p>\n"
+    },
+    {
+      "name": "vartheta",
+      "html": "<p>\u03d1</p>\n"
+    },
+    {
+      "name": "vartriangleleft",
+      "html": "<p>\u22b2</p>\n"
+    },
+    {
+      "name": "vartriangleright",
+      "html": "<p>\u22b3</p>\n"
+    },
+    {
+      "name": "vcy",
+      "html": "<p>\u0432</p>\n"
+    },
+    {
+      "name": "vdash",
+      "html": "<p>\u22a2</p>\n"
+    },
+    {
+      "name": "vee",
+      "html": "<p>\u2228</p>\n"
+    },
+    {
+      "name": "veebar",
+      "html": "<p>\u22bb</p>\n"
+    },
+    {
+      "name": "veeeq",
+      "html": "<p>\u225a</p>\n"
+    },
+    {
+      "name": "vellip",
+      "html": "<p>\u22ee</p>\n"
+    },
+    {
+      "name": "verbar",
+      "html": "<p>|</p>\n"
+    },
+    {
+      "name": "vert",
+      "html": "<p>|</p>\n"
+    },
+    {
+      "name": "vfr",
+      "html": "<p>\ud835\udd33</p>\n"
+    },
+    {
+      "name": "vltri",
+      "html": "<p>\u22b2</p>\n"
+    },
+    {
+      "name": "vnsub",
+      "html": "<p>\u2282\u20d2</p>\n"
+    },
+    {
+      "name": "vnsup",
+      "html": "<p>\u2283\u20d2</p>\n"
+    },
+    {
+      "name": "vopf",
+      "html": "<p>\ud835\udd67</p>\n"
+    },
+    {
+      "name": "vprop",
+      "html": "<p>\u221d</p>\n"
+    },
+    {
+      "name": "vrtri",
+      "html": "<p>\u22b3</p>\n"
+    },
+    {
+      "name": "vscr",
+      "html": "<p>\ud835\udccb</p>\n"
+    },
+    {
+      "name": "vsubnE",
+      "html": "<p>\u2acb\ufe00</p>\n"
+    },
+    {
+      "name": "vsubne",
+      "html": "<p>\u228a\ufe00</p>\n"
+    },
+    {
+      "name": "vsupnE",
+      "html": "<p>\u2acc\ufe00</p>\n"
+    },
+    {
+      "name": "vsupne",
+      "html": "<p>\u228b\ufe00</p>\n"
+    },
+    {
+      "name": "vzigzag",
+      "html": "<p>\u299a</p>\n"
+    },
+    {
+      "name": "wcirc",
+      "html": "<p>\u0175</p>\n"
+    },
+    {
+      "name": "wedbar",
+      "html": "<p>\u2a5f</p>\n"
+    },
+    {
+      "name": "wedge",
+      "html": "<p>\u2227</p>\n"
+    },
+    {
+      "name": "wedgeq",
+      "html": "<p>\u2259</p>\n"
+    },
+    {
+      "name": "weierp",
+      "html": "<p>\u2118</p>\n"
+    },
+    {
+      "name": "wfr",
+      "html": "<p>\ud835\udd34</p>\n"
+    },
+    {
+      "name": "wopf",
+      "html": "<p>\ud835\udd68</p>\n"
+    },
+    {
+      "name": "wp",
+      "html": "<p>\u2118</p>\n"
+    },
+    {
+      "name": "wr",
+      "html": "<p>\u2240</p>\n"
+    },
+    {
+      "name": "wreath",
+      "html": "<p>\u2240</p>\n"
+    },
+    {
+      "name": "wscr",
+      "html": "<p>\ud835\udccc</p>\n"
+    },
+    {
+      "name": "xcap",
+      "html": "<p>\u22c2</p>\n"
+    },
+    {
+      "name": "xcirc",
+      "html": "<p>\u25ef</p>\n"
+    },
+    {
+      "name": "xcup",
+      "html": "<p>\u22c3</p>\n"
+    },
+    {
+      "name": "xdtri",
+      "html": "<p>\u25bd</p>\n"
+    },
+    {
+      "name": "xfr",
+      "html": "<p>\ud835\udd35</p>\n"
+    },
+    {
+      "name": "xhArr",
+      "html": "<p>\u27fa</p>\n"
+    },
+    {
+      "name": "xharr",
+      "html": "<p>\u27f7</p>\n"
+    },
+    {
+      "name": "xi",
+      "html": "<p>\u03be</p>\n"
+    },
+    {
+      "name": "xlArr",
+      "html": "<p>\u27f8</p>\n"
+    },
+    {
+      "name": "xlarr",
+      "html": "<p>\u27f5</p>\n"
+    },
+    {
+      "name": "xmap",
+      "html": "<p>\u27fc</p>\n"
+    },
+    {
+      "name": "xnis",
+      "html": "<p>\u22fb</p>\n"
+    },
+    {
+      "name": "xodot",
+      "html": "<p>\u2a00</p>\n"
+    },
+    {
+      "name": "xopf",
+      "html": "<p>\ud835\udd69</p>\n"
+    },
+    {
+      "name": "xoplus",
+      "html": "<p>\u2a01</p>\n"
+    },
+    {
+      "name": "xotime",
+      "html": "<p>\u2a02</p>\n"
+    },
+    {
+      "name": "xrArr",
+      "html": "<p>\u27f9</p>\n"
+    },
+    {
+      "name": "xrarr",
+      "html": "<p>\u27f6</p>\n"
+    },
+    {
+      "name": "xscr",
+      "html": "<p>\ud835\udccd</p>\n"
+    },
+    {
+      "name": "xsqcup",
+      "html": "<p>\u2a06</p>\n"
+    },
+    {
+      "name": "xuplus",
+      "html": "<p>\u2a04</p>\n"
+    },
+    {
+      "name": "xutri",
+      "html": "<p>\u25b3</p>\n"
+    },
+    {
+      "name": "xvee",
+      "html": "<p>\u22c1</p>\n"
+    },
+    {
+      "name": "xwedge",
+      "html": "<p>\u22c0</p>\n"
+    },
+    {
+      "name": "yacute",
+      "html": "<p>\u00fd</p>\n"
+    },
+    {
+      "name": "yacy",
+      "html": "<p>\u044f</p>\n"
+    },
+    {
+      "name": "ycirc",
+      "html": "<p>\u0177</p>\n"
+    },
+    {
+      "name": "ycy",
+      "html": "<p>\u044b</p>\n"
+    },
+    {
+      "name": "yen",
+      "html": "<p>\u00a5</p>\n"
+    },
+    {
+      "name": "yfr",
+      "html": "<p>\ud835\udd36</p>\n"
+    },
+    {
+      "name": "yicy",
+      "html": "<p>\u0457</p>\n"
+    },
+    {
+      "name": "yopf",
+      "html": "<p>\ud835\udd6a</p>\n"
+    },
+    {
+      "name": "yscr",
+      "html": "<p>\ud835\udcce</p>\n"
+    },
+    {
+      "name": "yucy",
+      "html": "<p>\u044e</p>\n"
+    },
+    {
+      "name": "yuml",
+      "html": "<p>\u00ff</p>\n"
+    },
+    {
+      "name": "zacute",
+      "html": "<p>\u017a</p>\n"
+    },
+    {
+      "name": "zcaron",
+      "html": "<p>\u017e</p>\n"
+    },
+    {
+      "name": "zcy",
+      "html": "<p>\u0437</p>\n"
+    },
+    {
+      "name": "zdot",
+      "html": "<p>\u017c</p>\n"
+    },
+    {
+      "name": "zeetrf",
+      "html": "<p>\u2128</p>\n"
+    },
+    {
+      "name": "zeta",
+      "html": "<p>\u03b6</p>\n"
+    },
+    {
+      "name": "zfr",
+      "html": "<p>\ud835\udd37</p>\n"
+    },
+    {
+      "name": "zhcy",
+      "html": "<p>\u0436</p>\n"
+    },
+    {
+      "name": "zigrarr",
+      "html": "<p>\u21dd</p>\n"
+    },
+    {
+      "name": "zopf",
+      "html": "<p>\ud835\udd6b</p>\n"
+    },
+    {
+      "name": "zscr",
+      "html": "<p>\ud835\udccf</p>\n"
+    },
+    {
+      "name": "zwj",
+      "html": "<p>\u200d</p>\n"
+    },
+    {
+      "name": "zwnj",
+      "html": "<p>\u200c</p>\n"
+    }
+  ]
+}

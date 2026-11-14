@@ -1,0 +1,3 @@
+# Literal GitHub cmark-gfm SwiftPM experiment
+
+This is a research executable, not a public library or a concurrency-safe wrapper. `Vendor/src`, `Vendor/extensions` and `Vendor/COPYING` are unmodified from github/cmark-gfm commit `27d942c8b0a62d192f616e5bf3578f4b6a89e180`; `Vendor/UPSTREAM_SHA256.json` records hashes. The files under `Vendor/generated` and `Vendor/include` are build integration files, not original upstream sources. Generated configuration was copied from a Linux CMake build and is not yet qualified on other platforms. See ../../Documentation/GITHUB-CMARK-API-INVENTORY.md for the C API, licensing, parity tests and important global-state constraints.
