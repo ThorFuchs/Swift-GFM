@@ -60,7 +60,7 @@ for the explicit upstream skips and observed CommonMark round-trip differences.
 Build the DocC archive with `sh Tools/build-docc.sh` using the Swift toolchain's
 `docc` command.
 
-See [the wrapper and XML reference](Documentation/WRAPPER-API.md), [the full C API inventory](Documentation/GITHUB-CMARK-API-INVENTORY.md), and [conformance and reproduction details](Documentation/REPRODUCTION.md). The C source and its complete upstream license notices are in [Vendor/GitHubCMark](Vendor/GitHubCMark). Linux is tested; macOS remains unverified in this environment. The source license notices apply to distributions containing the vendored C code.
+See [the wrapper and XML reference](Documentation/WRAPPER-API.md), [the full C API inventory](Documentation/GITHUB-CMARK-API-INVENTORY.md), and [conformance and reproduction details](Documentation/REPRODUCTION.md). The C source and its complete upstream license notices are in [Vendor/GitHubCMark](Vendor/GitHubCMark). Linux x86_64 and macOS arm64 have passed the scoped CI tests described in the documentation. The source license notices apply to distributions containing the vendored C code.
 
 The repository does not yet declare a license for SwiftGFM's own code. The
 project owner must select one before the package can be published with clear

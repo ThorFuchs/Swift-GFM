@@ -91,8 +91,10 @@ and on 670/670 with all five GFM extensions enabled. Upstream examples 279 and
 280 are marked disabled and were not included. This comparison does not test
 all C-only properties, footnotes, malformed XML, arbitrary inputs, or formal
 specification conformance. Focused Swift tests cover several of those omitted
-properties and cases. macOS and other architectures have not been qualified in
-this environment. See [REPRODUCTION.md](REPRODUCTION.md) for the commands.
+properties and cases. On 2026-11-14, GitHub Actions also passed the Swift tests
+in debug and release on macOS arm64 with Xcode 27.2 and Apple Swift 6.4.2; that
+job did not run the Linux-only independent C reference or sanitizer checks.
+See [REPRODUCTION.md](REPRODUCTION.md) for the commands and CI evidence.
 
 The Linux Swift test suite also passed in debug and release configurations and
 under Thread Sanitizer. The C object contained thread-sanitizer instrumentation.
