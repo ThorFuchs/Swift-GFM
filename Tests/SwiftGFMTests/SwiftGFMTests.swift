@@ -31,11 +31,41 @@ import Testing
     #expect(!safe.contains("<script>"))
     let plain = try MarkdownEngine(configuration: .cmarkDefault).render("www.example.com\n")
     #expect(plain == "<p>www.example.com</p>\n")
-    let unsafe = try MarkdownEngine(configuration: .init(options: [.allowUnsafeHTML])).render("<script>x</script>\n")
+    let unsafe = try MarkdownEngine(configuration: .init(extensions: [], options: [.allowUnsafeHTML])).render(
+        "<script>x</script>\n")
     #expect(unsafe == "<script>x</script>\n")
     #expect(throws: MarkdownEngineError.unsupportedExtensions(128)) {
         try MarkdownEngine(configuration: .init(extensions: .init(rawValue: 128))).render("x")
     }
+}
+
+@Test func configurationDefaultsMatchTheEngineDefault() throws {
+    #expect(MarkdownConfiguration() == .gfm)
+    #expect(MarkdownConfiguration(limits: .unlimited) == .gfm)
+    #expect(MarkdownEngine().configuration == MarkdownConfiguration())
+    #expect(MarkdownConfiguration(options: [.footnotes]).extensions == .gfm)
+    #expect(MarkdownConfiguration.cmarkDefault.extensions.isEmpty)
+    #expect(MarkdownConfiguration.cmarkDefault != MarkdownConfiguration())
+}
+
+@Test func engineErrorsExposeCodeAndContext() throws {
+    let limited = MarkdownEngine(configuration: .init(limits: .init(maximumASTNodes: 1)))
+    do {
+        _ = try limited.parse("x")
+        Issue.record("expected a resource-limit error")
+    } catch let error as MarkdownEngineError where error.code == .resourceLimitExceeded {
+        #expect(error.resourceLimit == .astNodes)
+        #expect(error.limit == 1)
+        #expect(error.value == 2)
+        #expect(error.detail == nil)
+        #expect(
+            error.description == "MarkdownEngineError.resourceLimitExceeded (resource: astNodes, limit: 1, value: 2)")
+    }
+    let width = MarkdownEngineError.invalidWidth(-1)
+    #expect(width.code == .invalidWidth && width.value == -1 && width.resourceLimit == nil)
+    #expect(MarkdownEngineError.unsupportedASTNode(name: "x", type: 7).detail == "x")
+    #expect(MarkdownEngineError.parseFailed.description == "MarkdownEngineError.parseFailed")
+    #expect(MarkdownEngineError.invalidWidth(1) != .invalidWidth(2))
 }
 
 private struct RenderCase: Sendable {

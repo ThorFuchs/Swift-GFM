@@ -152,6 +152,6 @@ private func nodeKind(_ node: OpaquePointer) throws -> MarkdownNodeKind {
     case "table_header": return .tableRow(isHeader: true)
     case "table_row": return .tableRow(isHeader: false)
     case "table_cell": return .tableCell
-    default: throw MarkdownEngineError.unsupportedASTNode(name: name, type: type)
+    default: throw MarkdownEngineError.unsupportedASTNode(name: name, type: Int(type))
     }
 }

@@ -31,7 +31,7 @@ private let entities: EntityFixture = {
 
 @Test("Named entities match the pinned cmark-gfm executable", arguments: entities.examples)
 private func entityMatchesReference(_ example: EntityExample) throws {
-    let engine = MarkdownEngine(configuration: .init(options: [.allowUnsafeHTML]))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], options: [.allowUnsafeHTML]))
     let actual = try engine.render("&\(example.name);")
     #expect(
         Array(actual.utf8) == Array(example.html.utf8),

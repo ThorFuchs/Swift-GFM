@@ -3,10 +3,18 @@
 import Foundation
 import SwiftGFM
 
-#if canImport(Glibc)
-import Glibc
-#else
+#if canImport(Darwin)
 import Darwin
+#elseif canImport(Glibc)
+import Glibc
+#elseif canImport(Musl)
+import Musl
+#elseif canImport(Android)
+import Android
+#elseif canImport(WASILibc)
+import WASILibc
+#elseif canImport(ucrt)
+import ucrt
 #endif
 
 func fail(_ message: String) -> Never {

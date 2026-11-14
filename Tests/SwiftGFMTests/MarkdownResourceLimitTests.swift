@@ -5,17 +5,17 @@ import Testing
 
 @Test func inputLimitCountsUTF8BytesAndAppliesToParseAndRender() throws {
     let source = "é"
-    let allowed = MarkdownEngine(configuration: .init(limits: .init(maximumInputUTF8Bytes: 2)))
+    let allowed = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumInputUTF8Bytes: 2)))
     #expect(try allowed.render(source) == "<p>é</p>\n")
     #expect(try allowed.parse(source).source == source)
 
-    let limited = MarkdownEngine(configuration: .init(limits: .init(maximumInputUTF8Bytes: 1)))
+    let limited = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumInputUTF8Bytes: 1)))
     let expected = MarkdownEngineError.resourceLimitExceeded(.inputUTF8Bytes, limit: 1, actual: 2)
     #expect(throws: expected) { try limited.render(source) }
     #expect(throws: expected) { try limited.parse(source) }
     #expect(try limited.render("a") == "<p>a</p>\n")
 
-    let emptyOnly = MarkdownEngine(configuration: .init(limits: .init(maximumInputUTF8Bytes: 0)))
+    let emptyOnly = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumInputUTF8Bytes: 0)))
     #expect(try emptyOnly.render("") == "")
     #expect(try emptyOnly.parse("").root.kind == .document)
     #expect(throws: MarkdownEngineError.resourceLimitExceeded(.inputUTF8Bytes, limit: 0, actual: 1)) {
@@ -30,7 +30,7 @@ import Testing
         (.astDepth, .init(maximumASTDepth: -1)),
     ]
     for (kind, limits) in examples {
-        let engine = MarkdownEngine(configuration: .init(limits: limits))
+        let engine = MarkdownEngine(configuration: .init(extensions: [], limits: limits))
         let expected = MarkdownEngineError.invalidResourceLimit(kind, value: -1)
         #expect(throws: expected) { try engine.render("x") }
         #expect(throws: expected) { try engine.parse("x") }
@@ -39,17 +39,17 @@ import Testing
 
 @Test func astNodeLimitIncludesRootAndDoesNotAffectRendering() throws {
     let source = "# Title\n"  // document, heading, text
-    let allowed = MarkdownEngine(configuration: .init(limits: .init(maximumASTNodes: 3)))
+    let allowed = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTNodes: 3)))
     #expect(try allowed.parse(source).root.children.count == 1)
     #expect(try allowed.parse(source).configuration.limits.maximumASTNodes == 3)
 
-    let limited = MarkdownEngine(configuration: .init(limits: .init(maximumASTNodes: 2)))
+    let limited = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTNodes: 2)))
     #expect(throws: MarkdownEngineError.resourceLimitExceeded(.astNodes, limit: 2, actual: 3)) {
         try limited.parse(source)
     }
     #expect(try limited.render(source) == "<h1>Title</h1>\n")
 
-    let noNodes = MarkdownEngine(configuration: .init(limits: .init(maximumASTNodes: 0)))
+    let noNodes = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTNodes: 0)))
     #expect(throws: MarkdownEngineError.resourceLimitExceeded(.astNodes, limit: 0, actual: 1)) {
         try noNodes.parse("")
     }
@@ -58,23 +58,23 @@ import Testing
 
 @Test func astDepthLimitCountsRootAndReportsFirstExceededDepth() throws {
     let source = "> text\n"  // document, block quote, paragraph, text
-    let allowed = MarkdownEngine(configuration: .init(limits: .init(maximumASTDepth: 4)))
+    let allowed = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTDepth: 4)))
     #expect(try allowed.parse(source).root.children.count == 1)
 
-    let limited = MarkdownEngine(configuration: .init(limits: .init(maximumASTDepth: 3)))
+    let limited = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTDepth: 3)))
     #expect(throws: MarkdownEngineError.resourceLimitExceeded(.astDepth, limit: 3, actual: 4)) {
         try limited.parse(source)
     }
     #expect(try limited.render(source) == "<blockquote>\n<p>text</p>\n</blockquote>\n")
 
-    let noDepth = MarkdownEngine(configuration: .init(limits: .init(maximumASTDepth: 0)))
+    let noDepth = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTDepth: 0)))
     #expect(throws: MarkdownEngineError.resourceLimitExceeded(.astDepth, limit: 0, actual: 1)) {
         try noDepth.parse("")
     }
 }
 
 @Test func astLimitFailureCleansUpAndEngineCanBeReused() throws {
-    let engine = MarkdownEngine(configuration: .init(limits: .init(maximumASTDepth: 4)))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTDepth: 4)))
     let deep = String(repeating: "> ", count: 2_000) + "text\n"
     for _ in 0..<3 {
         #expect(throws: MarkdownEngineError.resourceLimitExceeded(.astDepth, limit: 4, actual: 5)) {
@@ -96,7 +96,7 @@ import Testing
 }
 
 @Test func concurrentEnginesKeepTheirLimitsIndependent() async {
-    let limited = MarkdownEngine(configuration: .init(limits: .init(maximumASTNodes: 2)))
+    let limited = MarkdownEngine(configuration: .init(extensions: [], limits: .init(maximumASTNodes: 2)))
     let unlimited = MarkdownEngine()
     let failures = await withTaskGroup(of: Bool.self, returning: Int.self) { group in
         for index in 0..<300 {

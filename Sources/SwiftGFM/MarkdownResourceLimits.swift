@@ -1,13 +1,23 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /// Identifies a resource measured by an optional SwiftGFM limit.
-public enum MarkdownResourceLimit: String, Sendable, Hashable {
+///
+/// Future versions may add resources without a major version change, so code
+/// that switches over these values needs a `default` case.
+public struct MarkdownResourceLimit: Sendable, Hashable, CustomStringConvertible {
+    private enum Value: String, Sendable { case inputUTF8Bytes, astNodes, astDepth }
+    private let value: Value
+    private init(_ value: Value) { self.value = value }
+
+    /// The resource's stable name, such as `astDepth`.
+    public var description: String { value.rawValue }
+
     /// Number of UTF-8 bytes in the original input string.
-    case inputUTF8Bytes
+    public static let inputUTF8Bytes = Self(.inputUTF8Bytes)
     /// Number of nodes copied into the Swift AST, including the document root.
-    case astNodes
+    public static let astNodes = Self(.astNodes)
     /// Depth of the Swift AST, counting the document root as depth one.
-    case astDepth
+    public static let astDepth = Self(.astDepth)
 }
 
 /// Optional bounds checked by SwiftGFM; `nil` means no bound for that resource.

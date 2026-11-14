@@ -19,5 +19,5 @@ trap 'rm -rf "$temp"' EXIT HUP INT TERM
 cp "$symbol" "$temp/SwiftGFM.symbols.json"
 docc convert Sources/SwiftGFM/SwiftGFM.docc --additional-symbol-graph-dir "$temp" \
   --fallback-display-name SwiftGFM --fallback-bundle-identifier org.swiftgfm.documentation \
-  --fallback-bundle-version 0.1.0 --output-path "$output" --warnings-as-errors
+  --fallback-bundle-version 1.0.0 --output-path "$output" --warnings-as-errors
 printf 'Documentation archive: %s\n' "$output"

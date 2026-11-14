@@ -13,7 +13,7 @@ questions are snapshots rather than statements of the current API.
 - [Wrapper API](WRAPPER-API.md): formats, options, defaults, and backend boundary.
 - [Read-only AST](AST.md): node kinds, walking, source positions, and ownership.
 - [Backend configurations](PROFILES.md): cmark defaults and the GFM extension set.
-- [Security](SECURITY.md): HTML handling and host responsibilities.
+- [Security model](SECURITY-MODEL.md): HTML handling and host responsibilities. Report vulnerabilities as described in the [security policy](../SECURITY.md).
 - [Resource limits](RESOURCE-LIMITS.md): optional input and Swift AST projection bounds.
 - [License and notices](../NOTICE): the project's Apache license and third-party material.
 - [Concurrency and process isolation](CMARK-CONCURRENCY.md): lock scope and limits.
