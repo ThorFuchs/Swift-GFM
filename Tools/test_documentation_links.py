@@ -27,13 +27,15 @@ class DocumentationLinkTests(unittest.TestCase):
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root / "README.md").write_text("# Root\n")
+            (root / "SECURITY.md").write_text("# Security\n")
+            (root / "CHANGES.md").write_text("[ignored](missing.md)\n")
             docs = root / "Experiments/example"
             (docs / ".build").mkdir(parents=True)
             (docs / "README.md").write_text("# Example\n")
             (docs / ".build/README.md").write_text("[broken](missing.md)\n")
             self.assertEqual(
                 {path.relative_to(root).as_posix() for path in documentation_files(root)},
-                {"README.md", "Experiments/example/README.md"},
+                {"README.md", "SECURITY.md", "Experiments/example/README.md"},
             )
 
 

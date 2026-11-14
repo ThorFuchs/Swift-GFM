@@ -67,7 +67,7 @@ limits, not to certify every input or platform.
 - The optional [resource limits](RESOURCE-LIMITS.md) bound input bytes and
   Swift AST projection, but cannot enforce hard C memory, output-size, or
   execution-time limits. A running C call is not cancellable. Raw HTML and link
-  policies are not a general sanitizer. See [SECURITY.md](SECURITY.md).
+  policies are not a general sanitizer. See [SECURITY-MODEL.md](SECURITY-MODEL.md).
 - The pinned backend's XML can be malformed for some inputs, and five
   CommonMark-to-HTML round trips differ in bytes from their source fixture,
   including two with changed inline-code spaces. See [WRAPPER-API.md](WRAPPER-API.md)

@@ -21,7 +21,7 @@ UTF-8 bytes before cmark runs; it applies to both parsing and rendering.
 ``MarkdownResourceLimits/maximumASTDepth`` apply only when copying an AST for
 ``MarkdownEngine/parse(_:)``. The document root counts as one node at depth one.
 
-Errors identify the limit kind, configured value, and observed value.
+Errors identify the limit kind, configured value, and observed value through ``MarkdownEngineError/resourceLimit``, ``MarkdownEngineError/limit``, and ``MarkdownEngineError/value``.
 ``MarkdownEngineError/invalidResourceLimit(_:value:)`` reports negative
 settings; ``MarkdownEngineError/resourceLimitExceeded(_:limit:actual:)``
 reports an exceeded bound.

@@ -17,16 +17,11 @@ The package requires Swift tools 6.4 or newer. The recorded CI runs use Swift
 6.4.2 on Linux x86_64 and macOS arm64; see [reproduction and qualification](Documentation/REPRODUCTION.md)
 for the exact scope.
 
-Add the package to your `Package.swift`, replacing `<reviewed-commit-sha>` with
-a revision you have reviewed. The repository is private, so the machine
-resolving it needs GitHub access. No release tag is currently provided.
+Add the package to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(
-        url: "https://github.com/ThorFuchs/Swift-GFM.git",
-        revision: "<reviewed-commit-sha>"
-    )
+    .package(url: "https://github.com/ThorFuchs/Swift-GFM.git", from: "1.0.0")
 ],
 targets: [
     .target(
@@ -52,8 +47,9 @@ The six formats are `.html`, `.xml`, `.commonMark`, `.plainText`, `.latex`, and
 is normalized and is not a lossless source serializer.
 
 The default engine enables table, strikethrough, autolink, tag-filter, and
-task-list extensions. Use `.cmarkDefault` for no extensions, or select them
-explicitly:
+task-list extensions, and so does `MarkdownConfiguration()` when you omit
+`extensions:`. Use `.cmarkDefault` or `extensions: []` for no extensions, or
+select them explicitly:
 
 ```swift
 let configuration = MarkdownConfiguration(
@@ -67,7 +63,7 @@ let result = try configuredEngine.render("# Hello\n")
 
 The default backend policy filters raw HTML and some unsafe links.
 `.allowUnsafeHTML` changes that behavior; neither mode is a complete HTML
-sanitizer. See [security](Documentation/SECURITY.md) for the host's
+sanitizer. See [security](Documentation/SECURITY-MODEL.md) for the host's
 responsibilities.
 
 Optional `MarkdownResourceLimits` can reject oversized UTF-8 input and bound
@@ -106,6 +102,34 @@ The CLI starts with cmark's zero-extension defaults; the library engine
 defaults to the GFM extension set. Tests include the pinned backend's bundled
 fixtures, with explicit upstream skips and documented round-trip differences.
 See [bundled test coverage](Documentation/BUNDLED-CMARK-QA.md).
+
+## Versioning and API stability
+
+SwiftGFM follows [Semantic Versioning](https://semver.org) from 1.0.0. The
+public API of the `SwiftGFM` library is covered; the `swift-gfm` command line,
+the development tools, and the experiments are not.
+
+- **Major versions** remove or change public API, or add cases to public
+  enums such as `MarkdownNodeKind`, `MarkdownOutputFormat`, or
+  `MarkdownWalkControl`. Exhaustive `switch` statements over these enums keep
+  compiling within a major version.
+- **Minor versions** add API. This includes new `MarkdownEngineError.Code`
+  values, new `MarkdownResourceLimit` values, and new error context
+  properties, which are structs rather than enums for that reason; give
+  `switch` statements over them a `default` case. Updating the vendored
+  cmark-gfm revision is at least a minor version because rendered output can
+  change. A backend update that requires new node kinds is a major version.
+- **Patch versions** fix bugs. A security fix, including an upstream cmark-gfm
+  fix, can be a patch version even if it changes output for affected inputs.
+
+The native XML output, CommonMark round-trip text, and error descriptions are
+backend or diagnostic output, not a stable schema.
+
+## Security
+
+See the [security policy](SECURITY.md) for supported versions and how to
+report a vulnerability privately, and the [security model](Documentation/SECURITY-MODEL.md)
+for what the package does and does not protect against.
 
 ## Documentation and licensing
 

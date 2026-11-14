@@ -5,15 +5,11 @@ Create an engine and choose the cmark backend configuration for your application
 ## Add the package
 
 SwiftGFM requires Swift tools 6.4 or newer. Add a package dependency and link
-the `SwiftGFM` product, replacing `<reviewed-commit-sha>` with a revision you
-have reviewed:
+the `SwiftGFM` product:
 
 ```swift
 dependencies: [
-    .package(
-        url: "https://github.com/ThorFuchs/Swift-GFM.git",
-        revision: "<reviewed-commit-sha>"
-    )
+    .package(url: "https://github.com/ThorFuchs/Swift-GFM.git", from: "1.0.0")
 ],
 targets: [
     .target(
@@ -23,8 +19,10 @@ targets: [
 ]
 ```
 
-The repository is private; the resolving machine needs GitHub access. No
-release tag is currently provided.
+SwiftGFM follows Semantic Versioning. New ``MarkdownEngineError/Code`` and
+``MarkdownResourceLimit`` values can appear in minor versions, so give a
+`switch` over them a `default` case; new ``MarkdownNodeKind`` and
+``MarkdownOutputFormat`` cases only appear in major versions.
 
 ## Render Markdown
 
@@ -38,7 +36,9 @@ let html = try engine.render("Hello *world*!\n", as: .html)
 
 ``MarkdownEngine/init(configuration:)`` defaults to the ``MarkdownConfiguration/gfm``
 configuration, which attaches tables, strikethrough, autolinks, tag filtering,
-and task lists. ``MarkdownConfiguration/cmarkDefault`` attaches no extensions.
+and task lists. ``MarkdownConfiguration/init(extensions:options:width:)`` uses the
+same extensions when you omit `extensions:`.
+``MarkdownConfiguration/cmarkDefault`` attaches no extensions.
 Both retain the backend's default HTML policy.
 
 To choose extensions and backend options explicitly:

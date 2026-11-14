@@ -39,7 +39,7 @@ private let formatExamples: [FormatExample] = [
 
 @Test("Six renderer outputs match pinned cmark bytes", arguments: formatExamples)
 private func exactReferenceFormats(_ example: FormatExample) throws {
-    let engine = MarkdownEngine(configuration: .init(options: [.allowUnsafeHTML]))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], options: [.allowUnsafeHTML]))
     let actual = try engine.render("# Title\n\nA *test*.\n", as: example.format)
     #expect(Array(actual.utf8) == Array(example.expected.utf8))
 }
@@ -48,10 +48,14 @@ private func exactReferenceFormats(_ example: FormatExample) throws {
     let source = "one\ntwo\n"
     #expect(try MarkdownEngine(configuration: .cmarkDefault).render(source) == "<p>one\ntwo</p>\n")
     #expect(
-        try MarkdownEngine(configuration: .init(options: [.hardBreaks])).render(source) == "<p>one<br />\ntwo</p>\n")
-    #expect(try MarkdownEngine(configuration: .init(options: [.noBreaks])).render(source) == "<p>one two</p>\n")
+        try MarkdownEngine(configuration: .init(extensions: [], options: [.hardBreaks])).render(source)
+            == "<p>one<br />\ntwo</p>\n")
     #expect(
-        try MarkdownEngine(configuration: .init(options: [.smartPunctuation])).render("\"Hello\" -- ...\n")
+        try MarkdownEngine(configuration: .init(extensions: [], options: [.noBreaks])).render(source)
+            == "<p>one two</p>\n")
+    #expect(
+        try MarkdownEngine(configuration: .init(extensions: [], options: [.smartPunctuation])).render(
+            "\"Hello\" -- ...\n")
             == "<p>“Hello” – …</p>\n")
 }
 
@@ -61,21 +65,21 @@ private func exactReferenceFormats(_ example: FormatExample) throws {
         try MarkdownEngine(configuration: .cmarkDefault).render(source)
             == "<!-- raw HTML omitted -->\n<p><a href=\"\">x</a></p>\n")
     #expect(
-        try MarkdownEngine(configuration: .init(options: [.allowUnsafeHTML])).render(source)
+        try MarkdownEngine(configuration: .init(extensions: [], options: [.allowUnsafeHTML])).render(source)
             == "<script>alert(1)</script>\n<p><a href=\"javascript:alert(1)\">x</a></p>\n")
     let filtered = MarkdownEngine(configuration: .init(extensions: [.tagFilter], options: [.allowUnsafeHTML]))
     #expect(try filtered.render("<script>alert(1)</script>\n") == "&lt;script>alert(1)&lt;/script>\n")
 }
 
 @Test func cmarkCodeInfoOption() throws {
-    let engine = MarkdownEngine(configuration: .init(options: [.fullInfoString]))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], options: [.fullInfoString]))
     let html = try engine.render("```swift other words\nx\n```\n")
     #expect(html == "<pre><code class=\"language-swift\" data-meta=\"other words\">x\n</code></pre>\n")
 }
 
 @Test func configurationBoundsAndStringBytes() throws {
     for width in [-1, Int(Int32.max) + 1] {
-        let engine = MarkdownEngine(configuration: .init(width: width))
+        let engine = MarkdownEngine(configuration: .init(extensions: [], width: width))
         #expect(throws: MarkdownEngineError.invalidWidth(width)) { try engine.render("x") }
         #expect(throws: MarkdownEngineError.invalidWidth(width)) { try engine.parse("x") }
     }

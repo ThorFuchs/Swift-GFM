@@ -34,3 +34,24 @@ extension bits cause an error. Unknown option bits are passed to the C backend.
 ``MarkdownOptions/smartPunctuation`` enables typography transformations.
 ``MarkdownOptions/allowUnsafeHTML`` changes cmark's HTML handling. See
 <doc:ConcurrencyAndSecurity> before rendering untrusted input.
+
+## Handle errors
+
+``MarkdownEngine/render(_:as:)`` and ``MarkdownEngine/parse(_:)`` throw
+``MarkdownEngineError``. Compare its ``MarkdownEngineError/code`` with the
+``MarkdownEngineError/Code`` values and read the optional context properties,
+such as ``MarkdownEngineError/resourceLimit`` or ``MarkdownEngineError/detail``:
+
+```swift
+do {
+    _ = try engine.render(input)
+} catch let error as MarkdownEngineError {
+    switch error.code {
+    case .resourceLimitExceeded: print("input too large:", error.value ?? 0)
+    case .invalidWidth: print("invalid width:", error.value ?? 0)
+    default: print(error)
+    }
+}
+```
+
+Future minor versions can add codes, so keep a `default` case.

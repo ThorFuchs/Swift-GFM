@@ -16,7 +16,7 @@ private func kinds(_ document: MarkdownDocument) -> [MarkdownNodeKind] {
 
 @Test func astCapturesCommonMarkProperties() throws {
     let source = "# Hi *friend*\n\n3) [a](https://example.com \"title\")\n4) ![alt](/i)\n\n```swift\nlet x = 1\n```\n"
-    let configuration = MarkdownConfiguration(options: [.sourcePositions])
+    let configuration = MarkdownConfiguration(extensions: [], options: [.sourcePositions])
     let document = try MarkdownEngine(configuration: configuration).parse(source)
     #expect(document.source == source)
     #expect(document.configuration == configuration)
@@ -61,14 +61,14 @@ private func kinds(_ document: MarkdownDocument) -> [MarkdownNodeKind] {
 }
 
 @Test func astFootnotesHaveConcreteKinds() throws {
-    let engine = MarkdownEngine(configuration: .init(options: [.footnotes]))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], options: [.footnotes]))
     let values = kinds(try engine.parse("A[^label].\n\n[^label]: Footnote.\n"))
     #expect(values.contains(.footnoteReference(literal: "1")))
     #expect(values.contains(.footnoteDefinition(literal: "label")))
 }
 
 @Test func footnoteASTRemainsUsableWhenBackendXMLIsNotWellFormed() throws {
-    let engine = MarkdownEngine(configuration: .init(options: [.footnotes]))
+    let engine = MarkdownEngine(configuration: .init(extensions: [], options: [.footnotes]))
     let source = "A[^n].\n\n[^n]: note\n"
     let xml = try engine.render(source, as: .xml)
     // These exact node names come from the pinned backend; the wrapper does not

@@ -1,4 +1,4 @@
-# Security boundary
+# Security model
 
 The C library's default HTML policy filters raw HTML and some unsafe links. `.allowUnsafeHTML` enables the backend's `CMARK_OPT_UNSAFE`; neither setting is a complete HTML sanitizer or a reproduction of GitHub.com hosted post-processing. Hosts must apply context-appropriate output policies.
 

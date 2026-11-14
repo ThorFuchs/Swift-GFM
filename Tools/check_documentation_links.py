@@ -42,7 +42,7 @@ def documentation_files(root):
                 if (all_markdown and name.endswith(".md")) or (not all_markdown and name == "README.md"):
                     yield Path(current) / name
 
-    files = [root / "README.md"]
+    files = [path for path in (root / "README.md", root / "SECURITY.md") if path.exists()]
     for directory in ("Documentation", "Sources/SwiftGFM/SwiftGFM.docc"):
         files.extend(find(root / directory, all_markdown=True))
     for directory in ("Fixtures", "Tests/SwiftGFMTests/Fixtures", "Experiments"):
