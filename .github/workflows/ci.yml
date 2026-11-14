@@ -1,40 +1,54 @@
 name: CI
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
 jobs:
-  swift:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+  linux:
+    name: Linux / Swift 6.4.2
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    container:
+      # Official swift:6.4.2-noble OCI index (amd64 and arm64).
+      image: swift@sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4
     steps:
-      - uses: actions/checkout@v4
-      - uses: swift-actions/setup-swift@v2
+      - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
         with:
-          swift-version: '6.4.2'
-      - if: runner.os == 'Linux'
-        run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests
+          python-version: '3.12.16'
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify the checked-out workspace
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Verify toolchain
+        run: |
+          swift --version | tee "$RUNNER_TEMP/swift-version.txt"
+          grep -F 'Swift version 6.4.2 ' "$RUNNER_TEMP/swift-version.txt"
+          python3 --version
+      - run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests
       - run: swift test
       - run: swift test -c release
-      - if: runner.os == 'Linux'
-        run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
-      - if: runner.os == 'Linux'
+      - run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
+      - name: Address Sanitizer (leak detection disabled)
         env:
           ASAN_OPTIONS: detect_leaks=0
         run: swift test --sanitize=address --scratch-path "$RUNNER_TEMP/swift-gfm-asan"
-      - if: runner.os == 'Linux'
-        run: sh Tools/build-docc.sh "$RUNNER_TEMP/swift-gfm-docc-build" "$RUNNER_TEMP/SwiftGFM.doccarchive"
+      - run: sh Tools/build-docc.sh "$RUNNER_TEMP/swift-gfm-docc-build" "$RUNNER_TEMP/SwiftGFM.doccarchive"
       - run: python3 -m venv .analysis-venv
       - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
       - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
-      - if: runner.os == 'Linux'
-        shell: bash
+      - name: Verify C symbol namespace
         run: |
           object=$(find .build -name GitHubCMark.o -type f -print -quit)
           test -n "$object"
           .analysis-venv/bin/python Tools/check_cmark_symbol_namespace.py "$object"
-      - if: runner.os == 'Linux'
-        shell: bash
+      - name: Compare with pinned upstream reference
         run: |
+          if ! command -v cmake >/dev/null; then
+            apt-get update
+            apt-get install -y cmake
+          fi
           git init "$RUNNER_TEMP/cmark-gfm"
           git -C "$RUNNER_TEMP/cmark-gfm" remote add origin https://github.com/github/cmark-gfm.git
           git -C "$RUNNER_TEMP/cmark-gfm" fetch --depth 1 origin 27d942c8b0a62d192f616e5bf3578f4b6a89e180
@@ -57,3 +71,27 @@ jobs:
           probe="$(swift build --package-path Experiments/ASTParityProbe --show-bin-path)/ASTParityProbe"
           python3 Tools/check_ast_projection.py --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-fixture-flags.json"
           python3 Tools/check_ast_projection.py --full-gfm --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-full-gfm.json"
+
+  macos:
+    name: macOS / Xcode 27.2
+    # Same GitHub-hosted Xcode runner used by the Swift-JSON sibling.
+    runs-on: xcode-27
+    timeout-minutes: 60
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
+    steps:
+      - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        with:
+          python-version: '3.12.16'
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Record Xcode and Swift versions
+        run: |
+          xcodebuild -version
+          swift --version
+      - run: swift test
+      - run: swift test -c release
+      - run: python3 -m venv .analysis-venv
+      - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
