@@ -11,11 +11,14 @@ class BackendRevisionTests(unittest.TestCase):
         self.assertEqual(problems(ROOT, list(tracked_files(ROOT)), REVISION, VERSION), [])
 
     def test_detects_a_stale_revision_and_version(self):
-        stale = "0" * 40
-        found = problems(ROOT, list(tracked_files(ROOT)), stale, "0.29.0.gfm.99")
+        # Build the stale values at run time so this file never contains a literal
+        # version or revision that the repository check would report.
+        stale_revision = "0" * 40
+        stale_version = VERSION.rsplit(".", 1)[0] + ".9999"
+        found = problems(ROOT, list(tracked_files(ROOT)), stale_revision, stale_version)
         self.assertTrue(any("does not mention the pinned revision" in item for item in found))
         self.assertTrue(any("backendRevision" in item for item in found))
-        self.assertTrue(any("version 0.29.0.gfm.13 is not 0.29.0.gfm.99" in item for item in found))
+        self.assertTrue(any(f"version {VERSION} is not {stale_version}" in item for item in found))
 
 
 if __name__ == "__main__":
