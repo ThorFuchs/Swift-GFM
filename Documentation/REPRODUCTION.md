@@ -1,6 +1,6 @@
 # Reproduction and gate status
 
-**Current wrapper:** The main package now provides the single six-format string-to-string API described in [WRAPPER-API.md](WRAPPER-API.md). Historical feasibility and specification-gate results below remain evidence rather than a statement that the wrapper is absent.
+**Current wrapper:** The main package provides the six-format string-to-string API described in [WRAPPER-API.md](WRAPPER-API.md) and a separate read-only [Swift AST](AST.md). Historical feasibility and specification-gate results below remain evidence rather than a statement that the wrapper is absent.
 
 The published versions checked on 2026-11-13 are [CommonMark 0.31.2](https://spec.commonmark.org/) and [GFM 0.29-gfm](https://github.github.com/gfm/). Their corpora are independent.
 

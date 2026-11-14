@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Require documentation on public, source-declared SwiftGFM symbols."""
 import json
 import pathlib

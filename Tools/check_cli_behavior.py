@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Exercise the standalone CLI's input, output, and error contract."""
 import argparse
 import subprocess

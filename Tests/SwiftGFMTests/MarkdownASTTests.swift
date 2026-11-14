@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 import Foundation
 import Testing
 
@@ -65,6 +67,19 @@ private func kinds(_ document: MarkdownDocument) -> [MarkdownNodeKind] {
     #expect(values.contains(.footnoteDefinition(literal: "label")))
 }
 
+@Test func footnoteASTRemainsUsableWhenBackendXMLIsNotWellFormed() throws {
+    let engine = MarkdownEngine(configuration: .init(options: [.footnotes]))
+    let source = "A[^n].\n\n[^n]: note\n"
+    let xml = try engine.render(source, as: .xml)
+    // These exact node names come from the pinned backend; the wrapper does not
+    // silently rewrite its XML. The Swift AST is copied directly from C nodes.
+    #expect(xml.contains("<<unknown> />"))
+    #expect(xml.contains("</<unknown>>"))
+    let values = kinds(try engine.parse(source))
+    #expect(values.contains(.footnoteReference(literal: "1")))
+    #expect(values.contains(.footnoteDefinition(literal: "n")))
+}
+
 @Test func astHandlesLongUnicodeNULAndNestedBlocks() throws {
     let source = String(repeating: "λ", count: 50_000) + "\u{0}end\n"
     let values = kinds(try MarkdownEngine().parse(source))
@@ -74,6 +89,37 @@ private func kinds(_ document: MarkdownDocument) -> [MarkdownNodeKind] {
     #expect(throws: MarkdownEngineError.unsupportedExtensions(128)) {
         try MarkdownEngine(configuration: .init(extensions: .init(rawValue: 128))).parse("x")
     }
+}
+
+@Test func astReleasesDeeplyNestedDocument() throws {
+    // The upstream pathological corpus covers rendering; this additionally
+    // exercises retaining, walking, and releasing the independently owned AST.
+    func parseAndRelease() throws {
+        let depth = 50_000
+        let document = try MarkdownEngine().parse(String(repeating: "> ", count: depth) + "text\n")
+        var blocks = 0
+        document.walk { node in
+            if case .blockQuote = node.kind { blocks += 1 }
+            return .visitChildren
+        }
+        #expect(blocks == depth)
+    }
+    try parseAndRelease()
+}
+
+@Test func astSubtreeSurvivesOriginalDocument() throws {
+    func parsedHeading() throws -> MarkdownNode {
+        let document = try MarkdownEngine().parse("# Hello *Swift*\n\nAnother paragraph\n")
+        return document.root.children[0]
+    }
+    let heading = try parsedHeading()
+    #expect(heading.kind == .heading(level: 1))
+    var text: [String] = []
+    heading.walk { node in
+        if case .text(let value) = node.kind { text.append(value) }
+        return .visitChildren
+    }
+    #expect(text == ["Hello ", "Swift"])
 }
 
 private struct SkippingVisitor: MarkdownVisitor {

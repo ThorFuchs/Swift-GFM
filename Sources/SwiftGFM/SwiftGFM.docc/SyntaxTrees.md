@@ -43,3 +43,9 @@ Swift Markdown library's tree and does not capture every internal cmark field or
 every original spelling choice. No C pointer escapes into the Swift tree. The
 package does not rewrite or render Swift trees; rendering the original source
 performs a separate cmark parse.
+
+Nodes share immutable tree storage. Keeping any node retains the whole parsed
+tree, and each access to ``MarkdownNode/children`` builds an array of child
+values. Node storage and traversal are nonrecursive. Optional
+<doc:ResourceLimits> can bound input bytes and Swift AST size, but do not impose
+a hard memory limit on cmark parsing.

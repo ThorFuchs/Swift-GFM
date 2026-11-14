@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 #ifndef SWIFT_GFM_CMARK_BRIDGE_H
 #define SWIFT_GFM_CMARK_BRIDGE_H
 #include <stddef.h>

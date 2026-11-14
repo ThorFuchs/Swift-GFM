@@ -1,4 +1,24 @@
-# S0 upstream assessment (2026-11-13)
+# Upstream strategy decision
+
+**Status: accepted for the current package.** SwiftGFM vendors the original
+GitHub cmark-gfm C source at `27d942c8b0a62d192f616e5bf3578f4b6a89e180` and
+provides a Swift string-to-string rendering API plus a separate read-only
+Swift AST. Its compatibility claim is fidelity to that backend under explicit
+configuration, not complete CommonMark, GFM, GitHub.com, or Jekyll
+conformance. No swift-markdown fork or runtime Swift Markdown dependency is used.
+
+The SwiftPM integration preserves the upstream source and its notices, prefixes
+C symbols to avoid observed collisions, and serializes wrapper calls with a
+shared lock. The Swift AST copies exposed C data into immutable values and does
+not expose the C tree. See [WRAPPER-API.md](WRAPPER-API.md), [AST.md](AST.md),
+and [BUNDLED-CMARK-QA.md](BUNDLED-CMARK-QA.md) for the current contract and
+evidence. The original strict profile gates are not claimed as passed.
+
+## Historical S0 upstream assessment (2026-11-13)
+
+The following assessment records what was known at S0. Statements about
+provisional choices or missing implementation describe that date and are
+superseded by the accepted decision above.
 
 Status: provisional; gate not passed. Inspected swift-markdown `ea1d88be47afe8a731b3971d7b3fb7a3a6db1a5a` (tools 6.2, Swift language mode 5), its swift-cmark `gfm` branch at `437611671145d47e6d9679761b8a5987766f4ae5`, commonmark/cmark `d56b4bdced7563c7bd596f8f80dd0521eb8ca34a`, github/cmark-gfm `27d942c8b0a62d192f616e5bf3578f4b6a89e180`, and commonmark-spec `8a5f7646e9f67c3004f023d262b3e6b596afc2ed`. These are inspected snapshots, not package or reference pins. swift-markdown declares a branch dependency on swift-cmark and a DocC plugin; resolving its dependency graph reproducibly remains open.
 

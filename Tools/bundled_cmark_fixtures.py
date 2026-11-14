@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 """Provenance for the unmodified test resources from the pinned C backend."""
 import pathlib
 

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 """Map published examples to historical cmark-gfm source examples by exact content.
 
 This is evidence for reference configuration, not proof that the historical

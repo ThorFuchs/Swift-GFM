@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Reproduce reference comparisons for the 15 published GFM mapping gaps."""
 import argparse
 import hashlib

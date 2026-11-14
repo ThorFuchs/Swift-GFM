@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Check a SwiftPM GitHub-C-source probe against its C CLI on source fixtures."""
 import argparse
 import base64

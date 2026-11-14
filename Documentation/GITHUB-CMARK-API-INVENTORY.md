@@ -1,6 +1,6 @@
 # GitHub cmark-gfm API inventory and wrapper assessment
 
-**Implementation update:** The main `SwiftGFM` target now wraps the pinned GitHub sources with one `render(_:as:)` method and a shared lock. The original experiment and measurements below remain historical; see [WRAPPER-API.md](WRAPPER-API.md) for the current product and qualification.
+**Implementation update:** The main `SwiftGFM` target now wraps the pinned GitHub sources with one `render(_:as:)` method, a separate read-only Swift AST, and a shared lock. The original experiment and measurements below remain historical; see [WRAPPER-API.md](WRAPPER-API.md) and [AST.md](AST.md) for the current product and qualification.
 
 Inspected [github/cmark-gfm](https://github.com/github/cmark-gfm) at commit `27d942c8b0a62d192f616e5bf3578f4b6a89e180` (its version string is `0.29.0.gfm.13`). This was repository HEAD when checked on 2026-11-13. The [main public header](https://github.com/github/cmark-gfm/blob/27d942c8b0a62d192f616e5bf3578f4b6a89e180/src/cmark-gfm.h), [extension API header](https://github.com/github/cmark-gfm/blob/27d942c8b0a62d192f616e5bf3578f4b6a89e180/src/cmark-gfm-extension_api.h), and [core extensions header](https://github.com/github/cmark-gfm/blob/27d942c8b0a62d192f616e5bf3578f4b6a89e180/extensions/cmark-gfm-core-extensions.h) are authoritative. The exact source commit, options, attached extensions and output format are all part of a reproducible wrapper contract; `0.29.0.gfm.13` alone is not a complete provenance identifier.
 

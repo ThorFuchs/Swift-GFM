@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare successful CLI options and six renderers for a small fixed corpus."""
 import argparse
 import base64

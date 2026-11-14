@@ -1,6 +1,6 @@
 # cmark-gfm concurrency and process isolation
 
-The public wrapper now implements the conservative shared-lock design below. Linux stress and Thread Sanitizer checks passed; those checks are not a complete concurrency guarantee. It concerns the literal GitHub `cmark-gfm` source at commit `27d942c8b0a62d192f616e5bf3578f4b6a89e180` copied into `Experiments/GitHubCMarkProbe`.
+The public wrapper implements the conservative shared-lock design below. Linux stress and Thread Sanitizer checks passed; those checks are not a complete concurrency guarantee. The production target vendors the literal GitHub `cmark-gfm` source at commit `27d942c8b0a62d192f616e5bf3578f4b6a89e180`; `Experiments/GitHubCMarkProbe` contains a separate historical feasibility copy.
 
 ## Build and process model
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Strict, byte-for-byte comparison of a command with official JSON examples."""
 import argparse
 import hashlib

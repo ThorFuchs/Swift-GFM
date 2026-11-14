@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare wrapper and independently built pinned cmark on bundled test inputs."""
 import argparse
 import base64

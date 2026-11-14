@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare the Swift AST projection with independently rendered cmark XML."""
 import argparse
 import hashlib

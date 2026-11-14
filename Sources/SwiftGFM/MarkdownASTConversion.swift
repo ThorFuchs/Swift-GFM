@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 internal import GitHubCMark
 
 // C pointers never leave this conversion, which runs under MarkdownEngine's lock.
@@ -5,26 +7,39 @@ private struct Frame {
     let kind: MarkdownNodeKind
     let range: MarkdownSourceRange?
     var nextChild: OpaquePointer?
-    var children: [MarkdownNode] = []
+    var children: [Int] = []
 }
 
-func copyMarkdownTree(_ root: OpaquePointer, includeSourcePositions: Bool) throws -> MarkdownNode {
-    func frame(_ node: OpaquePointer) throws -> Frame {
-        Frame(
+func copyMarkdownTree(_ root: OpaquePointer, includeSourcePositions: Bool, limits: MarkdownResourceLimits) throws
+    -> MarkdownNode
+{
+    var nodeCount = 0
+    func frame(_ node: OpaquePointer, depth: Int) throws -> Frame {
+        if let limit = limits.maximumASTDepth, depth > limit {
+            throw MarkdownEngineError.resourceLimitExceeded(.astDepth, limit: limit, actual: depth)
+        }
+        nodeCount += 1
+        if let limit = limits.maximumASTNodes, nodeCount > limit {
+            throw MarkdownEngineError.resourceLimitExceeded(.astNodes, limit: limit, actual: nodeCount)
+        }
+        return Frame(
             kind: try nodeKind(node), range: includeSourcePositions ? sourceRange(node) : nil,
             nextChild: swiftgfm_cmark_node_first_child(node))
     }
-    var stack = [try frame(root)]
+    var stack = [try frame(root, depth: 1)]
+    var records: [MarkdownNodeRecord] = []
     while !stack.isEmpty {
         let index = stack.count - 1
         if let child = stack[index].nextChild {
             stack[index].nextChild = swiftgfm_cmark_node_next(child)
-            stack.append(try frame(child))
+            stack.append(try frame(child, depth: stack.count + 1))
         } else {
             let completed = stack.removeLast()
-            let node = MarkdownNode(kind: completed.kind, range: completed.range, children: completed.children)
-            if stack.isEmpty { return node }
-            stack[stack.count - 1].children.append(node)
+            let nodeIndex = records.count
+            records.append(
+                MarkdownNodeRecord(kind: completed.kind, range: completed.range, children: completed.children))
+            if stack.isEmpty { return MarkdownNode(records: records, index: nodeIndex) }
+            stack[stack.count - 1].children.append(nodeIndex)
         }
     }
     throw MarkdownEngineError.invalidASTNode("missing root")

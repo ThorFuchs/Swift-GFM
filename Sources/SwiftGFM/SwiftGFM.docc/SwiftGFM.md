@@ -26,7 +26,9 @@ let document = try engine.parse("# Hello *Swift*\n")
 - <doc:Rendering>
 - <doc:SyntaxTrees>
 - <doc:ConcurrencyAndSecurity>
+- <doc:ResourceLimits>
 - <doc:BundledConformance>
+- <doc:Licensing>
 
 ### Parsing and rendering
 
@@ -36,6 +38,8 @@ let document = try engine.parse("# Hello *Swift*\n")
 - ``MarkdownExtensions``
 - ``MarkdownOptions``
 - ``MarkdownEngineError``
+- ``MarkdownResourceLimit``
+- ``MarkdownResourceLimits``
 
 ### Inspecting a document
 

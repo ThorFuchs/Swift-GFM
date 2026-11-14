@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Cluster strict HTML differences without changing conformance results."""
 import argparse
 from collections import Counter, defaultdict

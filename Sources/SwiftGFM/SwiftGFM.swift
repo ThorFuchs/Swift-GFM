@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 import Foundation
 internal import GitHubCMark
 
@@ -84,11 +86,23 @@ public struct MarkdownConfiguration: Sendable, Hashable {
     public var options: MarkdownOptions
     /// Renderer wrap width; zero disables wrapping. Must fit in a nonnegative `Int32`.
     public var width: Int
-    /// Creates a configuration. Defaults match cmark's zero-extension settings.
+    /// Optional input and Swift AST projection limits. Defaults to unlimited.
+    public var limits: MarkdownResourceLimits
+    /// Creates a configuration with no SwiftGFM-enforced resource limits.
+    /// Other defaults match cmark's zero-extension settings.
     public init(extensions: MarkdownExtensions = [], options: MarkdownOptions = [], width: Int = 0) {
+        self.init(extensions: extensions, options: options, width: width, limits: .unlimited)
+    }
+
+    /// Creates a configuration with explicit input and Swift AST projection limits.
+    public init(
+        extensions: MarkdownExtensions = [], options: MarkdownOptions = [], width: Int = 0,
+        limits: MarkdownResourceLimits
+    ) {
         self.extensions = extensions
         self.options = options
         self.width = width
+        self.limits = limits
     }
     /// The C library's default settings: no extensions, safe HTML, no wrapping.
     public static let cmarkDefault = Self()
@@ -112,6 +126,10 @@ public enum MarkdownEngineError: Error, Sendable, Equatable {
     case renderFailed
     /// The backend returned rendered bytes that were not valid UTF-8.
     case invalidUTF8Output
+    /// A resource limit was configured with a negative value.
+    case invalidResourceLimit(MarkdownResourceLimit, value: Int)
+    /// An input or Swift AST projection exceeded the specified limit.
+    case resourceLimitExceeded(MarkdownResourceLimit, limit: Int, actual: Int)
     /// A backend node has no supported Swift projection.
     case unsupportedASTNode(name: String, type: Int32)
     /// The backend returned an unexpected value for a node.
@@ -177,7 +195,8 @@ public struct MarkdownEngine: Sendable {
     public func parse(_ source: String) throws -> MarkdownDocument {
         try withParsedRoot(source) { _, root, _, _ in
             let tree = try copyMarkdownTree(
-                root, includeSourcePositions: configuration.options.contains(.sourcePositions))
+                root, includeSourcePositions: configuration.options.contains(.sourcePositions),
+                limits: configuration.limits)
             return MarkdownDocument(source: source, configuration: configuration, root: tree)
         }
     }
@@ -190,6 +209,20 @@ public struct MarkdownEngine: Sendable {
         }
         let unknown = configuration.extensions.rawValue & ~MarkdownExtensions.gfm.rawValue
         guard unknown == 0 else { throw MarkdownEngineError.unsupportedExtensions(unknown) }
+        let configuredLimits: [(MarkdownResourceLimit, Int?)] = [
+            (.inputUTF8Bytes, configuration.limits.maximumInputUTF8Bytes),
+            (.astNodes, configuration.limits.maximumASTNodes),
+            (.astDepth, configuration.limits.maximumASTDepth),
+        ]
+        for (kind, value) in configuredLimits {
+            if let value, value < 0 { throw MarkdownEngineError.invalidResourceLimit(kind, value: value) }
+        }
+        if let limit = configuration.limits.maximumInputUTF8Bytes {
+            let actual = source.utf8.count
+            if actual > limit {
+                throw MarkdownEngineError.resourceLimitExceeded(.inputUTF8Bytes, limit: limit, actual: actual)
+            }
+        }
         return try Self.gate.withLock {
             let flags = Int32(bitPattern: configuration.options.rawValue)
             swiftgfm_cmark_gfm_core_extensions_ensure_registered()

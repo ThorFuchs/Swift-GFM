@@ -1,5 +1,7 @@
 # GFM reporting views
 
+For the production wrapper's tests against the pinned **cmark-gfm repository's bundled fixtures**, see [BUNDLED-CMARK-QA.md](BUNDLED-CMARK-QA.md). Those backend-fidelity checks are distinct from the published-specification views described below.
+
 The pinned published GFM HTML has 677 numbered examples. Neither reporting view currently qualifies Swift-GFM: the candidate wrapper is available but extraction from the published HTML has not been fully verified against its exact source, and the per-example reference settings remain provisional. `qualification_eligible` is explicitly false for GFM reports. Actual and expected HTML are compared as bytes; no normalization changes pass/fail.
 
 ## Published examples

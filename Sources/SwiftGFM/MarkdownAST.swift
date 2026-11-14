@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 /// A location exactly as reported by the pinned cmark backend. Columns follow
 /// cmark's source-position rules and are not Swift `String.Index` values.
 public struct MarkdownSourcePosition: Sendable, Equatable {
@@ -113,14 +115,33 @@ public enum MarkdownNodeKind: Sendable, Equatable {
     case footnoteReference(literal: String)
 }
 
+// Flat storage avoids recursive deallocation for deeply nested documents.
+// Each node value shares the same immutable, copy-on-write Array storage.
+struct MarkdownNodeRecord: Sendable {
+    let kind: MarkdownNodeKind
+    let range: MarkdownSourceRange?
+    let children: [Int]
+}
+
 /// An immutable Swift value, with no pointer into the backend's C tree.
+/// A node retains the storage for its entire parsed document.
 public struct MarkdownNode: Sendable {
+    private let records: [MarkdownNodeRecord]
+    private let index: Int
+
+    init(records: [MarkdownNodeRecord], index: Int) {
+        self.records = records
+        self.index = index
+    }
+
     /// Typed node identity and properties.
-    public let kind: MarkdownNodeKind
+    public var kind: MarkdownNodeKind { records[index].kind }
     /// The backend's source range, when requested and available.
-    public let range: MarkdownSourceRange?
-    /// Child nodes in backend order.
-    public let children: [MarkdownNode]
+    public var range: MarkdownSourceRange? { records[index].range }
+    /// Child nodes in backend order. Access constructs an array of node values.
+    public var children: [MarkdownNode] {
+        records[index].children.map { MarkdownNode(records: records, index: $0) }
+    }
 
     /// Walk this node and its descendants in depth-first preorder.
     public func walk<V: MarkdownVisitor>(_ visitor: inout V) {

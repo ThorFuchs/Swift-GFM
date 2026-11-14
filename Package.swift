@@ -1,4 +1,5 @@
 // swift-tools-version: 6.4
+// SPDX-License-Identifier: Apache-2.0
 import PackageDescription
 
 /// Pinned C global symbols are namespaced without modifying upstream source.

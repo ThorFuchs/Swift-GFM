@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import pathlib
 import unittest
 from compare_bundled_gfm import ROOT, SOURCES, extract

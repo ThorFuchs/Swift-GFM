@@ -37,6 +37,7 @@ jobs:
       - run: sh Tools/build-docc.sh "$RUNNER_TEMP/swift-gfm-docc-build" "$RUNNER_TEMP/SwiftGFM.doccarchive"
       - run: python3 -m venv .analysis-venv
       - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: python3 Tools/check_documentation_links.py
       - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
       - name: Verify C symbol namespace
         run: |
@@ -93,4 +94,5 @@ jobs:
       - run: swift test -c release
       - run: python3 -m venv .analysis-venv
       - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: python3 Tools/check_documentation_links.py
       - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'

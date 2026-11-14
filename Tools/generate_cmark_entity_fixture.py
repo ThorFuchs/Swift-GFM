@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Generate/check strict entity expectations from the pinned cmark-gfm CLI."""
 import argparse
 import hashlib

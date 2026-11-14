@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: Apache-2.0
 # Requires git, CMake and a C compiler. Builds the exact inspected revisions locally.
 set -eu
 root=${1:-"$PWD/.references"}

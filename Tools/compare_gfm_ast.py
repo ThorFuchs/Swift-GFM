@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare partial Swift Markdown and cmark-gfm AST projections for HTML failures."""
 import argparse
 from collections import Counter

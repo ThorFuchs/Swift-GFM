@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 // An exploratory XML projection, not part of SwiftGFM's public API.
 import Foundation
 import FoundationXML

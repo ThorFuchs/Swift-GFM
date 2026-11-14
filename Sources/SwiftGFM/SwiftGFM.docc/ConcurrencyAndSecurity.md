@@ -12,8 +12,10 @@ boundary.
 
 These operations are synchronous. A task waiting for the lock can occupy an
 executor thread, and task cancellation does not interrupt a running C call.
-The library does not impose time, depth, memory, or input-size limits. A host
-that needs hard deadlines or crash isolation needs a separate process boundary.
+Optional <doc:ResourceLimits> can bound input bytes and the Swift AST
+projection, but default to unlimited. They do not impose hard C memory,
+output-size, or execution-time limits. A host that needs hard deadlines or
+crash isolation needs a separate process boundary.
 
 ## Output policy
 

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 """Extract numbered examples from the published GFM 0.29 HTML specification."""
 from html.parser import HTMLParser
 

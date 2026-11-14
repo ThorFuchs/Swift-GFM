@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 import Foundation
 import cmark_gfm
 import cmark_gfm_extensions

@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: Apache-2.0
 # Build DocC without a package plugin or external documentation dependency.
 set -eu
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)

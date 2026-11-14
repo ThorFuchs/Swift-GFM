@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Check the linked C target object's global symbol namespace on Linux."""
 import argparse
 import pathlib

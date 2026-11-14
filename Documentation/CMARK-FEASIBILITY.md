@@ -1,5 +1,7 @@
 # Direct cmark-gfm feasibility spike
 
+> Historical experiment: its conclusions describe the earlier swift-cmark spike, not the implemented SwiftGFM wrapper. See [WRAPPER-API.md](WRAPPER-API.md) and [AST.md](AST.md) for the current package.
+
 Status: experimental, not a production adapter or a release qualification. Tested 2026-11-13 on Debian 13 x86_64, Swift 6.4.2, swift-cmark `437611671145d47e6d9679761b8a5987766f4ae5`, swift-markdown `ea1d88be47afe8a731b3971d7b3fb7a3a6db1a5a`, CommonMark cmark 0.31.2 `eec0eeba6d31189fd828314576494566d539b1e3`. No fork or upstream code modification was made.
 
 ## Findings

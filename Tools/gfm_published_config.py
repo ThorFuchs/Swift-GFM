@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 """Provisional configurations for the 15 published examples missing historical labels."""
 # These choices are derived from the published sections and documented in
 # Documentation/GFM-15-INVESTIGATION.md. They are not original source labels.

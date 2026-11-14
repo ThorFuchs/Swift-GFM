@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare syntax-tree XML for failing CommonMark HTML examples (experimental)."""
 import argparse
 import json

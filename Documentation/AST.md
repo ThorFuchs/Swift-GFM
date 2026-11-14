@@ -31,7 +31,10 @@ the current subtree or `.stop` to end traversal. `document.walk { ... }` also
 accepts a throwing closure. `MarkdownWalker` and `MarkdownNode.walk` can walk a
 subtree. Traversal uses an explicit stack, and the visitor can maintain its own
 state. Swift arrays have value semantics; mutating a caller's copy cannot change
-the parsed node.
+the parsed node. Node values share immutable flat storage. Retaining any node
+keeps the complete parsed tree's storage alive, and reading `children` creates
+an array of child values. Releasing a deeply nested tree does not recursively
+destroy a chain of child nodes.
 
 ## Mapping and scope
 
@@ -76,10 +79,12 @@ all inputs.
 
 `MarkdownEngine`, `MarkdownDocument`, `MarkdownNode`, kinds and metadata are
 `Sendable`. Native parsing and conversion share the module's lock; traversal of
-an already returned tree requires no C access or library lock. The library has
-no per-request time, input-size, depth, or memory budget. A synchronous C call
-does not become cancellable when invoked from a Swift task. The existing cmark
-allocator, raw HTML, URL policy, and host security limitations also apply.
+an already returned tree requires no C access or library lock. Optional
+[resource limits](RESOURCE-LIMITS.md) can bound input bytes and Swift AST node
+count or depth; these limits default to unlimited and do not bound cmark's own
+allocation or execution time. A synchronous C call does not become cancellable
+when invoked from a Swift task. The existing cmark allocator, raw HTML, URL
+policy, and host security limitations also apply.
 
 ## Validation
 

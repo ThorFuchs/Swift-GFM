@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 """Narrow, supplementary checkbox serialization diagnostic; never a pass criterion."""
 from html.parser import HTMLParser
 

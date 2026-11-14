@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 /* SwiftGFM integration shim. The upstream cmark sources remain unchanged. */
 #include "cmark-gfm.h"
 

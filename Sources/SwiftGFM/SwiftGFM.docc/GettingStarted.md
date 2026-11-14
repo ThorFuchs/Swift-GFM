@@ -2,6 +2,30 @@
 
 Create an engine and choose the cmark backend configuration for your application.
 
+## Add the package
+
+SwiftGFM requires Swift tools 6.4 or newer. Add a package dependency and link
+the `SwiftGFM` product, replacing `<reviewed-commit-sha>` with a revision you
+have reviewed:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/ThorFuchs/Swift-GFM.git",
+        revision: "<reviewed-commit-sha>"
+    )
+],
+targets: [
+    .target(
+        name: "YourTarget",
+        dependencies: [.product(name: "SwiftGFM", package: "Swift-GFM")]
+    )
+]
+```
+
+The repository is private; the resolving machine needs GitHub access. No
+release tag is currently provided.
+
 ## Render Markdown
 
 ```swift

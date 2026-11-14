@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Compare Swift Markdown and cmark-gfm on a pinned upstream source suite."""
 import argparse
 import hashlib

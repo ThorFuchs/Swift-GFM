@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 import unittest
 import xml.etree.ElementTree as ET
 from compare_cmark_xml import structure, positions

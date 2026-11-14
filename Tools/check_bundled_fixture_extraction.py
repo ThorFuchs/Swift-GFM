@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Check fixture extraction against the pinned upstream get_tests implementation."""
 import argparse
 import hashlib
