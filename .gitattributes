@@ -1,4 +1,3 @@
 # Preserve the upstream test bytes, including intentional CR and CRLF input.
 Tests/SwiftGFMTests/Fixtures/cmark-gfm/*.txt -text
 Tests/SwiftGFMTests/Fixtures/cmark-gfm/*.json -text
-Fixtures/gfm/cmark-gfm-*-spec.txt -text

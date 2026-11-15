@@ -5,5 +5,3 @@ __pycache__/
 
 .references/
 .toolchains/
-.analysis-deps/
-.analysis-venv/

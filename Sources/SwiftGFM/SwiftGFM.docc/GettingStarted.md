@@ -4,7 +4,7 @@ Create an engine and choose the cmark backend configuration for your application
 
 ## Add the package
 
-SwiftGFM requires Swift tools 6.4 or newer. Add a package dependency and link
+SwiftGFM requires Swift 6.0 or newer. Add a package dependency and link
 the `SwiftGFM` product:
 
 ```swift

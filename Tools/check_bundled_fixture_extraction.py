@@ -8,8 +8,7 @@ import pathlib
 import subprocess
 import sys
 
-from bundled_cmark_fixtures import DIRECTORY, SOURCES
-from compare_bundled_gfm import extract
+from bundled_cmark_fixtures import DIRECTORY, SOURCES, extract
 
 
 def main():

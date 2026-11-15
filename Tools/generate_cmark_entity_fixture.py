@@ -11,7 +11,7 @@ import subprocess
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Vendor/GitHubCMark/src/entities.inc"
 DESTINATION = ROOT / "Tests/SwiftGFMTests/Fixtures/cmark-gfm/entities-reference.json"
-REVISION = "27d942c8b0a62d192f616e5bf3578f4b6a89e180"
+from bundled_cmark_fixtures import REVISION
 
 
 def main():

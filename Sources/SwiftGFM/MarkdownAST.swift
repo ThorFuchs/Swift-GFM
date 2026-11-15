@@ -2,7 +2,7 @@
 
 /// A location exactly as reported by the pinned cmark backend. Columns follow
 /// cmark's source-position rules and are not Swift `String.Index` values.
-public struct MarkdownSourcePosition: Sendable, Equatable {
+public struct MarkdownSourcePosition: Sendable, Hashable {
     /// Backend-reported line number.
     public let line: Int
     /// Backend-reported column number, not a Swift string index.
@@ -11,7 +11,7 @@ public struct MarkdownSourcePosition: Sendable, Equatable {
 
 /// Raw source coordinates reported by cmark, whose end position is inclusive.
 /// Some nodes have no range, including when `.sourcePositions` is disabled.
-public struct MarkdownSourceRange: Sendable, Equatable {
+public struct MarkdownSourceRange: Sendable, Hashable {
     /// The first source coordinate reported by cmark.
     public let start: MarkdownSourcePosition
     /// The inclusive final coordinate reported by cmark.
@@ -19,7 +19,7 @@ public struct MarkdownSourceRange: Sendable, Equatable {
 }
 
 /// The marker style and, for ordered lists, its start and delimiter.
-public enum MarkdownListStyle: Sendable, Equatable {
+public enum MarkdownListStyle: Sendable, Hashable {
     /// A bulleted list.
     case bullet
     /// A numbered list.
@@ -27,7 +27,7 @@ public enum MarkdownListStyle: Sendable, Equatable {
 }
 
 /// The punctuation following a numbered list marker.
-public enum MarkdownListDelimiter: Sendable, Equatable {
+public enum MarkdownListDelimiter: Sendable, Hashable {
     /// A period, as in `1.`.
     case period
     /// A closing parenthesis, as in `1)`.
@@ -35,7 +35,7 @@ public enum MarkdownListDelimiter: Sendable, Equatable {
 }
 
 /// Alignment of a GFM table column.
-public enum MarkdownTableAlignment: Sendable, Equatable {
+public enum MarkdownTableAlignment: Sendable, Hashable {
     /// No explicit alignment.
     case none
     /// Left alignment.
@@ -47,7 +47,7 @@ public enum MarkdownTableAlignment: Sendable, Equatable {
 }
 
 /// Fence details reported by cmark for a fenced code block.
-public struct MarkdownCodeFence: Sendable, Equatable {
+public struct MarkdownCodeFence: Sendable, Hashable {
     /// The fence character, normally a backtick or tilde.
     public let character: Character
     /// The number of fence characters.
@@ -58,7 +58,7 @@ public struct MarkdownCodeFence: Sendable, Equatable {
 
 /// The node kinds and properties exposed by this version of the cmark adapter.
 /// Strings are the backend's parsed values, not necessarily original spelling.
-public enum MarkdownNodeKind: Sendable, Equatable {
+public enum MarkdownNodeKind: Sendable, Hashable {
     /// The root document node.
     case document
     /// A block quotation.
@@ -154,8 +154,40 @@ public struct MarkdownNode: Sendable {
     }
 }
 
+/// Nodes compare structurally: two nodes are equal when their kinds, ranges,
+/// and complete subtrees are equal, even if they come from different parses.
+/// Comparison and hashing visit the whole subtree iteratively.
+extension MarkdownNode: Hashable {
+    /// Returns whether two nodes have equal kinds, ranges, and subtrees.
+    public static func == (lhs: MarkdownNode, rhs: MarkdownNode) -> Bool {
+        var pending = [(lhs, rhs)]
+        while let (left, right) = pending.popLast() {
+            let a = left.records[left.index]
+            let b = right.records[right.index]
+            guard a.kind == b.kind, a.range == b.range, a.children.count == b.children.count else { return false }
+            for (x, y) in zip(a.children, b.children) {
+                pending.append(
+                    (MarkdownNode(records: left.records, index: x), MarkdownNode(records: right.records, index: y)))
+            }
+        }
+        return true
+    }
+
+    /// Hashes the node's kind, range, and complete subtree.
+    public func hash(into hasher: inout Hasher) {
+        var pending = [index]
+        while let current = pending.popLast() {
+            let record = records[current]
+            hasher.combine(record.kind)
+            hasher.combine(record.range)
+            hasher.combine(record.children.count)
+            pending.append(contentsOf: record.children.reversed())
+        }
+    }
+}
+
 /// A snapshot of one cmark parse and the configuration that produced it.
-public struct MarkdownDocument: Sendable {
+public struct MarkdownDocument: Sendable, Hashable {
     /// The original source string supplied to the parser.
     public let source: String
     /// The backend configuration used to parse the source.
@@ -198,7 +230,7 @@ public enum MarkdownWalker {
 }
 
 /// Controls traversal after the current node has been visited.
-public enum MarkdownWalkControl: Sendable {
+public enum MarkdownWalkControl: Sendable, Hashable {
     /// Continue into the node's children.
     case visitChildren
     /// Skip this node's children and continue elsewhere.

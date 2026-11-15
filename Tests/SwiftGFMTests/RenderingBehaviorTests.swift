@@ -92,3 +92,31 @@ private func exactReferenceFormats(_ example: FormatExample) throws {
     #expect(try MarkdownEngine().render("") == "")
     #expect(try MarkdownEngine().parse("").root.kind == .document)
 }
+
+@Test func unsupportedOptionBitsAreRejected() throws {
+    // Hexadecimal constants keep these expressions cheap to type-check on Swift 6.0-6.2.
+    let reservedBits: UInt32 = 0x0000_0109  // cmark's default, legacy safe, and normalize bits
+    let unsupported: [UInt32] = [0x0000_0001, 0x0000_0008, 0x0000_0100, 0x0004_0000, 0x8000_0000]
+    let supported = MarkdownOptions.supported
+    #expect(supported.contains(.allowUnsafeHTML))
+    #expect(supported.rawValue & reservedBits == 0)
+    for bits in unsupported {
+        let engine = MarkdownEngine(configuration: .init(options: MarkdownOptions(rawValue: bits)))
+        let expected = MarkdownEngineError.unsupportedOptions(bits)
+        #expect(throws: expected) { try engine.render("x") }
+        #expect(throws: expected) { try engine.parse("x") }
+    }
+    let extraBit: UInt32 = 0x0010_0000
+    let mixed = MarkdownEngine(configuration: .init(options: [.smartPunctuation, MarkdownOptions(rawValue: extraBit)]))
+    let mixedError = MarkdownEngineError.unsupportedOptions(extraBit)
+    #expect(throws: mixedError) { try mixed.render("x") }
+    let all = MarkdownEngine(configuration: .init(options: .supported))
+    #expect(try all.render("x\n").contains("x"))
+}
+
+@Test func emptyAndLargeInputsAreFedWithoutCopies() throws {
+    #expect(try MarkdownEngine().render("") == "")
+    #expect(try MarkdownEngine().parse("").root.children.isEmpty)
+    let large = String(repeating: "word ", count: 200_000) + "\n"
+    #expect(try MarkdownEngine().render(large).hasPrefix("<p>word word"))
+}

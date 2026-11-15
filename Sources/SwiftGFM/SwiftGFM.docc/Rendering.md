@@ -28,7 +28,7 @@ round trip.
 ``MarkdownConfiguration`` holds ``MarkdownExtensions``, ``MarkdownOptions``,
 and a wrap width. A width of zero disables wrapping; negative values and values
 larger than `Int32.max` cause ``MarkdownEngineError/invalidWidth(_:)``. Unknown
-extension bits cause an error. Unknown option bits are passed to the C backend.
+extension bits and option bits outside ``MarkdownOptions/supported`` cause an error.
 
 ``MarkdownOptions/sourcePositions`` requests source positions, while
 ``MarkdownOptions/smartPunctuation`` enables typography transformations.

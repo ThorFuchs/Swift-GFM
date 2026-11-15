@@ -1,10 +1,20 @@
 name: CI
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly run to catch changes in hosted runners and images.
+    - cron: '17 4 * * 1'
 permissions:
   contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   linux:
-    name: Linux / Swift 6.4.2
+    name: Linux x86_64 / Swift 6.4.2
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     container:
@@ -26,7 +36,7 @@ jobs:
           swift --version | tee "$RUNNER_TEMP/swift-version.txt"
           grep -F 'Swift version 6.4.2 ' "$RUNNER_TEMP/swift-version.txt"
           python3 --version
-      - run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests
+      - run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests Tools/ASTParityProbe
       - run: swift test
       - run: swift test -c release
       - run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
@@ -35,47 +45,112 @@ jobs:
           ASAN_OPTIONS: detect_leaks=0
         run: swift test --sanitize=address --scratch-path "$RUNNER_TEMP/swift-gfm-asan"
       - run: sh Tools/build-docc.sh "$RUNNER_TEMP/swift-gfm-docc-build" "$RUNNER_TEMP/SwiftGFM.doccarchive"
-      - run: python3 -m venv .analysis-venv
-      - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: python3 -m unittest discover -s Tools -p 'test_*.py'
       - run: python3 Tools/check_documentation_links.py
-      - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
+      - run: python3 Tools/check_backend_revision.py
       - name: Verify C symbol namespace
         run: |
           object=$(find .build -name GitHubCMark.o -type f -print -quit)
           test -n "$object"
-          .analysis-venv/bin/python Tools/check_cmark_symbol_namespace.py "$object"
-      - name: Compare with pinned upstream reference
+          python3 Tools/check_cmark_symbol_namespace.py "$object"
+      - name: Build the pinned upstream reference
         run: |
           if ! command -v cmake >/dev/null; then
             apt-get update
             apt-get install -y cmake
           fi
-          git init "$RUNNER_TEMP/cmark-gfm"
-          git -C "$RUNNER_TEMP/cmark-gfm" remote add origin https://github.com/github/cmark-gfm.git
-          git -C "$RUNNER_TEMP/cmark-gfm" fetch --depth 1 origin 27d942c8b0a62d192f616e5bf3578f4b6a89e180
-          git -C "$RUNNER_TEMP/cmark-gfm" checkout --detach FETCH_HEAD
-          test "$(git -C "$RUNNER_TEMP/cmark-gfm" rev-parse HEAD)" = 27d942c8b0a62d192f616e5bf3578f4b6a89e180
-          cmake -S "$RUNNER_TEMP/cmark-gfm" -B "$RUNNER_TEMP/cmark-gfm-build" -DCMAKE_BUILD_TYPE=Release
-          cmake --build "$RUNNER_TEMP/cmark-gfm-build" --parallel 2
-          python3 Tools/check_bundled_fixture_extraction.py --upstream-test-dir "$RUNNER_TEMP/cmark-gfm/test"
-          python3 Tools/generate_cmark_entity_fixture.py --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --check
+          sh Tools/build-references.sh "$RUNNER_TEMP/references"
+      - name: Compare with the pinned upstream reference
+        run: |
+          upstream="$RUNNER_TEMP/references/cmark-gfm"
+          reference="$RUNNER_TEMP/references/cmark-gfm-build/src/cmark-gfm"
+          python3 Tools/check_bundled_fixture_extraction.py --upstream-test-dir "$upstream/test"
+          python3 Tools/generate_cmark_entity_fixture.py --reference "$reference" --check
           swift_bin="$(swift build --show-bin-path)/swift-gfm"
           python3 Tools/check_cli_behavior.py --binary "$swift_bin"
-          runner="$RUNNER_TEMP/cmark-gfm/test/spec_tests.py"
-          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/spec.txt" --program "$swift_bin html"
-          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/extensions.txt" --program "$swift_bin html" --extensions 'table strikethrough autolink tagfilter footnotes tasklist'
-          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/regression.txt" --program "$swift_bin html"
-          python3 "$runner" --no-normalize --spec "$RUNNER_TEMP/cmark-gfm/test/smart_punct.txt" --program "$swift_bin html --smart"
-          python3 Tools/check_bundled_cmark_reference.py --probe "$swift_bin" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/bundled-backend-parity.json"
-          python3 "$RUNNER_TEMP/cmark-gfm/test/pathological_tests.py" --program "$swift_bin html"
-          swift build --package-path Experiments/ASTParityProbe
-          probe="$(swift build --package-path Experiments/ASTParityProbe --show-bin-path)/ASTParityProbe"
-          python3 Tools/check_ast_projection.py --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-fixture-flags.json"
-          python3 Tools/check_ast_projection.py --full-gfm --probe "$probe" --reference "$RUNNER_TEMP/cmark-gfm-build/src/cmark-gfm" --report "$RUNNER_TEMP/ast-full-gfm.json"
+          runner="$upstream/test/spec_tests.py"
+          python3 "$runner" --no-normalize --spec "$upstream/test/spec.txt" --program "$swift_bin html"
+          python3 "$runner" --no-normalize --spec "$upstream/test/extensions.txt" --program "$swift_bin html" --extensions 'table strikethrough autolink tagfilter footnotes tasklist'
+          python3 "$runner" --no-normalize --spec "$upstream/test/regression.txt" --program "$swift_bin html"
+          python3 "$runner" --no-normalize --spec "$upstream/test/smart_punct.txt" --program "$swift_bin html --smart"
+          python3 Tools/check_bundled_cmark_reference.py --probe "$swift_bin" --reference "$reference" --report "$RUNNER_TEMP/bundled-backend-parity.json"
+          python3 "$upstream/test/pathological_tests.py" --program "$swift_bin html"
+          swift build --package-path Tools/ASTParityProbe
+          probe="$(swift build --package-path Tools/ASTParityProbe --show-bin-path)/ASTParityProbe"
+          python3 Tools/check_ast_projection.py --probe "$probe" --reference "$reference" --report "$RUNNER_TEMP/ast-fixture-flags.json"
+          python3 Tools/check_ast_projection.py --full-gfm --probe "$probe" --reference "$reference" --report "$RUNNER_TEMP/ast-full-gfm.json"
+
+  linux-arm64:
+    name: Linux arm64 / Swift 6.4.2
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
+    container:
+      # Official swift:6.4.2-noble OCI index (amd64 and arm64).
+      image: swift@sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - run: swift test
+      - run: swift test -c release
+
+  linux-swift-versions:
+    name: Linux / Swift ${{ matrix.swift }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Official swift:<version>-noble OCI indexes, pinned by digest.
+          - swift: '6.0'
+            image: swift@sha256:f73bbe1acf48ee6b0b6764268e0e2bed2cdf29285abcc908320a68cbfd9d5b90
+          - swift: '6.1'
+            image: swift@sha256:42b58c8cff07f45e6f083ade65743b5b147d0c01d4370d602fcf3c7b37dc1cac
+          - swift: '6.2'
+            image: swift@sha256:3459518b2e723a7c363d0f8cfa44fc796c77ecd8c18e92fd10e6f92dd78c0b12
+          - swift: '6.3'
+            image: swift@sha256:1ba0416be43dc57ba6ff7d02114356cad1ab17364024b7669385e3fe41a224aa
+    container:
+      image: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify toolchain
+        run: |
+          swift --version | tee "$RUNNER_TEMP/swift-version.txt"
+          grep -F "Swift version ${{ matrix.swift }}" "$RUNNER_TEMP/swift-version.txt"
+      - run: swift test
+
+  cross-compile:
+    name: WASI and Static Linux SDK / Swift 6.4.2
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    container:
+      # Official swift:6.4.2-noble OCI index (amd64 and arm64).
+      image: swift@sha256:23d9b28ad97fb1cf1999edc3a0cb265ee915ed42299a9344e7173d5a6d2b05f4
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install the Swift SDKs
+        run: |
+          # Checksums from https://www.swift.org/api/v1/install/releases.json for 6.4.2.
+          swift sdk install https://download.swift.org/swift-6.4.2-release/wasm-sdk/swift-6.4.2-RELEASE/swift-6.4.2-RELEASE_wasm.artifactbundle.tar.gz \
+            --checksum 83baca83553f8c443cda7b84800912e6e709c3acd2e7ebf277794ca5836c0da5
+          swift sdk install https://download.swift.org/swift-6.4.2-release/static-sdk/swift-6.4.2-RELEASE/swift-6.4.2-RELEASE_static-linux-0.1.0.artifactbundle.tar.gz \
+            --checksum 3786b179936d9cc9e266dd506bd1654176358d7b25288e243359f4d17cc4dc5a
+          swift sdk list
+      - run: swift build --swift-sdk swift-6.4.2-RELEASE_wasm --scratch-path "$RUNNER_TEMP/wasm"
+      - run: swift build --swift-sdk x86_64-swift-linux-musl --scratch-path "$RUNNER_TEMP/musl"
+      - name: Run the static CLI
+        run: |
+          binary="$(swift build --swift-sdk x86_64-swift-linux-musl --scratch-path "$RUNNER_TEMP/musl" --show-bin-path)/swift-gfm"
+          test "$(printf '*musl*\n' | "$binary" html)" = '<p><em>musl</em></p>'
 
   macos:
     name: macOS / Xcode 27.2
-    # Same GitHub-hosted Xcode runner used by the Swift-JSON sibling.
     runs-on: xcode-27
     timeout-minutes: 60
     env:
@@ -92,7 +167,15 @@ jobs:
           grep -F 'Apple Swift version 6.4.2 ' "$RUNNER_TEMP/swift-version.txt"
       - run: swift test
       - run: swift test -c release
-      - run: python3 -m venv .analysis-venv
-      - run: .analysis-venv/bin/python -m pip install -r Tools/requirements-analysis.txt
+      - run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
+      - run: python3 -m unittest discover -s Tools -p 'test_*.py'
       - run: python3 Tools/check_documentation_links.py
-      - run: .analysis-venv/bin/python -m unittest discover -s Tools -p 'test_*.py'
+      - name: Build for Apple platforms
+        run: |
+          for destination in 'generic/platform=iOS' 'generic/platform=tvOS' 'generic/platform=watchOS' \
+            'generic/platform=visionOS' 'generic/platform=macOS,variant=Mac Catalyst'; do
+            echo "::group::$destination"
+            xcodebuild build -scheme SwiftGFM -destination "$destination" \
+              -derivedDataPath "$RUNNER_TEMP/apple-platforms" -quiet
+            echo "::endgroup::"
+          done

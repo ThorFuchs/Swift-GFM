@@ -16,7 +16,7 @@ SwiftGFM library target.
 | `extensions-table-prefer-style-attributes.txt` | `3d902a4a1ce48df5dd7910647602fbae4535d8bac6700e918280fe1d928a4cee` |
 
 The spec and extension fixtures identify the CommonMark Spec and CC BY-SA 4.0;
-see `Fixtures/gfm/LICENSE` at the repository root. Upstream's full source
+see the adjacent [LICENSE](LICENSE). Upstream's full source
 license notices are in `Vendor/GitHubCMark/COPYING`. The CR characters in the
 regression fixture and the NUL in the full-info fixture are intentional; do not
 normalize fixture bytes.
