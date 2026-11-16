@@ -27,3 +27,5 @@ First public release.
 - `swift-gfm` command line that mirrors `cmark-gfm`, including file arguments.
 - Supports Swift 6.0 and later on macOS, Linux, iOS, tvOS, watchOS, visionOS,
   WebAssembly (WASI), and the Static Linux SDK.
+- API reference and guides at
+  https://thorfuchs.github.io/Swift-GFM/documentation/swiftgfm/.
