@@ -1,7 +1,10 @@
 # Swift-GFM
 
 [![CI](https://github.com/ThorFuchs/Swift-GFM/actions/workflows/ci.yml/badge.svg)](https://github.com/ThorFuchs/Swift-GFM/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+![Platforms: macOS | iOS | Linux | WebAssembly](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20Linux%20%7C%20WebAssembly-lightgrey.svg)
+
+[Read the documentation →](https://thorfuchs.github.io/Swift-GFM/documentation/swiftgfm/)
 
 SwiftGFM renders GitHub Flavored Markdown in Swift with GitHub's own
 [cmark-gfm](https://github.com/github/cmark-gfm) C library, and gives you a
@@ -206,9 +209,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [SUPPORT.md](SUPPORT.md), and the
 
 ## Documentation and licensing
 
-Start with the [documentation index](Documentation/README.md) or the
-[DocC catalog](Sources/SwiftGFM/SwiftGFM.docc/SwiftGFM.md). Build a local DocC
-archive with `sh Tools/build-docc.sh` and a toolchain that provides `docc`.
+The [API reference and guides](https://thorfuchs.github.io/Swift-GFM/documentation/swiftgfm/) are published from `main`. The
+[documentation index](Documentation/README.md) covers the wrapper, AST,
+security, concurrency, testing, and upstream updates. Build the DocC archive
+locally with `sh Tools/build-docc.sh`.
 
 SwiftGFM's original code is licensed under [Apache License 2.0](LICENSE). The
 [NOTICE](NOTICE) identifies third-party material: the vendored cmark-gfm source
