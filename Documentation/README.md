@@ -3,7 +3,7 @@
 ## Use the package
 
 - [Package README](../README.md): installation, rendering, AST, CLI, and versioning.
-- [DocC catalog](../Sources/SwiftGFM/SwiftGFM.docc/SwiftGFM.md): API reference and guides.
+- [API reference and guides](https://thorfuchs.github.io/Swift-GFM/documentation/swiftgfm/), built from the [DocC catalog](../Sources/SwiftGFM/SwiftGFM.docc/SwiftGFM.md).
 - [Wrapper API](WRAPPER-API.md): formats, options, configurations, and the backend boundary.
 - [Read-only AST](AST.md): node kinds, walking, source positions, and ownership.
 - [Resource limits](RESOURCE-LIMITS.md): optional input and Swift AST projection bounds.

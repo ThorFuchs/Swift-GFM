@@ -47,7 +47,9 @@ sh Tools/build-docc.sh
 The script needs `docc` on `PATH` (on macOS, add the directory printed by
 `dirname "$(xcrun --find docc)"`). It extracts the public symbol graph, fails if
 any source-declared public symbol is undocumented, and builds
-`.build/SwiftGFM.doccarchive` with warnings treated as errors.
+`.build/SwiftGFM.doccarchive` with warnings treated as errors. With a third
+argument, `sh Tools/build-docc.sh SCRATCH OUTPUT Swift-GFM` builds the static
+site that the `Documentation site` workflow publishes to GitHub Pages.
 
 ## Comparison with the upstream C executable
 
