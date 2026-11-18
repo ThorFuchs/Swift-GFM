@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The project follows
 
 ## Unreleased
 
+## 1.0.1
+
 - Add a GFM syntax guide and a gallery of runnable Markdown examples with
   verified HTML output and styled browser previews.
 - Remove two bundled test fixtures with unresolved individual provenance from
