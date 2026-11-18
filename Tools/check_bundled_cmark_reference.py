@@ -23,8 +23,6 @@ def command_options(suite, flags):
     options = ["--unsafe"]
     if suite in ("extensions", "extensions-table-prefer-style-attributes"):
         extensions.extend(ALL_EXTENSIONS)
-    if suite == "smart_punct":
-        options.append("--smart")
     if suite == "extensions-full-info-string":
         options.append("--full-info-string")
     if suite == "extensions-table-prefer-style-attributes":

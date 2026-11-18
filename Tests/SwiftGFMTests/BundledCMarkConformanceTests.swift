@@ -6,8 +6,7 @@ import Testing
 
 // Unmodified upstream sources and reproduction details are in Fixtures/cmark-gfm.
 private enum UpstreamSuite: String, CaseIterable, Sendable {
-    case spec, extensions, regression
-    case smartPunct = "smart_punct"
+    case spec, extensions
     case fullInfo = "extensions-full-info-string"
     case tableStyle = "extensions-table-prefer-style-attributes"
 }
@@ -104,7 +103,6 @@ private func configuration(for example: UpstreamExample) throws -> MarkdownConfi
     var extensions: MarkdownExtensions = (example.suite == .extensions || example.suite == .tableStyle) ? .gfm : []
     var options: MarkdownOptions = [.allowUnsafeHTML]
     if example.suite == .extensions || example.suite == .tableStyle { options.insert(.footnotes) }
-    if example.suite == .smartPunct { options.insert(.smartPunctuation) }
     if example.suite == .fullInfo { options.insert(.fullInfoString) }
     if example.suite == .tableStyle { options.insert(.tableStyleAttributes) }
     for flag in example.flags {
@@ -163,11 +161,9 @@ private func bundledCMarkInventory() {
     let bySuite = Dictionary(grouping: UpstreamFixtures.all, by: \.suite)
     #expect(bySuite[.spec]?.count == 672)
     #expect(bySuite[.extensions]?.count == 30)
-    #expect(bySuite[.regression]?.count == 26)
-    #expect(bySuite[.smartPunct]?.count == 16)
     #expect(bySuite[.fullInfo]?.count == 4)
     #expect(bySuite[.tableStyle]?.count == 1)
-    #expect(UpstreamFixtures.compared.count == 746)
+    #expect(UpstreamFixtures.compared.count == 704)
     #expect(UpstreamFixtures.roundTrips.count == 704)
     #expect(
         UpstreamFixtures.roundTrips.filter { $0.suite == .spec && knownRoundTripDifferences[$0.number] != nil }.count

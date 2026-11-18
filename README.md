@@ -167,8 +167,9 @@ defaults to the GFM extension set.
 swift test
 ```
 
-The tests include the pinned backend's bundled fixtures, with explicit upstream
-skips and documented round-trip differences. See
+The tests include the pinned backend's bundled fixtures and independently
+authored regression cases, with explicit upstream skips and documented
+round-trip differences. See
 [bundled test coverage](Documentation/BUNDLED-CMARK-QA.md) and
 [testing and verification](Documentation/TESTING.md) for the comparisons with
 the upstream C executable.

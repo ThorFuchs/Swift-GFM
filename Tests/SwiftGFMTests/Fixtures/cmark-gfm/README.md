@@ -10,16 +10,24 @@ SwiftGFM library target.
 | --- | --- |
 | `spec.txt` | `7d8e5814befec287ac116786d81ff14e0adc9b13295b4494649e995408fd871c` |
 | `extensions.txt` | `a2a45e98be9fca95f564f927265a0f63beea6cae5369d1cf4bde44caa51b2a3a` |
-| `regression.txt` | `0920d7e8134d5e4ec3693f3f52d904b42de45e23a66c29f54fe714dc54213fd9` |
-| `smart_punct.txt` | `b1dcfb0e0b6f314cf087edc06f47d9271849da539acfbfac0b9d7b16f10139c9` |
 | `extensions-full-info-string.txt` | `dec5fc65880d74f97d5181e0b75466fbe12662cda8383d8b51fd78e06191092f` |
 | `extensions-table-prefer-style-attributes.txt` | `3d902a4a1ce48df5dd7910647602fbae4535d8bac6700e918280fe1d928a4cee` |
 
 The spec and extension fixtures identify the CommonMark Spec and CC BY-SA 4.0;
 see the adjacent [LICENSE](LICENSE). Upstream's full source
-license notices are in `Vendor/GitHubCMark/COPYING`. The CR characters in the
-regression fixture and the NUL in the full-info fixture are intentional; do not
-normalize fixture bytes.
+license notices are in `Vendor/GitHubCMark/COPYING`. The NUL in the full-info
+fixture is intentional; do not normalize fixture bytes.
+
+The previously bundled `regression.txt` and `smart_punct.txt` have been removed
+from this source snapshot because their individual license provenance remains
+unresolved. For provenance, their original SHA-256 values were respectively
+`0920d7e8134d5e4ec3693f3f52d904b42de45e23a66c29f54fe714dc54213fd9` and
+`b1dcfb0e0b6f314cf087edc06f47d9271849da539acfbfac0b9d7b16f10139c9`.
+They remain in earlier Git history and the published 1.0.0 source tag.
+Thirteen independently authored cases, adapted from SwiftMD, exercise selected
+behaviors separately; they are not a complete replacement for the 42 removed
+upstream cases. CI may also test the upstream files from a separately acquired,
+pinned checkout; that does not determine the rights for their use.
 
 `entities-reference.json` is a derived test fixture, not an upstream file. It
 contains the exact HTML emitted by the independently built pinned cmark-gfm
