@@ -45,7 +45,7 @@ def documentation_files(root):
     files = sorted(root.glob("*.md"))
     for directory in ("Documentation", "Sources/SwiftGFM/SwiftGFM.docc"):
         files.extend(find(root / directory, all_markdown=True))
-    for directory in ("Tests/SwiftGFMTests/Fixtures", "Tools"):
+    for directory in ("Examples", "Tests/SwiftGFMTests/Fixtures", "Tools"):
         files.extend(find(root / directory, all_markdown=False))
     return sorted(set(files))
 

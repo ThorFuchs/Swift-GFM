@@ -111,6 +111,26 @@ the size or depth of the Swift AST projection. Defaults are unlimited. These
 checks do not impose a hard memory or time limit on cmark itself; see
 [resource limits](Documentation/RESOURCE-LIMITS.md).
 
+## Example gallery
+
+Explore eight runnable Markdown files and their generated HTML. The previews
+below show SwiftGFM's actual output styled with the gallery's own CSS; the
+library returns HTML fragments and does not supply a stylesheet. Footnotes
+require an explicit option.
+
+| Text and emphasis | Lists |
+| :---: | :---: |
+| [![Rendered text and emphasis](Examples/Images/01-text.png)](Examples/Markdown/01-text.md) | [![Rendered lists](Examples/Images/02-lists.png)](Examples/Markdown/02-lists.md) |
+| **Task lists** | **Tables** |
+| [![Rendered task lists](Examples/Images/03-tasks.png)](Examples/Markdown/03-tasks.md) | [![Rendered table](Examples/Images/04-tables.png)](Examples/Markdown/04-tables.md) |
+| **Links and autolinks** | **Code** |
+| [![Rendered links](Examples/Images/05-links.png)](Examples/Markdown/05-links.md) | [![Rendered code](Examples/Images/06-code.png)](Examples/Markdown/06-code.md) |
+| **Block quotes** | **Optional footnotes** |
+| [![Rendered block quote](Examples/Images/07-quotes.png)](Examples/Markdown/07-quotes.md) | [![Rendered footnotes](Examples/Images/08-footnotes.png)](Examples/Markdown/08-footnotes.md) |
+
+See the [gallery instructions and HTML output](Examples/README.md) and the
+[GFM syntax guide](https://thorfuchs.github.io/Swift-GFM/documentation/swiftgfm/gfmsyntax/).
+
 ## Inspect a syntax tree
 
 ```swift

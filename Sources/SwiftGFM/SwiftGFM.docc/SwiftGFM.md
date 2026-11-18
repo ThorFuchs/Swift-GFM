@@ -23,6 +23,7 @@ let document = try engine.parse("# Hello *Swift*\n")
 ### Guides
 
 - <doc:GettingStarted>
+- <doc:GFMSyntax>
 - <doc:Rendering>
 - <doc:SyntaxTrees>
 - <doc:ConcurrencyAndSecurity>

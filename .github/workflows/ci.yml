@@ -38,6 +38,8 @@ jobs:
           python3 --version
       - run: swift-format lint --strict --recursive Sources/SwiftGFM Sources/swift-gfm Tests/SwiftGFMTests Tools/ASTParityProbe
       - run: swift test
+      - name: Verify example HTML
+        run: python3 Tools/render_examples.py --binary "$(swift build --show-bin-path)/swift-gfm" --check
       - run: swift test -c release
       - run: swift test --sanitize=thread --scratch-path "$RUNNER_TEMP/swift-gfm-tsan"
       - name: Address Sanitizer (leak detection disabled)
