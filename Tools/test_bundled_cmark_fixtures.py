@@ -20,8 +20,13 @@ class PinnedFixtureTests(unittest.TestCase):
         self.assertEqual([x["example"] for x in extract(raw) if "disabled" in x["flags"]], [279, 280])
         extensions = extract((DIRECTORY / "extensions.txt").read_bytes())
         self.assertEqual([x["example"] for x in extensions if x["html"].strip() == "<IGNORE>"], [20])
-        regression = extract((DIRECTORY / "regression.txt").read_bytes())
-        self.assertIn("\r\r\n", regression[0]["markdown"])
+
+    def test_extraction_preserves_consecutive_carriage_returns(self):
+        fence = "`" * 32
+        raw = (f"{fence} example\n"
+               "Harbor\r\r\nDock\n.\n<p>Harbor</p>\n<p>Dock</p>\n"
+               f"{fence}\n").encode()
+        self.assertEqual(extract(raw)[0]["markdown"], "Harbor\r\r\nDock\n")
 
     def test_extraction_preserves_non_linefeed_unicode_and_tabs(self):
         fence = "`" * 32

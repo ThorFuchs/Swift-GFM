@@ -4,8 +4,7 @@ Understand the scope of the pinned cmark-gfm fixture comparisons.
 
 The Swift test target includes unmodified fixture files from GitHub cmark-gfm
 revision `27d942c8b0a62d192f616e5bf3578f4b6a89e180`. It exercises the bundled
-specification, extensions, regression, smart-punctuation, full-info-string, and
-table-style examples with the
+specification, extensions, full-info-string, and table-style examples with the
 configuration used by the upstream test runner. Expected and actual HTML are
 compared as UTF-8 bytes; the harness does not normalize HTML or line endings.
 The specification, extension, and option-specific suites also check the
@@ -18,6 +17,12 @@ Two specification examples are marked disabled upstream. One extensions example
 has `<IGNORE>` rather than expected HTML. These appear as explicitly skipped
 tests, with reasons. The source fixture files, provenance, and hashes remain in
 the test resources.
+
+Thirteen separately authored neutral regression cases cover selected behavior;
+they do not replace all 42 examples in the two removed upstream fixture files.
+Their optional independent C comparisons are explicitly skipped if no reference
+executable is configured. CI also runs the original regression and smart
+punctuation suites from a separate pinned upstream checkout.
 
 The tests also compare all 2,125 names in the backend's entity table against
 exact HTML from the pinned C executable. Those derived expectations have a

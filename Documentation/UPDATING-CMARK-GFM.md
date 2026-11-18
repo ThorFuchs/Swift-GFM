@@ -43,7 +43,9 @@ used by the tools, the reference build script, and CI.
 3. **Update the test fixtures.** Copy the upstream `test/*.txt` files listed in
    [the fixture README](../Tests/SwiftGFMTests/Fixtures/cmark-gfm/README.md)
    byte for byte, then update their hashes and example counts in the README and
-   in `SOURCES` in `Tools/bundled_cmark_fixtures.py`. Regenerate the entity
+   in `SOURCES` in `Tools/bundled_cmark_fixtures.py`. Do not reintroduce
+   the removed `regression.txt` or `smart_punct.txt` without resolving their
+   individual provenance and distribution terms. Regenerate the entity
    fixture from a reference build at the new revision:
 
    ```sh

@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The project follows
 
 ## Unreleased
 
+- Remove two bundled test fixtures with unresolved individual provenance from
+  new source snapshots, and add independently authored regression cases. The
+  pinned backend and runtime behavior are unchanged.
+
 ## 1.0.0
 
 First public release.

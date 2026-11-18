@@ -19,8 +19,10 @@ python3 Tools/check_backend_revision.py
 ```
 
 `swift test` runs the pinned backend's bundled fixtures, the derived
-named-entity fixture, CommonMark round trips, AST, resource-limit, and
-concurrency tests. It needs no network access or reference executable. See
+named-entity fixture, neutral regression cases, CommonMark round trips, AST,
+resource-limit, and concurrency tests. It needs no network access or reference
+executable. Neutral-case comparisons with an independent C executable are
+explicitly skipped unless `SWIFTGFM_CMARK_REFERENCE` is set. See
 [bundled test coverage](BUNDLED-CMARK-QA.md) for the corpus, its explicit skips,
 and the documented round-trip differences.
 
@@ -64,6 +66,7 @@ swift_gfm="$(swift build --show-bin-path)/swift-gfm"
 python3 Tools/check_bundled_fixture_extraction.py --upstream-test-dir "$PWD/.references/cmark-gfm/test"
 python3 Tools/generate_cmark_entity_fixture.py --reference "$reference" --check
 python3 Tools/check_cli_behavior.py --binary "$swift_gfm"
+SWIFTGFM_CMARK_REFERENCE="$reference" swift test --filter Neutral
 python3 Tools/check_bundled_cmark_reference.py --probe "$swift_gfm" --reference "$reference" \
   --report Artifacts/bundled-backend-parity.json
 python3 .references/cmark-gfm/test/pathological_tests.py --program "$swift_gfm html"
@@ -74,12 +77,17 @@ python3 .references/cmark-gfm/test/pathological_tests.py --program "$swift_gfm h
 - **Entity fixture** regenerates the expected HTML for all 2,125 named entities
   and compares it with the checked-in file.
 - **Backend parity** renders every source-enabled fixture input in all six
-  formats with both executables and compares raw bytes (4,482 comparisons).
+  formats with both executables and compares raw bytes (4,230 comparisons).
 - **Pathological inputs** run upstream's adversarial timing suite against the
   SwiftGFM CLI.
 
 CI additionally runs upstream's `spec_tests.py --no-normalize` against the CLI
-for the spec, extension, regression, and smart-punctuation suites.
+for the spec and extension suites, and for the regression and smart-punctuation
+files from the separate pinned upstream checkout. Those two files are not part
+of this source snapshot. The 13 neutral tests and their independent C
+comparisons are counted separately; they do not replace all 42 upstream cases.
+The independent checkout's revision and fixture hashes must be verified; merely
+obtaining files separately does not determine the rights for their use.
 
 Reports are written to the ignored `Artifacts/` directory. The scripts record
 the reference executable's hash, but cannot prove from the binary which

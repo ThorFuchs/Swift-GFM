@@ -32,7 +32,7 @@ there is no Jekyll or GitHub.com profile.
 ## Verification
 
 CI compares the CLI with an independently built pinned C executable for all six
-formats across every source-enabled bundled fixture input (4,482 byte
+formats across every source-enabled bundled fixture input (4,230 byte
 comparisons), runs the upstream spec runner against the CLI, and runs the Swift
 tests in debug, release, and under sanitizers on Linux and macOS. The
 string-based CLI rejects invalid UTF-8 before the engine. See

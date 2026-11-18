@@ -68,6 +68,11 @@ jobs:
           python3 Tools/generate_cmark_entity_fixture.py --reference "$reference" --check
           swift_bin="$(swift build --show-bin-path)/swift-gfm"
           python3 Tools/check_cli_behavior.py --binary "$swift_bin"
+          # The neutral C comparisons are optional locally, but mandatory here.
+          test -x "$reference"
+          SWIFTGFM_CMARK_REFERENCE="$reference" swift test --filter Neutral | tee "$RUNNER_TEMP/neutral-reference.txt"
+          grep -F 'Test "Independently written regression examples" with 13 test cases passed' "$RUNNER_TEMP/neutral-reference.txt"
+          grep -F 'Test "Independent C comparison for neutral examples" with 13 test cases passed' "$RUNNER_TEMP/neutral-reference.txt"
           runner="$upstream/test/spec_tests.py"
           python3 "$runner" --no-normalize --spec "$upstream/test/spec.txt" --program "$swift_bin html"
           python3 "$runner" --no-normalize --spec "$upstream/test/extensions.txt" --program "$swift_bin html" --extensions 'table strikethrough autolink tagfilter footnotes tasklist'
