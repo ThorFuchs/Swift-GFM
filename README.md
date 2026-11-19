@@ -106,6 +106,12 @@ The default backend policy filters raw HTML and some unsafe links.
 sanitizer. See [security](Documentation/SECURITY-MODEL.md) for the host's
 responsibilities.
 
+For an explicitly selected profile that recognizes dollar-delimited mathematics
+and returns HTML and formula pieces for a separate renderer, see the
+[mathematics guide](Documentation/MATHEMATICS.md). This API requires SwiftGFM
+1.1.0 or newer. The profile has its own
+documented syntax and limitations; normal rendering is unchanged.
+
 Optional `MarkdownResourceLimits` can reject oversized UTF-8 input and bound
 the size or depth of the Swift AST projection. Defaults are unlimited. These
 checks do not impose a hard memory or time limit on cmark itself; see

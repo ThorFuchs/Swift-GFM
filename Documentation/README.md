@@ -7,6 +7,7 @@
 - [GFM syntax guide](../Sources/SwiftGFM/SwiftGFM.docc/GFMSyntax.md) and [runnable gallery](../Examples/README.md): syntax, examples, and rendered HTML.
 - [Wrapper API](WRAPPER-API.md): formats, options, configurations, and the backend boundary.
 - [Read-only AST](AST.md): node kinds, walking, source positions, and ownership.
+- [Optional mathematics parsing](MATHEMATICS.md): structured formula and HTML pieces, delimiter rules, and limitations.
 - [Resource limits](RESOURCE-LIMITS.md): optional input and Swift AST projection bounds.
 - [Concurrency and process isolation](CMARK-CONCURRENCY.md): the lock, its limits, and when to use a worker process.
 - [Security model](SECURITY-MODEL.md): HTML handling and host responsibilities. Report vulnerabilities as described in the [security policy](../SECURITY.md).
@@ -15,6 +16,7 @@
 ## Verify and maintain
 
 - [Testing and verification](TESTING.md): local checks, sanitizers, DocC, and comparisons with the upstream C executable.
+- [1.1.0 candidate validation](RELEASE-1.1.0.md): tested commits, platforms, limitations, and remaining release gates.
 - [Bundled cmark-gfm test coverage](BUNDLED-CMARK-QA.md): fixture provenance, exact comparisons, skips, and round-trip differences.
 - [Fixture provenance](../Tests/SwiftGFMTests/Fixtures/cmark-gfm/README.md): upstream files, hashes, and the derived entity fixture.
 - [Updating the vendored cmark-gfm](UPDATING-CMARK-GFM.md): how to move the pinned backend to a new upstream revision.

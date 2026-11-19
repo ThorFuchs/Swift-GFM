@@ -16,7 +16,7 @@ class SymbolNamespaceTests(unittest.TestCase):
         upstream = set(names())
         for function in functions:
             self.assertIn(function.removeprefix("swiftgfm_"), upstream)
-        bridge_functions = set(re.findall(r'\b(swiftgfm_bridge_[A-Za-z0-9_]+)\s*\(', header))
+        bridge_functions = set(re.findall(r'\b(swiftgfm_(?:bridge|math)_[A-Za-z0-9_]+)\s*\(', header))
         self.assertEqual(bridge_functions, BRIDGE_SYMBOLS)
 
 if __name__ == "__main__":

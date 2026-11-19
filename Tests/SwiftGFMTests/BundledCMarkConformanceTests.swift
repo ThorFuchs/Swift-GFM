@@ -99,6 +99,28 @@ private enum UpstreamFixtures {
     }
 }
 
+@Test func mathProfileMatchesBackendOnInputsWithoutDollars() throws {
+    let examples = UpstreamFixtures.all.filter {
+        !$0.isDisabled && !$0.markdown.contains("$") && !$0.markdown.utf8.contains(0)
+    }
+    #expect(!examples.isEmpty)
+    let engine = MarkdownEngine()
+    for example in examples {
+        let parts = try engine.renderRecognizingMath(example.markdown).parts
+        let html = parts.compactMap { part -> String? in
+            if case .html(let value) = part { return value }
+            return nil
+        }.joined()
+        #expect(
+            parts.allSatisfy {
+                if case .html = $0 { return true }
+                return false
+            }, "\(example.testDescription)")
+        let expected = try engine.render(example.markdown)
+        #expect(html == expected, "\(example.testDescription)")
+    }
+}
+
 private func configuration(for example: UpstreamExample) throws -> MarkdownConfiguration {
     var extensions: MarkdownExtensions = (example.suite == .extensions || example.suite == .tableStyle) ? .gfm : []
     var options: MarkdownOptions = [.allowUnsafeHTML]

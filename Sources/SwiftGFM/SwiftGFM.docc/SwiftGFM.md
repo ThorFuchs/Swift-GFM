@@ -25,6 +25,7 @@ let document = try engine.parse("# Hello *Swift*\n")
 - <doc:GettingStarted>
 - <doc:GFMSyntax>
 - <doc:Rendering>
+- <doc:MathParsing>
 - <doc:SyntaxTrees>
 - <doc:ConcurrencyAndSecurity>
 - <doc:ResourceLimits>
