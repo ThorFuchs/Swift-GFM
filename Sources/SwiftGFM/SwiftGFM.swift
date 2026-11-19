@@ -347,29 +347,32 @@ public struct MarkdownEngine: Sendable {
             guard let raw = swiftgfm_cmark_render_html(root, flags, swiftgfm_cmark_parser_get_syntax_extensions(parser))
             else { throw MarkdownEngineError.renderFailed }
             defer { free(raw) }
-            guard let html = String(validatingCString: raw) else { throw MarkdownEngineError.invalidUTF8Output }
+            let html = Data(bytes: raw, count: strlen(raw))
             var parts: [MarkdownMathPart] = []
             var cursor = html.startIndex
-            let prefix = "SWIFTGFMMATH\(nonce)Z"
+            let prefix = Data("SWIFTGFMMATH\(nonce)Z".utf8)
             for index in 0..<swiftgfm_math_count(context) {
-                let marker = "\(prefix)\(index)END"
-                guard let match = html.range(of: prefix, range: cursor..<html.endIndex),
-                    html[match.lowerBound...].hasPrefix(marker),
+                let marker = Data("SWIFTGFMMATH\(nonce)Z\(index)END".utf8)
+                guard let match = html.range(of: prefix, in: cursor..<html.endIndex),
+                    html[match.lowerBound...].starts(with: marker),
+                    let htmlPart = String(data: html[cursor..<match.lowerBound], encoding: .utf8),
                     let tex = swiftgfm_math_tex(context, index), let original = swiftgfm_math_original(context, index),
                     let literal = String(validatingCString: tex), let fallback = String(validatingCString: original)
                 else { throw MarkdownMathError.invalidDocumentStream }
-                parts.append(.html(String(html[cursor..<match.lowerBound])))
+                parts.append(.html(htmlPart))
                 parts.append(
                     .math(
                         MarkdownMathOccurrence(
                             index: index, literal: literal, source: fallback,
                             displayMode: swiftgfm_math_display(context, index) != 0)))
-                cursor = html.index(match.lowerBound, offsetBy: marker.count)
+                cursor = match.lowerBound + marker.count
             }
-            guard html.range(of: prefix, range: cursor..<html.endIndex) == nil else {
+            guard html.range(of: prefix, in: cursor..<html.endIndex) == nil,
+                let tail = String(data: html[cursor...], encoding: .utf8)
+            else {
                 throw MarkdownMathError.invalidDocumentStream
             }
-            parts.append(.html(String(html[cursor...])))
+            parts.append(.html(tail))
             return MarkdownMathDocument(
                 parts: parts, containsTablesWithoutMath: swiftgfm_math_contains_table(context) != 0)
         }

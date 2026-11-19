@@ -200,3 +200,15 @@ import Testing
     }
     #expect(formulas == ["content"])
 }
+
+@Test func mathKeepsCombiningCharactersAdjacentToMarkers() throws {
+    for scalar in ["\u{301}", "\u{200D}", "\u{FE0F}"] {
+        let result = try MarkdownEngine().renderRecognizingMath("a\(scalar)$x$\(scalar)\n")
+        guard case .html(let prefix) = result.parts.first, case .html(let suffix) = result.parts.last else {
+            Issue.record("Missing surrounding HTML")
+            return
+        }
+        #expect(Array(prefix.utf8) == Array("<p>a\(scalar)".utf8))
+        #expect(Array(suffix.utf8) == Array("\(scalar)</p>\n".utf8))
+    }
+}
