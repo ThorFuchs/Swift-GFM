@@ -35,6 +35,16 @@ import Testing
     #expect(throws: MarkdownMathError.unclosedDisplay) { try MarkdownEngine().renderRecognizingMath("$$\nx\n") }
 }
 
+@Test func unclosedDisplayCanFallBackToCompleteMarkdown() throws {
+    let source = "Before $x$.\n\n$$\nunclosed\n\n# Later heading\n\n**Later text**\n"
+    let engine = MarkdownEngine()
+    #expect(throws: MarkdownMathError.unclosedDisplay) { try engine.renderRecognizingMath(source) }
+    let fallback = try engine.render(source)
+    #expect(fallback.contains("<h1>Later heading</h1>"))
+    #expect(fallback.contains("<strong>Later text</strong>"))
+    #expect(fallback.contains("Before $x$."))
+}
+
 @Test func mathHandlesContainersAndTablesConservatively() throws {
     let input = "> $$\n> x * y\n> $$\n\n- $$z^2$$\n\n| H |\n| --- |\n| $a\\|b$ |\n"
     let result = try MarkdownEngine().renderRecognizingMath(input)
