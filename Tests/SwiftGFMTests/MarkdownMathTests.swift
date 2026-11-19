@@ -122,7 +122,8 @@ import Testing
                 if case .html = $0 { return true }
                 return false
             })
-        #expect(html == (try engine.render(input)))
+        let expected = try engine.render(input)
+        #expect(html == expected)
     }
 }
 
@@ -149,7 +150,8 @@ import Testing
                     return nil
                 }
                 #expect(found == ["x_\(index)"])
-                #expect(try engine.render("**plain**") == "<p><strong>plain</strong></p>\n")
+                let plain = try engine.render("**plain**")
+                #expect(plain == "<p><strong>plain</strong></p>\n")
             }
         }
         try await group.waitForAll()

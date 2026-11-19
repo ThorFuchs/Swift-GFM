@@ -116,7 +116,8 @@ private enum UpstreamFixtures {
                 if case .html = $0 { return true }
                 return false
             }, "\(example.testDescription)")
-        #expect(html == (try engine.render(example.markdown)), "\(example.testDescription)")
+        let expected = try engine.render(example.markdown)
+        #expect(html == expected, "\(example.testDescription)")
     }
 }
 

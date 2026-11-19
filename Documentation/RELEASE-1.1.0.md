@@ -3,7 +3,8 @@
 This records pre-merge evidence for the optional math parser. It is not a
 release announcement. The code tested below is commit
 `46b5abebbca6baec4b955a18e3f1cdc6241d28f3`; the subsequent candidate
-preparation changes documentation, the changelog and the security workflow.
+preparation changes documentation, the changelog, the security workflow and
+test expressions for compatibility with Swift 6.0; package code is unchanged.
 A future merge commit and release tag require their own checks under
 [RELEASING.md](../RELEASING.md).
 
