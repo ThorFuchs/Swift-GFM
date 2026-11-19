@@ -350,10 +350,11 @@ public struct MarkdownEngine: Sendable {
             guard let html = String(validatingCString: raw) else { throw MarkdownEngineError.invalidUTF8Output }
             var parts: [MarkdownMathPart] = []
             var cursor = html.startIndex
+            let prefix = "SWIFTGFMMATH\(nonce)Z"
             for index in 0..<swiftgfm_math_count(context) {
-                let marker = "SWIFTGFMMATH\(nonce)Z\(index)END"
-                guard let match = html.range(of: marker), match.lowerBound >= cursor,
-                    html.range(of: marker, range: match.upperBound..<html.endIndex) == nil,
+                let marker = "\(prefix)\(index)END"
+                guard let match = html.range(of: prefix, range: cursor..<html.endIndex),
+                    html[match.lowerBound...].hasPrefix(marker),
                     let tex = swiftgfm_math_tex(context, index), let original = swiftgfm_math_original(context, index),
                     let literal = String(validatingCString: tex), let fallback = String(validatingCString: original)
                 else { throw MarkdownMathError.invalidDocumentStream }
@@ -363,7 +364,10 @@ public struct MarkdownEngine: Sendable {
                         MarkdownMathOccurrence(
                             index: index, literal: literal, source: fallback,
                             displayMode: swiftgfm_math_display(context, index) != 0)))
-                cursor = match.upperBound
+                cursor = html.index(match.lowerBound, offsetBy: marker.count)
+            }
+            guard html.range(of: prefix, range: cursor..<html.endIndex) == nil else {
+                throw MarkdownMathError.invalidDocumentStream
             }
             parts.append(.html(String(html[cursor...])))
             return MarkdownMathDocument(

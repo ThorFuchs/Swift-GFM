@@ -175,3 +175,28 @@ import Testing
             }, "\(input)")
     }
 }
+
+@Test func mathManyFormulasKeepDocumentOrder() throws {
+    let source = (0..<2500).map { "$x_\($0)$" }.joined(separator: " ")
+    let document = try MarkdownEngine().renderRecognizingMath(source)
+    let occurrences = document.parts.compactMap { part -> MarkdownMathOccurrence? in
+        if case .math(let value) = part { return value }
+        return nil
+    }
+    #expect(occurrences.count == 2500)
+    #expect(
+        occurrences.enumerated().allSatisfy { index, occurrence in
+            occurrence.index == index && occurrence.literal == "x_\(index)"
+        })
+}
+
+@Test func mathDoesNotExposeHTMLAttributesOrComments() throws {
+    let input =
+        #"Text <span title="$attr$">$content$</span> <!-- $comment$ --> [link](https://example.com "$title$") ![$alt$](image.png)"#
+    let result = try MarkdownEngine().renderRecognizingMath(input)
+    let formulas = result.parts.compactMap { part -> String? in
+        if case .math(let value) = part { return value.literal }
+        return nil
+    }
+    #expect(formulas == ["content"])
+}

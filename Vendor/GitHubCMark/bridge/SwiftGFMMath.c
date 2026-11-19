@@ -192,18 +192,21 @@ int swiftgfm_math_prepare(swiftgfm_math_context *ctx, cmark_node *root, const ch
   cmark_mem *mem = cmark_get_default_mem_allocator();
   cmark_iter *iter = cmark_iter_new(root);
   cmark_event_type event;
+  size_t image_depth = 0;
   while ((event = cmark_iter_next(iter)) != CMARK_EVENT_DONE) {
-    if (event != CMARK_EVENT_ENTER) continue;
     cmark_node *node = cmark_iter_get_node(iter);
+    cmark_node_type type = cmark_node_get_type(node);
+    if (type == CMARK_NODE_IMAGE) {
+      if (event == CMARK_EVENT_ENTER) image_depth++;
+      else if (event == CMARK_EVENT_EXIT) image_depth--;
+    }
+    if (event != CMARK_EVENT_ENTER) continue;
     const char *name = cmark_node_get_type_string(node);
     if (name && strcmp(name, "table") == 0) ctx->contains_table = 1;
-    cmark_node_type type = cmark_node_get_type(node);
     if ((type != CMARK_NODE_CUSTOM_INLINE && type != CMARK_NODE_CUSTOM_BLOCK) || !cmark_node_get_user_data(node)) continue;
     math_item *item = cmark_node_get_user_data(node);
     if (!item->closed) { ctx->failed = 2; break; }
-    for (cmark_node *p = cmark_node_parent(node); p; p = cmark_node_parent(p))
-      if (cmark_node_get_type(p) == CMARK_NODE_IMAGE) ctx->failed = 3;
-    if (ctx->failed) break;
+    if (image_depth) { ctx->failed = 3; break; }
     if (ctx->count == ctx->capacity) {
       size_t capacity = ctx->capacity ? ctx->capacity * 2 : 16;
       if (capacity < ctx->capacity || capacity > SIZE_MAX / sizeof(*ctx->items)) { ctx->failed = 1; break; }
