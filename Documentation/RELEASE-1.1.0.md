@@ -3,8 +3,9 @@
 This records pre-merge evidence for the optional math parser. It is not a
 release announcement. The code tested below is commit
 `46b5abebbca6baec4b955a18e3f1cdc6241d28f3`; the subsequent candidate
-preparation changes documentation and the changelog. A future merge commit and
-release tag require their own checks under [RELEASING.md](../RELEASING.md).
+preparation changes documentation, the changelog and the security workflow.
+A future merge commit and release tag require their own checks under
+[RELEASING.md](../RELEASING.md).
 
 ## Scope and compatibility
 
@@ -53,7 +54,8 @@ output or impose a hard cmark memory or time limit.
   warnings. The Swift side, Linux build, and cross-translation-unit cmark and
   allocator behavior were not comprehensively modeled. The earlier CodeQL
   run does not cover this candidate; no fuzzing or independent security audit
-  is claimed.
+  is claimed. A separate CodeQL workflow has been prepared for Swift and C;
+  its results for the release commit still need review.
 
 ## Still required before publication
 
