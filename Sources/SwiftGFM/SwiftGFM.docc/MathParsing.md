@@ -19,7 +19,8 @@ for part in document.parts {
 
 Inline math requires single dollars on one line; its content cannot start or
 end with ASCII whitespace. Display math uses separate `$$` lines, or a standalone `$$x$$` line.
-Escaped delimiters, invalid or missing closers, and currency-like input follow
+An unescaped backtick stops the search for a closing dollar. Escaped
+delimiters, invalid or missing closers, and currency-like input follow
 the rules in the repository's mathematics guide. An unclosed display block
 throws ``MarkdownMathError/unclosedDisplay``; callers can render the original
 document with ``MarkdownEngine/render(_:as:)`` instead.

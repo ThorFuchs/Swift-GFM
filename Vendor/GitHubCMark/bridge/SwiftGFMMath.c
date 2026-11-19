@@ -65,6 +65,9 @@ static cmark_node *math_inline(cmark_syntax_extension *ext, cmark_parser *parser
   for (int i = start + 1; i < chunk->len && chunk->data[i] != '\n' && chunk->data[i] != '\r'; i++) {
     if (++ctx->scanned > ctx->budget) { ctx->failed = 1; return NULL; }
     unsigned char c = chunk->data[i];
+    /* A code-span opener belongs to Markdown, not to a preceding unmatched
+       dollar. Do not consume its contents while searching for a closer. */
+    if (c == '`' && !escaped) break;
     if (c == '$' && !escaped && i > start + 1 && !ascii_space(chunk->data[i - 1]) &&
         (i + 1 == chunk->len || (chunk->data[i + 1] != '$' &&
          !(chunk->data[i + 1] >= '0' && chunk->data[i + 1] <= '9')))) {

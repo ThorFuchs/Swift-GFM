@@ -212,3 +212,20 @@ import Testing
         #expect(Array(suffix.utf8) == Array("\(scalar)</p>\n".utf8))
     }
 }
+
+@Test func mathDoesNotConsumeCodeAfterCurrencyAndEscapes() throws {
+    let source = "a $x$\u{301}, ❤️$y$; Preis $5 und $10; \\$z\\$; `$q$`."
+    let document = try MarkdownEngine().renderRecognizingMath(source)
+    var formulas: [String] = []
+    var html = ""
+    for part in document.parts {
+        switch part {
+        case .html(let value): html += value
+        case .math(let value):
+            formulas.append(value.literal)
+            html += "<math></math>"
+        }
+    }
+    #expect(formulas == ["x", "y"])
+    #expect(html.contains("Preis $5 und $10; $z$; <code>$q$</code>"))
+}

@@ -33,7 +33,9 @@ diagnostic. No caller callback runs while SwiftGFM holds its parser lock.
   content bytes must not be ASCII whitespace; `$$` is not an inline delimiter. A
   backslash-escaped closing dollar remains in the TeX. The first unescaped
   dollar must be a valid closer; a closer followed by an ASCII digit is not
-  accepted. These rules avoid some common currency ambiguities; Markdown math
+  accepted. An unescaped backtick ends the search for a closer so a preceding
+  unmatched dollar cannot consume a Markdown code span. These rules avoid some
+  common currency ambiguities; Markdown math
   is not an official part of the pinned GFM grammar and other parsers differ.
 - Display math uses either a line containing an opening `$$` and a later line
   containing a closing `$$`, or a single line `$$expression$$`. The delimiter
