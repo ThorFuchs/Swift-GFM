@@ -6,6 +6,9 @@ All notable changes to this project are documented here. The project follows
 
 ## Unreleased
 
+- Add an opt-in, renderer-independent math-aware HTML document stream. The
+  standard cmark render and parse profiles remain unchanged.
+
 ## 1.0.1
 
 - Add a GFM syntax guide and a gallery of runnable Markdown examples with

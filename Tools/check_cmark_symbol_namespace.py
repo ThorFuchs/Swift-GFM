@@ -8,6 +8,8 @@ import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BRIDGE_SYMBOLS = {"swiftgfm_bridge_node_get_type", "swiftgfm_bridge_node_get_list_type", "swiftgfm_bridge_node_get_list_delim"}
+BRIDGE_SYMBOLS |= {"swiftgfm_math_" + suffix for suffix in (
+    "new", "attach", "parse", "prepare", "count", "contains_table", "tex", "original", "display", "free")}
 
 def names():
     manifest = (ROOT / "Package.swift").read_text()

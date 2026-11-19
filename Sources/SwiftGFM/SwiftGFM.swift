@@ -328,9 +328,61 @@ public struct MarkdownEngine: Sendable {
         }
     }
 
+    /// Produce an HTML document stream with opt-in math positions kept separate.
+    ///
+    /// Inline math uses single dollars on one line; display math uses lines
+    /// containing `$$` delimiters. Math is not recognized in tables, code, or image
+    /// descriptions. Raw HTML must remain disabled. See the math guide for the
+    /// exact delimiter rules and limitations. No caller callback runs under the lock.
+    public func renderRecognizingMath(_ source: String) throws -> MarkdownMathDocument {
+        guard !configuration.options.contains(.allowUnsafeHTML) else { throw MarkdownMathError.unsafeHTML }
+        guard !source.utf8.contains(0) else { throw MarkdownMathError.nulInSource }
+        guard source.utf8.count <= Int32.max else { throw MarkdownMathError.parserUnavailable }
+        let nonce = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        return try withParsedRoot(source, math: true) { parser, root, flags, _, context in
+            guard let context else { throw MarkdownMathError.parserUnavailable }
+            let status = nonce.withCString { swiftgfm_math_prepare(context, root, $0) }
+            if status == 2 { throw MarkdownMathError.unclosedDisplay }
+            guard status == 0 else { throw MarkdownMathError.parserUnavailable }
+            guard let raw = swiftgfm_cmark_render_html(root, flags, swiftgfm_cmark_parser_get_syntax_extensions(parser))
+            else { throw MarkdownEngineError.renderFailed }
+            defer { free(raw) }
+            guard let html = String(validatingCString: raw) else { throw MarkdownEngineError.invalidUTF8Output }
+            var parts: [MarkdownMathPart] = []
+            var cursor = html.startIndex
+            for index in 0..<swiftgfm_math_count(context) {
+                let marker = "SWIFTGFMMATH\(nonce)Z\(index)END"
+                guard let match = html.range(of: marker), match.lowerBound >= cursor,
+                    html.range(of: marker, range: match.upperBound..<html.endIndex) == nil,
+                    let tex = swiftgfm_math_tex(context, index), let original = swiftgfm_math_original(context, index),
+                    let literal = String(validatingCString: tex), let fallback = String(validatingCString: original)
+                else { throw MarkdownMathError.invalidDocumentStream }
+                parts.append(.html(String(html[cursor..<match.lowerBound])))
+                parts.append(
+                    .math(
+                        MarkdownMathOccurrence(
+                            index: index, literal: literal, source: fallback,
+                            displayMode: swiftgfm_math_display(context, index) != 0)))
+                cursor = match.upperBound
+            }
+            parts.append(.html(String(html[cursor...])))
+            return MarkdownMathDocument(
+                parts: parts, containsTablesWithoutMath: swiftgfm_math_contains_table(context) != 0)
+        }
+    }
+
     private func withParsedRoot<T>(_ source: String, _ body: (OpaquePointer, OpaquePointer, Int32, Int32) throws -> T)
         throws -> T
     {
+        try withParsedRoot(source, math: false) { parser, root, flags, width, _ in
+            try body(parser, root, flags, width)
+        }
+    }
+
+    private func withParsedRoot<T>(
+        _ source: String, math: Bool,
+        _ body: (OpaquePointer, OpaquePointer, Int32, Int32, OpaquePointer?) throws -> T
+    ) throws -> T {
         guard configuration.width >= 0, let width = Int32(exactly: configuration.width) else {
             throw MarkdownEngineError.invalidWidth(configuration.width)
         }
@@ -355,8 +407,14 @@ public struct MarkdownEngine: Sendable {
         return try Self.gate.withLock {
             let flags = Int32(bitPattern: configuration.options.rawValue)
             swiftgfm_cmark_gfm_core_extensions_ensure_registered()
+            let mathContext = math ? swiftgfm_math_new(source.utf8.count) : nil
+            guard !math || mathContext != nil else { throw MarkdownMathError.parserUnavailable }
+            defer { if let mathContext { swiftgfm_math_free(mathContext) } }
             guard let parser = swiftgfm_cmark_parser_new(flags) else { throw MarkdownEngineError.parserUnavailable }
             defer { swiftgfm_cmark_parser_free(parser) }
+            if let mathContext, swiftgfm_math_attach(mathContext, parser) == 0 {
+                throw MarkdownMathError.parserUnavailable
+            }
             let names: [(MarkdownExtensions, String)] = [
                 (.table, "table"), (.strikethrough, "strikethrough"), (.autolink, "autolink"),
                 (.tagFilter, "tagfilter"), (.taskList, "tasklist"),
@@ -371,15 +429,20 @@ public struct MarkdownEngine: Sendable {
             // Feed the string's UTF-8 storage directly; cmark takes an explicit length,
             // so neither a copy nor a NUL terminator is needed.
             var input = source
-            input.withUTF8 { buffer in
-                guard let base = buffer.baseAddress, !buffer.isEmpty else { return }
-                base.withMemoryRebound(to: CChar.self, capacity: buffer.count) {
+            let root: OpaquePointer? = input.withUTF8 { buffer in
+                guard let base = buffer.baseAddress, !buffer.isEmpty else {
+                    if let mathContext { return swiftgfm_math_parse(mathContext, parser, "", 0) }
+                    return swiftgfm_cmark_parser_finish(parser)
+                }
+                return base.withMemoryRebound(to: CChar.self, capacity: buffer.count) {
+                    if let mathContext { return swiftgfm_math_parse(mathContext, parser, $0, buffer.count) }
                     swiftgfm_cmark_parser_feed(parser, $0, buffer.count)
+                    return swiftgfm_cmark_parser_finish(parser)
                 }
             }
-            guard let root = swiftgfm_cmark_parser_finish(parser) else { throw MarkdownEngineError.parseFailed }
+            guard let root else { throw MarkdownEngineError.parseFailed }
             defer { swiftgfm_cmark_node_free(root) }
-            return try body(parser, root, flags, width)
+            return try body(parser, root, flags, width, mathContext)
         }
     }
 
