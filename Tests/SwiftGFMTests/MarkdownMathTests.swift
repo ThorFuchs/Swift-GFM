@@ -229,3 +229,19 @@ import Testing
     #expect(formulas == ["x", "y"])
     #expect(html.contains("Preis $5 und $10; $z$; <code>$q$</code>"))
 }
+
+@Test func mathPositionsFollowFootnoteRenderingOrder() throws {
+    let engine = MarkdownEngine(configuration: .init(options: [.footnotes]))
+    for input in [
+        "First[^note] and $x$.\n\n[^note]: A note with $y$.\n",
+        "[^note]: A note with $y$.\n\nFirst[^note] and $x$.\n",
+    ] {
+        let result = try engine.renderRecognizingMath(input)
+        let formulas = result.parts.compactMap { part -> MarkdownMathOccurrence? in
+            if case .math(let value) = part { return value }
+            return nil
+        }
+        #expect(formulas.map(\.literal) == ["x", "y"])
+        #expect(formulas.map(\.index) == [0, 1])
+    }
+}
