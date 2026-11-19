@@ -16,6 +16,7 @@
 ## Verify and maintain
 
 - [Testing and verification](TESTING.md): local checks, sanitizers, DocC, and comparisons with the upstream C executable.
+- [1.1.0 candidate validation](RELEASE-1.1.0.md): tested commits, platforms, limitations, and remaining release gates.
 - [Bundled cmark-gfm test coverage](BUNDLED-CMARK-QA.md): fixture provenance, exact comparisons, skips, and round-trip differences.
 - [Fixture provenance](../Tests/SwiftGFMTests/Fixtures/cmark-gfm/README.md): upstream files, hashes, and the derived entity fixture.
 - [Updating the vendored cmark-gfm](UPDATING-CMARK-GFM.md): how to move the pinned backend to a new upstream revision.

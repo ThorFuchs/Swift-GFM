@@ -1,6 +1,7 @@
 # Optional math-aware HTML
 
 Recognize selected dollar-delimited formulas before Markdown inline parsing.
+This API requires SwiftGFM 1.1.0 or newer.
 
 ``MarkdownEngine/renderRecognizingMath(_:)`` returns ``MarkdownMathDocument``
 with ordered ``MarkdownMathPart`` values. HTML pieces form a document stream;
@@ -18,7 +19,8 @@ for part in document.parts {
 ```
 
 Inline math requires single dollars on one line; its content cannot start or
-end with ASCII whitespace. Display math uses separate `$$` lines, or a standalone `$$x$$` line.
+end with ASCII whitespace. Display math uses separate `$$` lines, or a
+standalone `$$x$$` line.
 An unescaped backtick stops the search for a closing dollar. Escaped
 delimiters, invalid or missing closers, and currency-like input follow
 the rules in the repository's mathematics guide. An unclosed display block

@@ -6,8 +6,15 @@ All notable changes to this project are documented here. The project follows
 
 ## Unreleased
 
-- Add an opt-in, renderer-independent math-aware HTML document stream. The
-  standard cmark render and parse profiles remain unchanged.
+## 1.1.0
+
+- Add `MarkdownEngine.renderRecognizingMath(_:)`, an opt-in HTML document
+  stream that carries inline and display TeX separately for a caller-provided
+  renderer. It preserves the captured formula spelling without requiring
+  KaTeX. The standard cmark render and parse profiles remain unchanged.
+- Document the math profile's delimiter rules, safe insertion positions and
+  fallback behavior. Math is not recognized in table cells, code or image
+  descriptions; unsafe raw HTML and NUL input are rejected by this profile.
 
 ## 1.0.1
 

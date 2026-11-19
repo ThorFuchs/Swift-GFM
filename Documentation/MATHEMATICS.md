@@ -1,6 +1,7 @@
 # Opt-in mathematics parsing
 
 `MarkdownEngine.renderRecognizingMath(_:)` is an additional, HTML-only profile.
+It requires SwiftGFM 1.1.0 or newer.
 It recognizes selected dollar-delimited formulas during cmark parsing, before
 Markdown inline interpretation, and returns a sequence of HTML pieces and math
 occurrences. It does not render TeX, invoke KaTeX, or change `render(_:)` or
@@ -35,8 +36,9 @@ diagnostic. No caller callback runs while SwiftGFM holds its parser lock.
   dollar must be a valid closer; a closer followed by an ASCII digit is not
   accepted. An unescaped backtick ends the search for a closer so a preceding
   unmatched dollar cannot consume a Markdown code span. These rules avoid some
-  common currency ambiguities; Markdown math
-  is not an official part of the pinned GFM grammar and other parsers differ.
+  common currency ambiguities, but cannot semantically distinguish all prices
+  from formulas. Markdown math is not part of the pinned GFM grammar and other
+  parsers differ.
 - Display math uses either a line containing an opening `$$` and a later line
   containing a closing `$$`, or a single line `$$expression$$`. The delimiter
   lines may have up to three leading spaces in the current Markdown container.
